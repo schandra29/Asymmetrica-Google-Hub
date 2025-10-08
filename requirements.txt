@@ -16,6 +16,9 @@ python-dotenv==1.0.0
 # Structured Logging
 structlog==23.2.0
 
+# Numerical Computing
+numpy==1.26.2
+
 # Data Validation & Serialization
 pydantic==2.5.3
 
