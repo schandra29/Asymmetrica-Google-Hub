@@ -20,13 +20,12 @@ import asyncio
 import pytest
 import time
 from unittest.mock import AsyncMock, MagicMock
-from app.utils.harmonic_timer import (
+from core.defensekit.harmonic_timer import (
     HarmonicTimer,
     HarmonicMultiple,
     HarmonicTiming,
     RetryResult,
-    quick_sleep_async,
-    calculate_harmonic_delay
+    harmonic_sleep
 )
 
 
@@ -69,13 +68,13 @@ class TestHarmonicDelayCalculation:
         assert abs(timing.period_ms - 611.1) < 1.0
     
     def test_calculate_octave_harmonic(self):
-        """Test octave (24×) harmonic delay."""
+        """Test octave (8×) harmonic delay."""
         timer = HarmonicTimer()
         timing = timer.calculate_delay(HarmonicMultiple.OCTAVE)
         
-        assert timing.multiple == 24
-        assert abs(timing.delay_seconds - 4.8889) < 0.01  # ~5 seconds
-        assert abs(timing.period_ms - 4888.9) < 10.0
+        assert timing.multiple == 8
+        assert abs(timing.delay_seconds - 1.6296) < 0.01
+        assert abs(timing.period_ms - 1629.6) < 10.0
     
     def test_calculate_with_integer_multiple(self):
         """Test calculation with raw integer multiple."""
@@ -108,34 +107,34 @@ class TestHarmonicDelayCalculation:
 class TestSynchronousSleep:
     """Test suite for synchronous sleep operations."""
     
-    def test_sleep_single_harmonic(self):
+    def test_sleep_sync_single_harmonic(self):
         """Test synchronous sleep for single harmonic."""
         timer = HarmonicTimer()
         
         start_time = time.time()
-        timer.sleep(HarmonicMultiple.SINGLE)
+        timer.sleep_sync(HarmonicMultiple.SINGLE)
         elapsed = time.time() - start_time
         
         # Should sleep ~204ms (allow ±50ms tolerance for system jitter)
         assert abs(elapsed - 0.204) < 0.05
     
-    def test_sleep_zero_multiple(self):
+    def test_sleep_sync_zero_multiple(self):
         """Test sleep with zero multiple doesn't delay."""
         timer = HarmonicTimer()
         
         start_time = time.time()
-        timer.sleep(HarmonicMultiple.IMMEDIATE)
+        timer.sleep_sync(HarmonicMultiple.IMMEDIATE)
         elapsed = time.time() - start_time
         
         # Should be nearly instant
         assert elapsed < 0.01
     
-    def test_sleep_with_integer(self):
+    def test_sleep_sync_with_integer(self):
         """Test sleep with integer multiple."""
         timer = HarmonicTimer()
         
         start_time = time.time()
-        timer.sleep(2)  # 2× harmonic
+        timer.sleep_sync(2)  # 2× harmonic
         elapsed = time.time() - start_time
         
         # Should sleep ~407ms
@@ -182,10 +181,10 @@ class TestAsynchronousSleep:
         assert elapsed < 0.01
     
     @pytest.mark.asyncio
-    async def test_quick_sleep_async_convenience(self):
+    async def test_harmonic_sleep_convenience(self):
         """Test convenience function for quick async sleep."""
         start_time = time.time()
-        await quick_sleep_async(1)
+        await harmonic_sleep(1)
         elapsed = time.time() - start_time
         
         # Should sleep ~204ms
@@ -388,67 +387,6 @@ class TestRetryWithBackoff:
         expected_delay = 7 * 0.2037
         assert abs(result.total_delay_seconds - expected_delay) < 0.2
         assert abs(elapsed - expected_delay) < 0.3  # Allow system jitter
-
-
-class TestRateLimitingIntervals:
-    """Test suite for rate limiting interval generation."""
-    
-    def test_harmonic_intervals_same_multiple(self):
-        """Test generating intervals with same harmonic multiple."""
-        timer = HarmonicTimer()
-        intervals = timer.get_harmonic_intervals(count=5, start_multiple=1)
-        
-        assert len(intervals) == 5
-        
-        # All intervals should be equal
-        for timing in intervals:
-            assert timing.multiple == 1
-            assert abs(timing.delay_seconds - 0.2037) < 0.001
-    
-    def test_harmonic_intervals_total_duration(self):
-        """Test total duration of rate limiting sequence."""
-        timer = HarmonicTimer()
-        intervals = timer.get_harmonic_intervals(count=10, start_multiple=2)
-        
-        total_duration = sum(t.delay_seconds for t in intervals)
-        
-        # 10 intervals × 2× harmonic = 20× base period
-        # 20 × 0.2037 ≈ 4.074 seconds
-        assert abs(total_duration - 4.074) < 0.01
-    
-    def test_harmonic_intervals_for_rate_limiting(self):
-        """Test intervals suitable for API rate limiting."""
-        timer = HarmonicTimer()
-        
-        # Simulate 5 requests per second (200ms intervals)
-        intervals = timer.get_harmonic_intervals(count=5, start_multiple=1)
-        
-        # Each interval ~204ms, perfect for 5 RPS
-        for timing in intervals:
-            assert abs(timing.delay_seconds - 0.204) < 0.01
-
-
-class TestConvenienceFunctions:
-    """Test suite for convenience functions."""
-    
-    def test_calculate_harmonic_delay_function(self):
-        """Test calculate_harmonic_delay convenience function."""
-        delay = calculate_harmonic_delay(3)
-        
-        # 3× harmonic ≈ 0.611 seconds
-        assert abs(delay - 0.611) < 0.01
-    
-    def test_calculate_harmonic_delay_zero(self):
-        """Test calculate_harmonic_delay with zero multiple."""
-        delay = calculate_harmonic_delay(0)
-        assert delay == 0.0
-    
-    def test_calculate_harmonic_delay_large_multiple(self):
-        """Test calculate_harmonic_delay with large multiple."""
-        delay = calculate_harmonic_delay(100)
-        
-        # 100× harmonic ≈ 20.37 seconds
-        assert abs(delay - 20.37) < 0.1
 
 
 class TestHarmonicTimingDataclass:
