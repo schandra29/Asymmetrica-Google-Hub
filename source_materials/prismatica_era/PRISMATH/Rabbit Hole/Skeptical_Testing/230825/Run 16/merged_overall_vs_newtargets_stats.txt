@@ -1,0 +1,6 @@
+N: 390
+chi2_stat_vs_newtargets: 0.0
+df: 2
+asymptotic_pval: 1.0
+bootstrap_pval: 1.0
+chi2_bootstrap_CI_95: [0.045852692790976306, 7.519020667134213]

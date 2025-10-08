@@ -1,0 +1,3 @@
+KMeans regime to cluster mapping: {'creation': 2, 'optimization': 0, 'transcendence': 1, 'natural_asymmetry': 1}
+ANOVA F-statistic: 10.424475128429918
+ANOVA p-value: 7.849677359452402e-07

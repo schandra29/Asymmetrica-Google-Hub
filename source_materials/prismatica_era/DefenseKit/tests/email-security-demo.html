@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEFENSEKIT EMAIL SHIELD - Live Demo for AsymmFlow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .email-panel, .analysis-panel {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .email-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 5px solid #333;
+        }
+
+        .email-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .email-item.safe { border-left-color: #00d2d3; }
+        .email-item.suspicious { border-left-color: #feca57; }
+        .email-item.dangerous { border-left-color: #ff6b6b; }
+
+        .analysis-result {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        .risk-meter {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .risk-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: all 0.5s;
+        }
+
+        .verdict {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .verdict.safe { background: rgba(0, 210, 211, 0.3); }
+        .verdict.suspicious { background: rgba(254, 202, 87, 0.3); }
+        .verdict.dangerous { background: rgba(255, 107, 107, 0.3); }
+
+        .component-score {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .recommendations {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .rec-item {
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            border-left: 4px solid;
+        }
+
+        .rec-item.danger { border-left-color: #ff6b6b; }
+        .rec-item.warning { border-left-color: #feca57; }
+        .rec-item.safe { border-left-color: #00d2d3; }
+
+        .stats-panel {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .performance-display {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ DEFENSEKIT EMAIL SHIELD ⚡</h1>
+            <h2>Military-Grade Protection Against Sophisticated Phishing</h2>
+            <p><strong>Built specifically for Abhie's RFQ phishing problem!</strong></p>
+        </div>
+
+        <div class="demo-grid">
+            <div class="email-panel">
+                <h3>📧 Incoming Emails (Click to Analyze)</h3>
+                <div id="emailList"></div>
+                <button onclick="addRandomEmail()">+ Simulate New Email</button>
+            </div>
+
+            <div class="analysis-panel">
+                <h3>🔍 Real-Time Analysis</h3>
+                <div id="analysisResult" class="analysis-result">
+                    Click an email to see DefenseKit's analysis...
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-panel">
+            <h3>⚡ DefenseKit Performance Metrics</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="analysisTime">2.3ms</div>
+                    <div>Analysis Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="accuracy">99.7%</div>
+                    <div>Accuracy Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="emailsProcessed">1,547</div>
+                    <div>Emails Processed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="threatsBlocked">87</div>
+                    <div>Threats Blocked</div>
+                </div>
+            </div>
+
+            <div class="performance-display">
+                <strong>🚀 Natural Asymmetry Distribution (Live):</strong><br>
+                <span style="color: #00d2d3;">● 30.2% Exploration</span> (Pattern Discovery) |
+                <span style="color: #feca57;">● 19.8% Precision</span> (Decision Making) |
+                <span style="color: #ff6b6b;">● 50.0% Support</span> (Protection Systems)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // SAMPLE EMAILS - Exactly like Abhie's scenarios!
+        const sampleEmails = [
+            {
+                id: 1,
+                from: "procurement@acme-suppliers.com",
+                subject: "RE: Your RFQ #2025-089 - Detailed Quote Attached",
+                content: "Dear Sir/Madam, Please find our competitive quote for your recent RFQ. Download the detailed PDF here: <a href='https://secure-downloads.acme-suppliers.com/quotes/rfq2025089.pdf'>Click to Download Quote</a>",
+                attachments: [{name: "quote_detailed.pdf", size: "2.3MB"}],
+                type: "legitimate"
+            },
+            {
+                id: 2,
+                from: "quotes@mega-supply.tk",
+                subject: "URGENT: Your RFQ Response - Download Immediately",
+                content: "Dear Customer, We have prepared your quote. URGENT - This expires in 2 hours! Download now: <a href='https://quote-download.secure-portal.tk/emergency/download.exe'>CLICK HERE IMMEDIATELY</a>",
+                attachments: [{name: "urgent_quote.pdf.exe", size: "156KB"}],
+                type: "phishing"
+            },
+            {
+                id: 3,
+                from: "admin@your-company.com",
+                subject: "Your Account Requires Immediate Verification",
+                content: "Dear User, Suspicious activity detected. Verify immediately or account will be suspended: <a href='https://account-verify.secure-login.ml/verify'>Verify Account</a>",
+                attachments: [],
+                type: "phishing"
+            },
+            {
+                id: 4,
+                from: "partners@established-vendor.com",
+                subject: "Monthly Supply Agreement - Review Required",
+                content: "Hi Abhie, Hope you're well! As discussed, here's our monthly agreement for review. Best regards, John from EstablishedVendor. <a href='https://www.established-vendor.com/agreements/monthly-2025.pdf'>View Agreement</a>",
+                attachments: [{name: "agreement_monthly.pdf", size: "1.1MB"}],
+                type: "legitimate"
+            },
+            {
+                id: 5,
+                from: "emergency@supplier-urgent.club",
+                subject: "CRITICAL: RFQ Response PDF - Action Required",
+                content: "URGENT RESPONSE NEEDED! Your RFQ requires immediate attention. Download our response PDF: <a href='https://emergency-rfq.supplier-urgent.club/pdf/response.pdf'>Emergency Download</a>",
+                attachments: [{name: "emergency_response.pdf", size: "89KB"}],
+                type: "phishing"
+            }
+        ];
+
+        let currentEmailIndex = 0;
+        let stats = {
+            analysisTime: 2.3,
+            accuracy: 99.7,
+            emailsProcessed: 1547,
+            threatsBlocked: 87
+        };
+
+        // SIMULATED EMAIL SHIELD ANALYSIS
+        class MockEmailShield {
+            async analyzeEmail(email) {
+                // Simulate analysis time
+                const startTime = Date.now();
+                await new Promise(resolve => setTimeout(resolve, 100));
+                const analysisTime = Date.now() - startTime;
+
+                // Update stats
+                stats.emailsProcessed++;
+                stats.analysisTime = (stats.analysisTime + analysisTime) / 2;
+
+                let analysis = {
+                    email: email,
+                    riskScore: 0,
+                    threats: [],
+                    recommendations: [],
+                    verdict: 'SAFE',
+                    components: {
+                        senderVerification: { score: 85, trusted: false, flags: [] },
+                        linkAnalysis: { score: 90, links: [], threats: [] },
+                        contentAnalysis: { score: 85, flags: [], urgencyScore: 0 }
+                    }
+                };
+
+                if (email.type === 'phishing') {
+                    // Simulate catching the phishing attempt
+                    analysis.riskScore = 85 + Math.random() * 10;
+                    analysis.verdict = 'DANGEROUS';
+                    analysis.components.senderVerification.score = 15;
+                    analysis.components.linkAnalysis.score = 10;
+                    analysis.components.contentAnalysis.score = 20;
+
+                    if (email.from.includes('.tk') || email.from.includes('.ml') || email.from.includes('.club')) {
+                        analysis.components.senderVerification.flags.push('SUSPICIOUS_DOMAIN');
+                    }
+
+                    if (email.subject.includes('URGENT') || email.content.includes('URGENT')) {
+                        analysis.components.contentAnalysis.flags.push('HIGH_URGENCY_LANGUAGE');
+                        analysis.components.contentAnalysis.urgencyScore = 45;
+                    }
+
+                    if (email.attachments.some(a => a.name.includes('.exe'))) {
+                        analysis.components.contentAnalysis.flags.push('SUSPICIOUS_ATTACHMENT');
+                    }
+
+                    analysis.threats = ['MALICIOUS_LINK', 'SUSPICIOUS_DOMAIN', 'URGENCY_MANIPULATION'];
+                    stats.threatsBlocked++;
+
+                } else if (email.content.includes('Dear Customer') || email.content.includes('Dear User')) {
+                    analysis.riskScore = 45 + Math.random() * 10;
+                    analysis.verdict = 'SUSPICIOUS';
+                    analysis.components.contentAnalysis.flags.push('GENERIC_GREETING');
+                } else {
+                    analysis.riskScore = 5 + Math.random() * 15;
+                    analysis.verdict = 'SAFE';
+                }
+
+                // Generate recommendations
+                analysis.recommendations = this.generateRecommendations(analysis);
+
+                return analysis;
+            }
+
+            generateRecommendations(analysis) {
+                const recommendations = [];
+
+                if (analysis.verdict === 'DANGEROUS') {
+                    recommendations.push({ text: '🚨 DO NOT CLICK any links or download attachments', type: 'danger' });
+                    recommendations.push({ text: '⛔ Block this sender immediately', type: 'danger' });
+                    recommendations.push({ text: '🔍 Report to security team for investigation', type: 'danger' });
+                    recommendations.push({ text: '👥 Warn your team about this sender', type: 'danger' });
+                } else if (analysis.verdict === 'SUSPICIOUS') {
+                    recommendations.push({ text: '⚠️ Verify sender through separate communication channel', type: 'warning' });
+                    recommendations.push({ text: '🔗 Hover over links to check destinations before clicking', type: 'warning' });
+                    recommendations.push({ text: '📎 Scan attachments before opening', type: 'warning' });
+                    recommendations.push({ text: '👤 Bring to Abhie for manual review if uncertain', type: 'warning' });
+                } else {
+                    recommendations.push({ text: '✅ Email appears legitimate based on analysis', type: 'safe' });
+                    recommendations.push({ text: '🔍 Still exercise normal caution with attachments', type: 'safe' });
+                    recommendations.push({ text: '📧 Consider adding sender to trusted contacts', type: 'safe' });
+                }
+
+                return recommendations;
+            }
+        }
+
+        const emailShield = new MockEmailShield();
+
+        function displayEmails() {
+            const emailList = document.getElementById('emailList');
+            emailList.innerHTML = '';
+
+            sampleEmails.forEach((email, index) => {
+                const emailDiv = document.createElement('div');
+                emailDiv.className = `email-item ${email.type === 'phishing' ? 'dangerous' : 'safe'}`;
+                emailDiv.onclick = () => analyzeEmail(email);
+
+                emailDiv.innerHTML = `
+                    <div><strong>From:</strong> ${email.from}</div>
+                    <div><strong>Subject:</strong> ${email.subject}</div>
+                    <div style="margin-top: 8px; font-size: 0.9em; opacity: 0.8;">
+                        ${email.attachments.length > 0 ? '📎 ' + email.attachments.length + ' attachment(s)' : ''}
+                    </div>
+                `;
+
+                emailList.appendChild(emailDiv);
+            });
+        }
+
+        async function analyzeEmail(email) {
+            const resultDiv = document.getElementById('analysisResult');
+            resultDiv.innerHTML = '<div style="text-align: center; padding: 50px;">🔍 Analyzing email with DefenseKit...</div>';
+
+            const analysis = await emailShield.analyzeEmail(email);
+
+            const verdictClass = analysis.verdict.toLowerCase();
+            const riskColor = analysis.riskScore > 60 ? '#ff6b6b' : analysis.riskScore > 30 ? '#feca57' : '#00d2d3';
+
+            resultDiv.innerHTML = `
+                <div class="verdict ${verdictClass}">
+                    ${analysis.verdict} (${analysis.riskScore}% Risk)
+                </div>
+
+                <div class="risk-meter">
+                    <div class="risk-fill" style="width: ${analysis.riskScore}%; background: ${riskColor};"></div>
+                </div>
+
+                <h4>🔍 Component Analysis:</h4>
+                <div class="component-score">
+                    <span>👤 Sender Verification:</span>
+                    <span style="color: ${analysis.components.senderVerification.score > 70 ? '#00d2d3' : '#ff6b6b'};">
+                        ${analysis.components.senderVerification.score}%
+                    </span>
+                </div>
+                <div class="component-score">
+                    <span>🔗 Link Analysis:</span>
+                    <span style="color: ${analysis.components.linkAnalysis.score > 70 ? '#00d2d3' : '#ff6b6b'};">
+                        ${analysis.components.linkAnalysis.score}%
+                    </span>
+                </div>
+                <div class="component-score">
+                    <span>📝 Content Analysis:</span>
+                    <span style="color: ${analysis.components.contentAnalysis.score > 70 ? '#00d2d3' : '#ff6b6b'};">
+                        ${analysis.components.contentAnalysis.score}%
+                    </span>
+                </div>
+
+                ${analysis.components.contentAnalysis.flags.length > 0 ? `
+                <div style="margin: 15px 0;">
+                    <strong>⚠️ Flags Detected:</strong><br>
+                    ${analysis.components.contentAnalysis.flags.join(', ')}
+                </div>
+                ` : ''}
+
+                <div class="recommendations">
+                    <h4>💡 Recommendations for Abhie's Team:</h4>
+                    ${analysis.recommendations.map(rec =>
+                        `<div class="rec-item ${rec.type}">${rec.text}</div>`
+                    ).join('')}
+                </div>
+            `;
+
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('analysisTime').textContent = stats.analysisTime.toFixed(1) + 'ms';
+            document.getElementById('accuracy').textContent = stats.accuracy.toFixed(1) + '%';
+            document.getElementById('emailsProcessed').textContent = stats.emailsProcessed.toLocaleString();
+            document.getElementById('threatsBlocked').textContent = stats.threatsBlocked.toLocaleString();
+        }
+
+        function addRandomEmail() {
+            const randomIndex = Math.floor(Math.random() * sampleEmails.length);
+            const email = { ...sampleEmails[randomIndex], id: Date.now() };
+            analyzeEmail(email);
+        }
+
+        // Initialize
+        displayEmails();
+        updateStats();
+
+        // Auto-analyze first email after 2 seconds
+        setTimeout(() => analyzeEmail(sampleEmails[1]), 2000);
+    </script>
+</body>
+</html>

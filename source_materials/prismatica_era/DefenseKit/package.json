@@ -1,0 +1,78 @@
+{
+  "name": "defensekit",
+  "version": "1.0.0",
+  "description": "Military-grade defensive security components for legitimate businesses",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:quantum": "jest tests/quantum-consciousness-bridge-test.js",
+    "test:integration": "jest tests/ --testNamePattern='integration'",
+    "lint": "eslint src/",
+    "build": "node scripts/build.js",
+    "example:identity": "node examples/identity-demo.js",
+    "example:htx": "node examples/htx-demo.js",
+    "example:replay": "node examples/replay-demo.js"
+  },
+  "keywords": [
+    "security",
+    "authentication",
+    "htx",
+    "noise-protocol",
+    "cbor",
+    "replay-protection",
+    "self-certifying",
+    "mitm-detection",
+    "defensive-security",
+    "zero-trust"
+  ],
+  "author": "Sarat Chandra",
+  "license": "MIT",
+  "dependencies": {
+    "@noble/ciphers": "^0.4.1",
+    "@noble/curves": "^1.3.0",
+    "@noble/hashes": "^1.3.3",
+    "cbor": "^10.0.11",
+    "chalk": "^5.6.2",
+    "cli-progress": "^3.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@jest/globals": "^30.1.2",
+    "@types/jest": "^30.0.0",
+    "babel-jest": "^30.1.2",
+    "eslint": "^8.56.0",
+    "jest": "^30.1.3",
+    "jest-html-reporters": "^3.1.7",
+    "supertest": "^7.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/defensekit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/defensekit/issues"
+  },
+  "homepage": "https://github.com/yourusername/defensekit#readme",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./htx": "./src/htx-v2/htx-protocol.js",
+    "./cbor": "./src/cbor/deterministic-cbor.js",
+    "./identity": "./src/identity/self-certifying.js",
+    "./calibration": "./src/calibration/template-calibration.js",
+    "./replay": "./src/replay/replay-protection.js"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  }
+}

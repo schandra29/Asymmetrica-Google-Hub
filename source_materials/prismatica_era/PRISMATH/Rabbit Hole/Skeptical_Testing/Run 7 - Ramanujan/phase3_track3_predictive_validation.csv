@@ -1,0 +1,61 @@
+id,template,guided_chain,confidence,historical_concordance,predictive_validity
+cand_59,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Support-dominant -> Support-dominant -> Support-dominant -> Support-dominant,0.9240631538511832,1.0,0.9999999999994679
+cand_7,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric,0.879752078750522,1.0,0.9563964672259648
+cand_17,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric,0.879752078750522,0.0,0.9563964672259648
+cand_14,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Support-dominant -> Support-dominant -> Support-dominant,0.5455283407066892,0.0,0.6275094862088993
+cand_16,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Balanced-asymmetric -> Support-dominant -> Support-dominant -> Support-dominant,0.5455283407066892,1.0,0.6275094862088993
+cand_54,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Support-dominant -> Support-dominant -> Support-dominant,0.5455283407066892,1.0,0.6275094862088993
+cand_3,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant -> Support-dominant,0.5450449155015099,0.0,0.6270337801528019
+cand_9,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant -> Support-dominant,0.5450449155015099,1.0,0.6270337801528019
+cand_40,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant -> Support-dominant,0.5450449155015099,1.0,0.6270337801528019
+cand_51,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant -> Support-dominant,0.5450449155015099,1.0,0.6270337801528019
+cand_10,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant,0.5445804975657778,0.0,0.626576777865331
+cand_35,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant,0.5445804975657778,0.0,0.626576777865331
+cand_4,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant -> Exploration-dominant,0.5431668391608561,1.0,0.6251856922180179
+cand_23,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant -> Exploration-dominant,0.5431668391608561,0.0,0.6251856922180179
+cand_18,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric -> Exploration-dominant,0.5422603871932197,1.0,0.6242937141292748
+cand_43,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Support-dominant -> Support-dominant -> Support-dominant -> Balanced-asymmetric,0.5399431019650088,1.0,0.6220134304267397
+cand_42,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Support-dominant -> Support-dominant -> Balanced-asymmetric -> Balanced-asymmetric,0.5396792766825333,1.0,0.6217538178056339
+cand_34,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Support-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric,0.5394258244591729,1.0,0.6215044126105961
+cand_13,divisor_sum: sum_{d|n} f(d) equals g(n),Exploration-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Balanced-asymmetric,0.5366266078446285,0.0,0.6187498928180805
+cand_52,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Support-dominant -> Balanced-asymmetric -> Support-dominant -> Support-dominant,0.533444143100346,1.0,0.6156182444556202
+cand_1,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Support-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant,0.5334358433075305,1.0,0.615610077190727
+cand_33,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric -> Balanced-asymmetric,0.5334358433075305,1.0,0.615610077190727
+cand_36,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric -> Balanced-asymmetric,0.5334358433075305,0.0,0.615610077190727
+cand_39,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric,0.5334358433075305,0.0,0.615610077190727
+cand_57,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric,0.5334358433075305,1.0,0.615610077190727
+cand_48,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Support-dominant -> Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant,0.5334022857745944,1.0,0.6155770554916631
+cand_60,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Support-dominant -> Support-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5334009825255528,1.0,0.6155757730524045
+cand_25,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Support-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Exploration-dominant,0.5333943797163982,1.0,0.6155692756743854
+cand_2,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Exploration-dominant -> Balanced-asymmetric -> Support-dominant -> Support-dominant,0.5333487256165715,1.0,0.6155243505617918
+cand_19,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Exploration-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant,0.5333441774399411,1.0,0.6155198750087091
+cand_44,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Exploration-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Support-dominant,0.5333441774399411,1.0,0.6155198750087091
+cand_8,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant,0.5333257883559646,1.0,0.6155017795546036
+cand_11,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant,0.5333257883559646,1.0,0.6155017795546036
+cand_30,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant,0.5333257883559646,1.0,0.6155017795546036
+cand_31,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant -> Balanced-asymmetric,0.5333257883559646,0.0,0.6155017795546036
+cand_32,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Exploration-dominant -> Exploration-dominant -> Balanced-asymmetric,0.5333257883559646,1.0,0.6155017795546036
+cand_6,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Exploration-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Exploration-dominant,0.5333214559406952,1.0,0.615497516317687
+cand_29,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric,0.5333214559406952,0.0,0.615497516317687
+cand_37,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric,0.5333214559406952,1.0,0.615497516317687
+cand_41,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Exploration-dominant -> Balanced-asymmetric -> Balanced-asymmetric -> Exploration-dominant,0.5333214559406952,1.0,0.615497516317687
+cand_20,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5332383317565162,1.0,0.6154157194287402
+cand_22,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Support-dominant -> Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric,0.5332366728745466,1.0,0.6154140870351644
+cand_26,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Support-dominant -> Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric,0.5332366728745466,1.0,0.6154140870351644
+cand_12,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Support-dominant,0.5332359437236884,1.0,0.6154133695271088
+cand_21,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Support-dominant,0.5332359437236884,1.0,0.6154133695271088
+cand_24,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Support-dominant,0.5332359437236884,1.0,0.6154133695271088
+cand_27,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Support-dominant,0.5332359437236884,1.0,0.6154133695271088
+cand_47,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Support-dominant,0.5332359437236884,1.0,0.6154133695271088
+cand_5,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5332353517946801,1.0,0.6154127870497968
+cand_15,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5332353517946801,1.0,0.6154127870497968
+cand_50,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5332353517946801,1.0,0.6154127870497968
+cand_49,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Exploration-dominant -> Balanced-asymmetric -> Support-dominant -> Balanced-asymmetric,0.5332350346783212,1.0,0.6154124749970309
+cand_28,continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...)),Support-dominant -> Balanced-asymmetric -> Exploration-dominant -> Balanced-asymmetric,0.5332346286136074,1.0,0.6154120754162034
+cand_38,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Balanced-asymmetric -> Exploration-dominant -> Support-dominant -> Balanced-asymmetric,0.5332330486527206,1.0,0.6154105206835286
+cand_45,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Support-dominant -> Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5332330486527206,1.0,0.6154105206835286
+cand_46,divisor_sum: sum_{d|n} f(d) equals g(n),Support-dominant -> Exploration-dominant -> Balanced-asymmetric -> Support-dominant,0.5332330486527206,0.0,0.6154105206835286
+cand_53,q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k},Balanced-asymmetric -> Support-dominant -> Exploration-dominant -> Balanced-asymmetric,0.5332330486527206,1.0,0.6154105206835286
+cand_55,divisor_sum: sum_{d|n} f(d) equals g(n),Balanced-asymmetric -> Exploration-dominant -> Support-dominant -> Exploration-dominant,0.5332330486527206,0.0,0.6154105206835286
+cand_56,partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k),Balanced-asymmetric -> Exploration-dominant -> Support-dominant -> Support-dominant,0.5332330486527206,1.0,0.6154105206835286
+cand_58,theta_identity: theta3^4 equals theta2^4 plus theta4^4,Support-dominant -> Exploration-dominant -> Balanced-asymmetric -> Exploration-dominant,0.5332330486527206,1.0,0.6154105206835286

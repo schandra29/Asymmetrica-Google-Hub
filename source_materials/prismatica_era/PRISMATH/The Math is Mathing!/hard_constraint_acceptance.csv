@@ -1,0 +1,7 @@
+epsilon,total_accepted,Sum of odds = n^2_accepted,AM≥GM (two variables)_accepted,Cauchy–Schwarz_accepted,Triangle inequality_accepted
+0.4,1,1,,,
+0.5,1,1,,,
+0.6,2,1,1.0,,
+0.8,3,2,1.0,,
+1.0,7,2,2.0,1.0,2.0
+1.1,9,3,2.0,2.0,2.0

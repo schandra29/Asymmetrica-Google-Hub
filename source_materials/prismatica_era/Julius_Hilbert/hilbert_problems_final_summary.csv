@@ -1,0 +1,5 @@
+Dataset,Problem,R0_Exploration,R1_Optimization,R2_Integration,Silhouette_Score,Stability_ARI
+Riemann Zeros,Hilbert #8 (RH),0.5390539053905391,0.149014901490149,0.3119311931193119,,
+Prime Gaps,Twin Primes,0.5912912912912913,0.0754754754754754,0.3332332332332332,,
+Collatz Sequences,Collatz Conjecture,0.5308,0.1845,0.2847,,
+Dirichlet L-zeros,Hilbert #8 (Extended),0.4885396857171454,0.5077569812831548,0.0037033329996997,,

@@ -1,0 +1,8 @@
+theorem,proof,L_steps,Sigma_symbols,Depth_D,Avg_outdeg_W,Reuse_R,Compress_Khat,P_emergence,P_optimization,P_support,P_dev_L1,Term_L,Term_Sigma,Term_D,Term_W,Term_R,Term_Khat,Term_Pdev,S_score
+AM≥GM (two variables),Jensen on log,3,86,3,0.667,2.0,0.946,0.333,0.667,0.0,1.0,3.0,4.3,1.8,0.133,-1.6,0.946,0.0,8.579
+AM≥GM (two variables),Square nonnegativity,4,126,4,0.75,1.75,0.792,0.25,0.5,0.25,0.6,4.0,6.3,2.4,0.15,-1.4,0.792,0.0,12.242
+Cauchy–Schwarz,Projection geometry,3,145,3,0.667,1.333,0.814,0.333,0.667,0.0,1.0,3.0,7.25,1.8,0.133,-1.067,0.814,0.0,11.931
+Sum of odds = n^2,Induction,5,167,5,0.8,1.2,0.807,0.2,0.4,0.4,0.4,5.0,8.35,3.0,0.16,-0.96,0.807,0.0,16.357
+Sum of odds = n^2,Geometric L-layers,5,207,4,1.0,1.4,0.789,0.4,0.4,0.2,0.6,5.0,10.35,2.4,0.2,-1.12,0.789,0.0,17.619
+Triangle inequality,Via Cauchy–Schwarz,3,87,3,0.667,1.0,0.649,0.333,0.667,0.0,1.0,3.0,4.35,1.8,0.133,-0.8,0.649,0.0,9.132
+Triangle inequality,Geometric path length,3,134,3,0.667,1.0,0.806,0.333,0.667,0.0,1.0,3.0,6.7,1.8,0.133,-0.8,0.806,0.0,11.639

@@ -1,0 +1,331 @@
+<html><head><meta charset="utf-8"><title>EEG Three-Regime Validation Report</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;margin:20px;} table{border-collapse:collapse;margin:10px 0;} th,td{border:1px solid #ddd;padding:6px;} h1,h2{margin-top:24px;} .small{color:#666;font-size:12px;}</style>
+</head><body>
+<h1>EEG Three-Regime Validation Report</h1>
+<h2>Dataset columns</h2>
+<pre>[
+  "Unnamed: 0",
+  "id",
+  "indra_time",
+  "browser_latency",
+  "reading_time",
+  "attention_esense",
+  "meditation_esense",
+  "eeg_power",
+  "raw_values",
+  "signal_quality",
+  "createdAt",
+  "updatedAt",
+  "label",
+  "_time"
+]</pre>
+<h2>Derived EEG features (head)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>individual_alpha_power</th>
+      <th>theta_wave_creativity</th>
+      <th>_bin_time</th>
+      <th>desynchronization_index</th>
+      <th>personal_rhythm_strength</th>
+      <th>alpha_align</th>
+      <th>dynamic_coherence_change</th>
+      <th>gamma_binding_activity</th>
+      <th>phase_locking_variance</th>
+      <th>cross_frequency_coupling</th>
+      <th>group_coherence_maximum</th>
+      <th>stable_phase_alignment</th>
+      <th>entropy_minimization</th>
+      <th>collective_alpha_sync</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.5301522116533005</td>
+      <td>-0.7426178788729005</td>
+      <td>-2.021475414358087</td>
+      <td>-1.0653848438559412</td>
+      <td>1.0765157681705155</td>
+      <td>1.0653848438559412</td>
+      <td>NaN</td>
+      <td>-0.814080051537889</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.9920073065411412</td>
+      <td>NaN</td>
+      <td>1.0184029232036185</td>
+      <td>-1.1890091131624376</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.9615385755122808</td>
+      <td>-1.130644691197655</td>
+      <td>-2.0198976689461605</td>
+      <td>-1.0653848438559412</td>
+      <td>1.6622264917223657</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>-0.8816291689805867</td>
+      <td>-0.868333219634863</td>
+      <td>NaN</td>
+      <td>1.9920073065411412</td>
+      <td>NaN</td>
+      <td>1.9228594266888634</td>
+      <td>-2.1565092134124515</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.030204918168487607</td>
+      <td>1.5647551067110694</td>
+      <td>-2.018319923534234</td>
+      <td>-1.0653848438559412</td>
+      <td>-0.8961784590653219</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>0.36998354908551007</td>
+      <td>-0.45354199464835054</td>
+      <td>2.2505402770363903</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-0.9901758237906955</td>
+      <td>-0.06774266366381547</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.6739236688736717</td>
+      <td>-0.9103913902276898</td>
+      <td>-2.016742178122307</td>
+      <td>-1.0653848438559412</td>
+      <td>-0.9882292921149183</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>1.0780934216227889</td>
+      <td>-0.6506106596434721</td>
+      <td>0.3150332570307881</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-0.7838707224729565</td>
+      <td>-1.5114553259483172</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.5184811463199552</td>
+      <td>-0.349913921469319</td>
+      <td>-2.0151644327103804</td>
+      <td>-1.0653848438559412</td>
+      <td>-1.7742319088669498</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>1.2675768177938005</td>
+      <td>0.8809146546671808</td>
+      <td>0.11709162618547315</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-1.5576966900474742</td>
+      <td>3.4056029220538124</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.027662620205678702</td>
+      <td>-0.8337628735480477</td>
+      <td>-2.013586687298454</td>
+      <td>-1.0653848438559412</td>
+      <td>-1.5977610992863072</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>2.4689029121435637</td>
+      <td>0.8164225071721017</td>
+      <td>-0.5294673485296086</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-1.476399780556872</td>
+      <td>-0.062040875800425596</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.8774014903921694</td>
+      <td>0.45584806096613173</td>
+      <td>-2.0120089418865272</td>
+      <td>-1.0653848438559412</td>
+      <td>-1.5440006333750482</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>1.2097991645954227</td>
+      <td>0.5681776492032345</td>
+      <td>-0.3459293364954296</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-1.437748970076553</td>
+      <td>1.9678091405583586</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.07217680359112519</td>
+      <td>0.6858343870481555</td>
+      <td>-2.0104311964746007</td>
+      <td>-1.0653848438559412</td>
+      <td>-0.7401395963130535</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>0.7428156378017604</td>
+      <td>0.5800427113375389</td>
+      <td>-0.3378979022215006</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-0.7598156609333224</td>
+      <td>-0.1618759204288777</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.24581109708734689</td>
+      <td>0.024597726549479858</td>
+      <td>-2.008853451062674</td>
+      <td>-1.0653848438559412</td>
+      <td>-0.9368728860423462</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>0.38412147251269446</td>
+      <td>0.09749622593738831</td>
+      <td>-0.3574683731966272</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>-1.0880737326865906</td>
+      <td>0.5512975861061704</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.4147443113758638</td>
+      <td>-1.1671470734133955</td>
+      <td>-2.0072757056507475</td>
+      <td>-1.0653848438559412</td>
+      <td>0.5345467985930512</td>
+      <td>1.0653848438559412</td>
+      <td>-0.9433739508674628</td>
+      <td>0.6190687577071562</td>
+      <td>-0.40931487847467907</td>
+      <td>-0.3625513694246809</td>
+      <td>1.9920073065411412</td>
+      <td>9.51837094499297</td>
+      <td>0.05904342112896319</td>
+      <td>-0.9301758155838331</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Regime ANOVA (proportions)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>F</th>
+      <th>p</th>
+      <th>partial_eta_squared</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>R1p</td>
+      <td>11965.438805</td>
+      <td>0.0</td>
+      <td>0.44365</td>
+    </tr>
+    <tr>
+      <td>R2p</td>
+      <td>23846.099047</td>
+      <td>0.0</td>
+      <td>0.613782</td>
+    </tr>
+    <tr>
+      <td>R3p</td>
+      <td>21643.808793</td>
+      <td>0.0</td>
+      <td>0.590573</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Cluster to regime mapping (cosine)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>to_R1</th>
+      <th>to_R2</th>
+      <th>to_R3</th>
+      <th>cluster</th>
+      <th>assigned_regime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.4599</td>
+      <td>0.7749</td>
+      <td>0.7918</td>
+      <td>0</td>
+      <td>optimization</td>
+    </tr>
+    <tr>
+      <td>0.4022</td>
+      <td>0.5618</td>
+      <td>0.754</td>
+      <td>1</td>
+      <td>transcendence</td>
+    </tr>
+    <tr>
+      <td>0.6709</td>
+      <td>0.7636</td>
+      <td>0.9241</td>
+      <td>2</td>
+      <td>creation</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Synchronization distance by remapped regime (means)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime_mapped</th>
+      <th>sync_dist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>creation</td>
+      <td>1.5428</td>
+    </tr>
+    <tr>
+      <td>optimization</td>
+      <td>2.0042</td>
+    </tr>
+    <tr>
+      <td>transcendence</td>
+      <td>1.8754</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Fractal dimension</h2>
+<p>Estimated fractal dimension: 1.78</p>
+<h2>Bootstrap partial eta^2 intervals</h2>
+<pre>{
+  "R1p": {
+    "mean": 0.4439309007513361,
+    "ci_lo": 0.4291967437116446,
+    "ci_hi": 0.4576841516800147
+  },
+  "R2p": {
+    "mean": 0.6136329119474137,
+    "ci_lo": 0.6073572462899212,
+    "ci_hi": 0.6192609445293092
+  },
+  "R3p": {
+    "mean": 0.5916435496516506,
+    "ci_lo": 0.5841806570342427,
+    "ci_hi": 0.5995764940797589
+  }
+}</pre>
+<h2>Figures</h2>
+<img src="eeg_regime_scatter.png" width="640">
+<img src="eeg_cluster_centers_bar.png" width="800">
+<img src="eeg_sync_distance_by_regime.png" width="800">
+<img src="eeg_fractal_trace.png" width="800">
+<p class="small">Generated by Julius at https://julius.ai</p>
+</body></html>

@@ -1,0 +1,11 @@
+Coherence Test (Pull to Transcendence)
+Iter 1: Dist = [0.23  0.483 0.287], Coherence = 0.724
+Iter 2: Dist = [0.233 0.459 0.308], Coherence = 0.74
+Iter 3: Dist = [0.236 0.437 0.327], Coherence = 0.755
+Iter 4: Dist = [0.238 0.418 0.343], Coherence = 0.771
+Iter 5: Dist = [0.241 0.401 0.359], Coherence = 0.786
+Iter 6: Dist = [0.243 0.385 0.372], Coherence = 0.801
+Iter 7: Dist = [0.245 0.371 0.385], Coherence = 0.816
+Iter 8: Dist = [0.246 0.358 0.396], Coherence = 0.83
+Iter 9: Dist = [0.248 0.347 0.406], Coherence = 0.843
+Iter 10: Dist = [0.249 0.337 0.414], Coherence = 0.856

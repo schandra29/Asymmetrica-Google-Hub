@@ -1,0 +1,6 @@
+Discovery Report (Intuition-first)
+1. Stationary vs Observed: dependence_stationary_vs_observed.csv
+2. Block Bootstrap Overall CIs: dependence_block_bootstrap_overall_CIs.csv
+3. Block Bootstrap Chi-square CI: dependence_block_bootstrap_chisq_CI.txt
+4. Visuals: exploratory_violin_subgroups.png, exploratory_ternary_sources.png, exploratory_transition_heatmap_row_norm.png
+Interpretation pointers: observed mix as empirical baseline; stationary distribution as dependence lens; block bootstrap intervals reflect clustering.

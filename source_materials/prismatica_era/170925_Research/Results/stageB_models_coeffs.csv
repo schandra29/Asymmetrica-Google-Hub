@@ -1,0 +1,204 @@
+model_id,mask_list,term,coef
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,log2n,7.684647248422556
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,v2,-6.26063764208307
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod12_eq_10,0.48429276358443013
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod12_eq_10*v2,0.484292763584427
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod30_eq_2*v2,0.7078012252405474
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod3_eq_2*v2,0.03937490309653846
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod5_eq_2,-0.2832078025513982
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod5_eq_2*v2,-0.5373732296735765
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_v2_ge_5*log2n,0.8373841670266957
+0,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_v2_ge_5*v2,-1.9053919795296208
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,bias,-1.4577551387005117
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,log2n,7.572251156432368
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,v2,-3.553460291725515
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_mod12_eq_10,0.5583304105545327
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_mod12_eq_10*v2,0.5583304105545351
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_mod30_eq_2*v2,0.7616642434354911
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_mod5_eq_2,-0.256168595065201
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_mod5_eq_2*v2,-0.5644349788078524
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_v2_ge_2,-0.8107203010309045
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_v2_ge_2*log2n,0.34878996474983914
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_v2_ge_2*v2,-2.9064254540558965
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_v2_ge_6*log2n,1.3971038905575957
+1,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_6,if_v2_ge_6*v2,-2.6460711140997004
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,bias,-0.6626313509603247
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,log2n,7.695733350653196
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,v2,-5.889073499590183
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_mod12_eq_10,0.5665509849444098
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_mod12_eq_10*v2,0.5665509849444103
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_mod3_eq_2*v2,0.18488296657268127
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_mod5_eq_2,-0.8770304471212064
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_v2_ge_3,-1.6839366032557324
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_v2_ge_3*v2,0.2565411698473441
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_v2_ge_4,-2.3570291425077037
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_v2_ge_4*log2n,0.736429069446372
+2,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4,if_v2_ge_4*v2,-1.7627364479085634
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,bias,-0.2684786189574557
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,log2n,7.714355716689624
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,v2,-6.13996756825464
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_mod30_eq_2*log2n,-0.2980876156181644
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_mod30_eq_2*v2,1.942512378613581
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_mod5_eq_2,1.0055639833234242
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_mod5_eq_2*v2,-0.9715800876912206
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_3,-3.939093895321388
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_3*v2,1.1342212084426442
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_4,-4.762302096782684
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_4*log2n,0.7111454132358513
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_4*v2,-1.3354033959412215
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_8*log2n,1.0043760549378746
+3,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_4 | if_v2_ge_8,if_v2_ge_8*v2,-2.166042704290509
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,log2n,7.708929691567329
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,v2,-6.251776876568694
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,if_mod5_eq_2,-0.8835361126746958
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,if_v2_ge_3,-0.5040944499249447
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,if_v2_ge_3*v2,-0.014038033185850729
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,if_v2_ge_6*log2n,1.49143928689766
+4,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6,if_v2_ge_6*v2,-2.9227739666651202
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,log2n,7.68488556273305
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,v2,-6.2485537831548035
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_mod12_eq_10,0.47779405861604596
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_mod12_eq_10*v2,0.477794058616005
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_mod30_eq_2*v2,0.7645629704904688
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_mod5_eq_2,-0.2704397284878133
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_mod5_eq_2*v2,-0.560389125204419
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_5,-14.554501954997889
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_5*log2n,0.9292193978974619
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_5*v2,0.5827927551248171
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_7*log2n,1.4157858442520104
+5,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_7*v2,-2.99796531193232
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,log2n,7.708344798012545
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,v2,-6.247099258681593
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,if_mod5_eq_2,-0.8822630092763443
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_3,-0.41936374775974933
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_3*v2,-0.03960969098867384
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_6*log2n,1.6350207098482332
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_6*v2,-3.2688885677798383
+6,if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_7*v2,0.16944292481688478
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,log2n,7.703856259993972
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,v2,-6.228555961986406
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_mod30_eq_2*v2,0.7243546117285599
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_mod5_eq_2,-0.296093567695686
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_mod5_eq_2*v2,-0.5386205511943328
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_3,-0.845247210514191
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_3*v2,0.11268018562936044
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_7*log2n,1.5578111378188602
+7,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_7*v2,-3.053503398706684
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,log2n,7.6879863519077185
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,v2,-6.268782630790029
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod12_eq_10,0.4697377689456723
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod12_eq_10*v2,0.4697377689456439
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod30_eq_2*v2,0.7535983025374201
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod5_eq_2,-0.29223170521554115
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod5_eq_2*v2,-0.5496605575215441
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_v2_ge_6*log2n,1.4940628318094638
+8,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_v2_ge_6*v2,-2.917774089527208
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,log2n,7.647850313665317
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,v2,-6.0418676194356795
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_mod12_eq_10,0.5216096429739085
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_mod12_eq_10*v2,0.521609642973909
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_mod3_eq_2*v2,0.18789872776698302
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_3,-0.6760332765177066
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_3*v2,-0.06127895985752252
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_5*log2n,0.5569398171204185
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_5*v2,-1.3321455748431876
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_7*log2n,1.0144404311929613
+9,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_7,if_v2_ge_7*v2,-1.814792878926316
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,log2n,7.673447089804974
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,v2,-6.15394766449695
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_mod12_eq_10,0.49959776903523756
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_mod12_eq_10*v2,0.4995977690352318
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_mod30_eq_2*v2,0.7358133744059674
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_mod5_eq_2,-0.24959701029572343
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_mod5_eq_2*v2,-0.5611900381637931
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_v2_ge_4,-4.8518324694527415
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_v2_ge_4*log2n,0.7645212652767839
+10,if_mod12_eq_10 | if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_4,if_v2_ge_4*v2,-1.1269306007646611
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,log2n,7.683149846061537
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,v2,-6.388305801001168
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_mod12_eq_10,0.47537782377830984
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_mod12_eq_10*v2,0.47537782377830495
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_mod30_eq_2*v2,0.07995017251483438
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_mod3_eq_2*v2,0.16422456405143304
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_6*log2n,2.0543208515533533
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_6*v2,-4.144138644898454
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_7*log2n,-0.5499683469985709
+11,if_mod12_eq_10 | if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_7*v2,1.2500296996966846
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,bias,-1.7710817443406177
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,log2n,7.572158695271751
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,v2,-3.42265735524012
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_mod12_eq_10,0.5681067023230412
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_mod12_eq_10*v2,0.5681067023230413
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_mod3_eq_2*v2,0.19149128795114556
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_v2_ge_2,-1.3775266445255214
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_v2_ge_2*log2n,0.39015385078915754
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_v2_ge_2*v2,-3.029102255425014
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_v2_ge_4,-0.10489928282470053
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_v2_ge_7*log2n,1.40113432265631
+12,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_7,if_v2_ge_7*v2,-2.7042793415574393
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,log2n,7.64678893946267
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,v2,-6.032300116692544
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_mod12_eq_10,0.523424266107406
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_mod12_eq_10*v2,0.5234242661074
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_mod3_eq_2*v2,0.18437394354987569
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_v2_ge_3,-0.3736797660132449
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_v2_ge_3*v2,-0.15471882742040055
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_v2_ge_5*log2n,0.8889439090979221
+13,if_mod12_eq_10 | if_mod3_eq_2 | if_v2_ge_3 | if_v2_ge_5,if_v2_ge_5*v2,-2.0626166013929335
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,bias,-1.7812027488147504
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,log2n,7.785743561456172
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,v2,-5.888539867685873
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,if_mod12_eq_10,0.5660803459331409
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,if_mod12_eq_10*v2,0.566080345933144
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,if_mod3_eq_2*v2,0.18312932067856658
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,if_mod5_eq_2,-0.8779098245983016
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,if_v2_ge_3,2.8042940870432833
+14,if_mod12_eq_10 | if_mod3_eq_2 | if_mod5_eq_2 | if_v2_ge_3,if_v2_ge_3*v2,-1.116873208423413
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,bias,-1.7800280759721196
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,log2n,7.741441147550187
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,v2,-5.248057052960833
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_mod12_eq_10,0.5203318095851087
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_mod12_eq_10*v2,0.5203318095851087
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_mod5_eq_2,-0.8745096798475801
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_v2_ge_2,2.0918926845148413
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_v2_ge_2*v2,-1.3761362924738632
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_v2_ge_4*v2,0.030005064129604242
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_v2_ge_5*log2n,0.757402139933951
+15,if_mod12_eq_10 | if_mod5_eq_2 | if_v2_ge_2 | if_v2_ge_4 | if_v2_ge_5,if_v2_ge_5*v2,-1.6016000549890896
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,log2n,7.716439367750152
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,v2,-6.376529031786881
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod30_eq_2*v2,0.7152978473129505
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod5_eq_2,-0.2764780514722103
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_mod5_eq_2*v2,-0.541813819490887
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_v2_ge_6*log2n,1.4641318824563299
+16,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_6,if_v2_ge_6*v2,-2.806720445639908
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,log2n,7.717164262432071
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,v2,-6.384039801080404
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod30_eq_2*log2n,-0.2936796894789677
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod30_eq_2*v2,1.9135212329690674
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod5_eq_2,0.9895915847760648
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_mod5_eq_2*v2,-0.9642636330778228
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_v2_ge_5,-6.683911218360502
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_v2_ge_5*log2n,1.2567481478701898
+17,if_mod30_eq_2 | if_mod5_eq_2 | if_v2_ge_5,if_v2_ge_5*v2,-1.6012933398722204
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,bias,-3.003260491483215
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,log2n,7.766483485268804
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,v2,-4.440083322859069
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_mod30_eq_2*v2,0.0929224190340593
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_mod3_eq_2,1.0287597659420604
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_mod3_eq_2*v2,-0.21833754741809325
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_2,0.391650282043732
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_2*v2,-1.0451725493320851
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_3,0.6004608866424761
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_3*v2,-0.6275513401345891
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_7*log2n,1.4908419753710556
+18,if_mod30_eq_2 | if_mod3_eq_2 | if_v2_ge_2 | if_v2_ge_3 | if_v2_ge_7,if_v2_ge_7*v2,-2.9438048497641565
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,log2n,7.707054904282546
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,v2,-6.236735055666132
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_mod5_eq_2,-0.879818797759074
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_3,-0.6492806292029676
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_3*v2,0.023553283326936292
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_5*log2n,0.4177168726984455
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_5*v2,-1.0664938131462516
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_6*log2n,1.0842885200372807
+19,if_mod5_eq_2 | if_v2_ge_3 | if_v2_ge_5 | if_v2_ge_6 | if_v2_ge_7,if_v2_ge_6*v2,-1.903915558803638

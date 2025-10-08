@@ -1,0 +1,16 @@
+artifact
+collatz_P1_transition_matrix.csv
+collatz_P2_two_step_matrix.csv
+collatz_P3_three_step_matrix.csv
+collatz_P1_transition_matrix.png
+collatz_P2_transition_matrix.png
+collatz_P3_transition_matrix.png
+collatz_top_3step_chains.csv
+collatz_dwell_durations.csv
+collatz_survival_km.csv
+collatz_hazard_discrete.csv
+collatz_survival_km.png
+collatz_hazard_discrete.png
+collatz_stationary_distribution_poc.csv
+collatz_weibull_params.csv
+collatz_loglogistic_params.csv

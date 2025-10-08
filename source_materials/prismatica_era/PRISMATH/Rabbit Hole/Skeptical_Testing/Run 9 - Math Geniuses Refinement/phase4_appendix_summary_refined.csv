@@ -1,0 +1,4 @@
+target,avg_concordance,avg_pred,pass_numeric
+Euler,1.0,0.6166932477572467,1.0
+Mandelbrot,1.0,0.6167650927172001,1.0
+Tesla,1.0,0.6228489392161586,1.0

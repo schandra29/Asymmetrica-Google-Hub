@@ -1,0 +1,25 @@
+Mike Jensen proposes a theory that he believes **solves the mystery of the double-slit experiment and wave-particle duality**, a problem that has baffled scientists for over a century and even troubled Albert Einstein due to its non-deterministic nature.
+
+Here's a conceptual breakdown of his claims:
+
+**Conceptual Breakdown of Claims:**
+
+*   **Reality as a 3D Video Game and Grid Structure:** Jensen likens our three-dimensional reality to an "ultimate computer game". He postulates that reality is composed of an extremely tiny, unpixelated, three-dimensional grid or lattice structure. At the smallest Planck scales, this structure consists of "voxels" or "space-time pixels".
+*   **Voxel Memory and Ancillae:** Each of these voxels possesses a "memory capacity." At the vertex of every four pixels, there's an entity called an "ancilla," which continuously calculates the "cost to compute reality".
+*   **Substrate Saturation Protocol (SSP):** A key concept is the "substrate saturation protocol," which defines the maximum level of information each voxel can hold. If the information exceeds this allocated memory, it "immediately resets".
+*   **Light as an Encoding Mechanism:** Light, in this theory, does not merely travel; it **binds together groups or "clouds" of these three-dimensional pixels**. It acts as an "encoding mechanism of reality," transmitting these pixel clouds through the double slits as a single "register" or "packet of information"—a waveform. This process efficiently defers the computation of all reality at once.
+*   **Wave Function Collapse (Particle Behavior):** The "cloud" of pixels, existing in a "superpositional state," travels through the double slits. **Wave function collapse occurs only when this cloud becomes "entangled with information,"** such as a detector screen or measurement device. This entanglement causes the "informational load" to spike, triggering the "substrate saturation protocol" and leading to the immediate collapse of the entire cloud into a "definite particle". This is the "trick" that explains the observed particle behavior.
+*   **Universal Computer and Least Computational Path:** Reality, or the "universal computer," is constantly seeking the "least computationally expensive path". Similar to a video game only computing what's on screen, reality only gets calculated when the "cost of information is too high," at which point it's forced to "choose a definite reality".
+*   **Black Hole Entropy and Cosmology:** The theory extends to explain black hole entropy using the von Neumann entropy equation. In black holes, these 3D pixels become **"permanently saturated,"** unlike the temporary saturation and reset seen in wave function collapse. Black holes are thus described as "permanently saturated areas of space-time," acting as "giant spheres of locked up information" that cannot propagate light waves. The theory also applies to cosmology, suggesting that light from distant galaxies is only computed when it entangles with an "informational system," like our eyes through a telescope.
+*   **New Fundamental Constant:** Jensen introduces a new fundamental constant of nature called "**Smax**," which represents the total maximum entropy of a system.
+*   **Deterministic Reality:** Ultimately, Jensen claims his theory provides a **deterministic way for reality to encode all possible outcomes** of our universe without the immense computational cost of calculating everything simultaneously. He suggests that the "transverse and vertical waves" of light are specifically designed to "stitch together" these 3D voxels and encode reality in a cost-efficient manner.
+
+**Potential for Empirical Verification:**
+
+Mike Jensen emphasizes that his theory is not just conceptual but also **empirically testable and reproducible**. He offers several avenues for verification:
+
+1.  **Reproducibility of the Double-Slit Experiment:** He provides a link with his theory, enabling others to "reproduce this experiment" with his explanation.
+2.  **Colab Simulations:** He claims that the theory can be mathematically demonstrated, and his provided "colab simulations" (accessible through links in his theory) **exactly mimic the observed wave-particle duality and collapse**.
+3.  **Ten Reproducible Experiments:** More specifically, he states there is a list of "**10 experiments** that any high school physics, college physics, university physics, or somebody with a lab at home looking at optics can reproduce".
+4.  **Observation of the Universal Cost Budget (UCB):** These experiments would allow observers to "actually look at what's called the **UCB or the universal cost budget** of these clouds these superpositional clouds and exactly when they collapse".
+5.  **Light's Influence on Collapse:** The collapse time can be observed "according to the type of light that you're using," which aligns with his claim that light's frequency and amplitude modulate the size and coherency of the pixel cloud.

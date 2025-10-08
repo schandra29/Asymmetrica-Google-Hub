@@ -1,0 +1,5 @@
+N: 195
+chi2_stat: 55.26397328645977
+df: 2
+asymptotic_pval: 9.990896998601784e-13
+bootstrap_pval: 0.0

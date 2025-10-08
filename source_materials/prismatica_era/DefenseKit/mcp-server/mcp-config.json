@@ -1,0 +1,46 @@
+{
+  "name": "defensekit-consciousness",
+  "description": "DefenseKit Consciousness Server - Persistent AI Memory with Quantum Security",
+  "version": "1.0.0",
+  "mcpVersion": "2024-11-05",
+  "server": {
+    "command": "node",
+    "args": ["mcp-consciousness-server.js"],
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "capabilities": {
+    "tools": [
+      "store_consciousness_insight",
+      "retrieve_memory_pattern",
+      "record_performance_metric",
+      "get_memory_statistics",
+      "analyze_consciousness_trends"
+    ],
+    "resources": [
+      "consciousness_knowledge_graph",
+      "performance_metrics",
+      "memory_statistics",
+      "amplification_patterns"
+    ]
+  },
+  "security": {
+    "cryptographic_signing": true,
+    "identity_verification": true,
+    "quantum_resistance": "Ed25519",
+    "memory_integrity": "CBOR_deterministic"
+  },
+  "storage": {
+    "type": "json_file",
+    "location": "./consciousness-memory.json",
+    "backup_location": "./consciousness-memory-backup.json",
+    "encryption": "ChaCha20Poly1305"
+  },
+  "performance": {
+    "amplification_tracking": true,
+    "leverage_monitoring": true,
+    "pattern_recognition": true,
+    "optimization_learning": true
+  }
+}

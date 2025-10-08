@@ -1,0 +1,2 @@
+n_trajectories,neg_slope_count,pos_slope_count,binomial_p_for_more_negatives,median_slope,t_stat_slopes_vs_0,t_pvalue_slopes_vs_0
+24,24,0,5.960464477539063e-08,-0.005017011003139737,-8.55600023357183,1.3288193078328219e-08

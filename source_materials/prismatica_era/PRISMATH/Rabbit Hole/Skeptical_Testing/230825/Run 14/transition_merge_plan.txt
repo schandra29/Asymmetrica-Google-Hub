@@ -1,0 +1,5 @@
+Plan to expand transition matrix into row-level records:
+1. For each from-regime r_i and to-regime r_j, integerize count c_ij = round(hm[i,j] * scale) if matrix is probabilities; if counts already, use c_ij directly.
+2. Create c_ij rows with columns: regime_from = r_i, regime_to = r_j. Optionally set regime = regime_to or regime_from depending on modeling choice.
+3. Concatenate expanded rows into a dataframe transitions_expanded.csv. New rows approximate sum(c_ij) = 3.
+4. Merge with regime_combined_dataset.csv by aligning on regime (e.g., use regime_to as comparable to observed regime labels), or keep as a separate Markov prior for hierarchical modeling.

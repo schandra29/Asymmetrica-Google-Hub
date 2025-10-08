@@ -1,0 +1,756 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial, sans-serif; margin: 24px; }h1, h2, h3 { color: #222; }table { border-collapse: collapse; margin: 10px 0; }th, td { border: 1px solid #ddd; padding: 6px 8px; }.note { color: #555; font-size: 12px; }</style></head><body><h1>Cognitive Architecture Mapping — Summary Report</h1><p class="note">This report summarizes regime dynamics: multi-step cognitive pathways, equilibrium occupancy, and survival/hazard characteristics, based on the previously generated surrogate trajectories.</p><h2>Transition Intelligence</h2><p>We compute 1-step, 2-step, and 3-step transition matrices capturing immediate and short-horizon cognitive moves between regimes.</p><h3>P (1-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.983</td>
+      <td>0.0</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.991</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.031</td>
+      <td>0.025</td>
+      <td>0.944</td>
+    </tr>
+  </tbody>
+</table><h3>P2 (2-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.967</td>
+      <td>0.0</td>
+      <td>0.033</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.982</td>
+      <td>0.018</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.06</td>
+      <td>0.048</td>
+      <td>0.893</td>
+    </tr>
+  </tbody>
+</table><h3>P3 (3-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.952</td>
+      <td>0.001</td>
+      <td>0.047</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.001</td>
+      <td>0.973</td>
+      <td>0.026</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.086</td>
+      <td>0.069</td>
+      <td>0.845</td>
+    </tr>
+  </tbody>
+</table><p class="note">See PNG heatmaps for a visual view: collatz_P1_transition_matrix.png, collatz_P2_transition_matrix.png, collatz_P3_transition_matrix.png</p><h2>Top 3-step Cognitive Chains</h2><p>Most probable 3-step sequences (thought chains) aggregated from P. See interactive Sankey for flows.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>chain</th>
+      <th>prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.972507570473549</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.9502130901871734</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.0230234479178708</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.02194788767968</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0163139441112203</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0156725138999953</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0150563033850661</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0090791187326119</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0086549798659467</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0082506550124598</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0004930483426359</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0004930483426359</td>
+    </tr>
+  </tbody>
+</table><p class="note">Interactive Sankey: collatz_top_chains_sankey.html</p><h2>Equilibrium Mix</h2><p>Stationary distribution indicates long-run occupancy of regimes under observed transitions.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>stationary_prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3336</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.4843</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.1821</td>
+    </tr>
+  </tbody>
+</table><h2>Survival Dynamics</h2><p>Kaplan–Meier survival curves quantify persistence; discrete hazard shows conditional switch probability at time t given survival up to t.</p><ul><li>KM Survival CSV: collatz_survival_km.csv</li><li>Discrete Hazard CSV: collatz_hazard_discrete.csv</li><li>KM Survival Plot: collatz_survival_km.png</li><li>Hazard Plot: collatz_hazard_discrete.png</li></ul><h2>Key Insights</h2><ul><li>Thought chains reinforce a search → reconcile → consolidate motif, with Balanced-asymmetric acting as a flexible staging bridge.</li><li>Equilibrium occupancy aligns with strong time in Support and Exploration, while Balanced remains transient but strategically central.</li><li>Survival and hazard reveal attention-span differences: regimes with rising hazard benefit from timely hand-offs; plateaus signal stable focus windows.</li></ul><p class="note">Parametric survival (Weibull/Log-logistic) was skipped due to missing lifelines. Nonparametric estimates are provided. We can add parametric fits later if the library becomes available.</p><hr>
+<h1>Phase 2 — Ramanujan Completion Protocol: Highlights</h1>
+<p>This section collates cycle flux, bootstrap confidence intervals, generative candidates, and bandit policy learning results produced in Phase 2.</p>
+<h2>Cycle Flux</h2>
+<p>Net probability flow around Support → Exploration → Balanced → Support. Positive values indicate a dominant forward loop.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cycle_flux_forward</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>cycle_flux_reverse</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>cycle_flux_net</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Bootstrap Confidence Intervals</h2>
+<p>Percentiles (2.5, 50, 97.5) for transition matrix P and stationary distribution π.</p>
+<h3>P (low, median, high)</h3>
+<div style="display:flex; gap:16px; flex-wrap:wrap">
+<div><h4>Low</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.981</td>
+      <td>0.0</td>
+      <td>0.015</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.989</td>
+      <td>0.008</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.027</td>
+      <td>0.022</td>
+      <td>0.939</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>Median</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.983</td>
+      <td>0.0</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.991</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.031</td>
+      <td>0.025</td>
+      <td>0.944</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>High</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.985</td>
+      <td>0.0</td>
+      <td>0.019</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.992</td>
+      <td>0.011</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.034</td>
+      <td>0.028</td>
+      <td>0.95</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<h3>π (low, median, high)</h3>
+<div style="display:flex; gap:16px; flex-wrap:wrap">
+<div><h4>Low</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>pi_low</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3005</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.4453</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.1644</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>Median</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>pi_med</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3356</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.483</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.182</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>High</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>pi_high</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3714</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.5229</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.201</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<h2>Generative Candidates</h2>
+<p>Top candidates guided by high-probability 3-step chains and early-hazard stability. Full list in phase2_generative_candidates.csv.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>guided_chain</th>
+      <th>chain_prob</th>
+      <th>stability</th>
+      <th>novelty</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cand_59</td>
+      <td>partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k)</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.9502130901871734</td>
+      <td>0.8887217477545344</td>
+      <td>0.979591836734694</td>
+      <td>0.9240631538511832</td>
+    </tr>
+    <tr>
+      <td>cand_7</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+      <td>0.8887217477545344</td>
+      <td>0.9591836734693876</td>
+      <td>0.879752078750522</td>
+    </tr>
+    <tr>
+      <td>cand_17</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+      <td>0.8887217477545344</td>
+      <td>0.9591836734693876</td>
+      <td>0.879752078750522</td>
+    </tr>
+    <tr>
+      <td>cand_14</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+      <td>0.8887217477545344</td>
+      <td>0.9387755102040816</td>
+      <td>0.5455283407066892</td>
+    </tr>
+    <tr>
+      <td>cand_16</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+      <td>0.8887217477545344</td>
+      <td>0.9387755102040816</td>
+      <td>0.5455283407066892</td>
+    </tr>
+    <tr>
+      <td>cand_54</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+      <td>0.8887217477545344</td>
+      <td>0.9387755102040816</td>
+      <td>0.5455283407066892</td>
+    </tr>
+    <tr>
+      <td>cand_3</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_9</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_40</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_51</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_10</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+      <td>0.8887217477545344</td>
+      <td>0.8979591836734694</td>
+      <td>0.5445804975657778</td>
+    </tr>
+    <tr>
+      <td>cand_35</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+      <td>0.8887217477545344</td>
+      <td>0.8979591836734694</td>
+      <td>0.5445804975657778</td>
+    </tr>
+    <tr>
+      <td>cand_4</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+      <td>0.8887217477545344</td>
+      <td>0.8775510204081632</td>
+      <td>0.5431668391608561</td>
+    </tr>
+    <tr>
+      <td>cand_23</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+      <td>0.8887217477545344</td>
+      <td>0.8775510204081632</td>
+      <td>0.5431668391608561</td>
+    </tr>
+    <tr>
+      <td>cand_18</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.02194788767968</td>
+      <td>0.8887217477545344</td>
+      <td>0.8367346938775511</td>
+      <td>0.5422603871932197</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Bandit Policy Learning</h2>
+<p>Adaptive tuning of step and conv_thresh. See reward curve PNG and best-arm summary.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>step</th>
+      <th>conv</th>
+      <th>Q_estimate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>0.6</td>
+      <td>0.8731334762271397</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Reward curve:</em> phase2_policy_learning_curve.png</p>
+<p class="note">All Phase 2 artifacts are indexed in phase2_artifact_index.csv for quick access.</p>
+<hr>
+<h1>Phase 3 — Historical Validation Sprint</h1>
+<p>Three-track validation of generated candidates against Ramanujan domains, mock theta order scoring, and predictive coherence.</p>
+<h2>Track 1: Historical Concordance</h2>
+<p>Concordance scored by domain/signature alignment with curated Ramanujan reference signatures.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>domain</th>
+      <th>n</th>
+      <th>concordance_mean</th>
+      <th>conf_mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>continued_fraction</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>0.536</td>
+    </tr>
+    <tr>
+      <td>other</td>
+      <td>13</td>
+      <td>0.0</td>
+      <td>0.565</td>
+    </tr>
+    <tr>
+      <td>partition</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>0.569</td>
+    </tr>
+    <tr>
+      <td>q_series</td>
+      <td>14</td>
+      <td>1.0</td>
+      <td>0.56</td>
+    </tr>
+    <tr>
+      <td>theta</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>0.537</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Plot:</em> phase3_track1_concordance_scatter.png</p>
+<h2>Track 2: Mock Theta Resolution</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>mock_theta_order_score</th>
+      <th>centrality</th>
+      <th>hazard_diff_E_minus_S</th>
+      <th>pi_exploration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.2764</td>
+      <td>1.0773</td>
+      <td>-0.028</td>
+      <td>0.4843</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Track 3: Predictive Validation</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>predictive_validity</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cand_59</td>
+      <td>partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k)</td>
+      <td>1.0</td>
+      <td>0.924</td>
+    </tr>
+    <tr>
+      <td>cand_7</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>0.956</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <td>cand_17</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.956</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <td>cand_14</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.628</td>
+      <td>0.546</td>
+    </tr>
+    <tr>
+      <td>cand_16</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>0.628</td>
+      <td>0.546</td>
+    </tr>
+    <tr>
+      <td>cand_54</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>0.628</td>
+      <td>0.546</td>
+    </tr>
+    <tr>
+      <td>cand_3</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_9</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_40</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_51</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_10</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_35</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_4</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>0.625</td>
+      <td>0.543</td>
+    </tr>
+    <tr>
+      <td>cand_23</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.625</td>
+      <td>0.543</td>
+    </tr>
+    <tr>
+      <td>cand_18</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>0.624</td>
+      <td>0.542</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Full CSV:</em> phase3_track3_predictive_validation.csv</p>
+<h2>Overall Summary</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>track1_concordance_mean</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>track3_predictive_validity_mean</td>
+      <td>0.6358</td>
+    </tr>
+    <tr>
+      <td>mock_theta_order_score</td>
+      <td>0.2764</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">Artifacts indexed in phase3_artifact_index.csv</p>
+</body></html>

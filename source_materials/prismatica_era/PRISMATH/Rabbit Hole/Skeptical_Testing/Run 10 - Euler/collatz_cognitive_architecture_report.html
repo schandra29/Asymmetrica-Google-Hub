@@ -1,0 +1,1546 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial, sans-serif; margin: 24px; }h1, h2, h3 { color: #222; }table { border-collapse: collapse; margin: 10px 0; }th, td { border: 1px solid #ddd; padding: 6px 8px; }.note { color: #555; font-size: 12px; }</style></head><body><h1>Cognitive Architecture Mapping — Summary Report</h1><p class="note">This report summarizes regime dynamics: multi-step cognitive pathways, equilibrium occupancy, and survival/hazard characteristics, based on the previously generated surrogate trajectories.</p><h2>Transition Intelligence</h2><p>We compute 1-step, 2-step, and 3-step transition matrices capturing immediate and short-horizon cognitive moves between regimes.</p><h3>P (1-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.983</td>
+      <td>0.0</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.991</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.031</td>
+      <td>0.025</td>
+      <td>0.944</td>
+    </tr>
+  </tbody>
+</table><h3>P2 (2-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.967</td>
+      <td>0.0</td>
+      <td>0.033</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.982</td>
+      <td>0.018</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.06</td>
+      <td>0.048</td>
+      <td>0.893</td>
+    </tr>
+  </tbody>
+</table><h3>P3 (3-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.952</td>
+      <td>0.001</td>
+      <td>0.047</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.001</td>
+      <td>0.973</td>
+      <td>0.026</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.086</td>
+      <td>0.069</td>
+      <td>0.845</td>
+    </tr>
+  </tbody>
+</table><p class="note">See PNG heatmaps for a visual view: collatz_P1_transition_matrix.png, collatz_P2_transition_matrix.png, collatz_P3_transition_matrix.png</p><h2>Top 3-step Cognitive Chains</h2><p>Most probable 3-step sequences (thought chains) aggregated from P. See interactive Sankey for flows.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>chain</th>
+      <th>prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.972507570473549</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.9502130901871734</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.0230234479178708</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.02194788767968</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0163139441112203</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0156725138999953</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0150563033850661</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0090791187326119</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0086549798659467</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0082506550124598</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0004930483426359</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0004930483426359</td>
+    </tr>
+  </tbody>
+</table><p class="note">Interactive Sankey: collatz_top_chains_sankey.html</p><h2>Equilibrium Mix</h2><p>Stationary distribution indicates long-run occupancy of regimes under observed transitions.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>stationary_prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3336</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.4843</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.1821</td>
+    </tr>
+  </tbody>
+</table><h2>Survival Dynamics</h2><p>Kaplan–Meier survival curves quantify persistence; discrete hazard shows conditional switch probability at time t given survival up to t.</p><ul><li>KM Survival CSV: collatz_survival_km.csv</li><li>Discrete Hazard CSV: collatz_hazard_discrete.csv</li><li>KM Survival Plot: collatz_survival_km.png</li><li>Hazard Plot: collatz_hazard_discrete.png</li></ul><h2>Key Insights</h2><ul><li>Thought chains reinforce a search → reconcile → consolidate motif, with Balanced-asymmetric acting as a flexible staging bridge.</li><li>Equilibrium occupancy aligns with strong time in Support and Exploration, while Balanced remains transient but strategically central.</li><li>Survival and hazard reveal attention-span differences: regimes with rising hazard benefit from timely hand-offs; plateaus signal stable focus windows.</li></ul><p class="note">Parametric survival (Weibull/Log-logistic) was skipped due to missing lifelines. Nonparametric estimates are provided. We can add parametric fits later if the library becomes available.</p><hr>
+<h1>Phase 2 — Ramanujan Completion Protocol: Highlights</h1>
+<p>This section collates cycle flux, bootstrap confidence intervals, generative candidates, and bandit policy learning results produced in Phase 2.</p>
+<h2>Cycle Flux</h2>
+<p>Net probability flow around Support → Exploration → Balanced → Support. Positive values indicate a dominant forward loop.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cycle_flux_forward</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>cycle_flux_reverse</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>cycle_flux_net</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Bootstrap Confidence Intervals</h2>
+<p>Percentiles (2.5, 50, 97.5) for transition matrix P and stationary distribution π.</p>
+<h3>P (low, median, high)</h3>
+<div style="display:flex; gap:16px; flex-wrap:wrap">
+<div><h4>Low</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.981</td>
+      <td>0.0</td>
+      <td>0.015</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.989</td>
+      <td>0.008</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.027</td>
+      <td>0.022</td>
+      <td>0.939</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>Median</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.983</td>
+      <td>0.0</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.991</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.031</td>
+      <td>0.025</td>
+      <td>0.944</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>High</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.985</td>
+      <td>0.0</td>
+      <td>0.019</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.992</td>
+      <td>0.011</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.034</td>
+      <td>0.028</td>
+      <td>0.95</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<h3>π (low, median, high)</h3>
+<div style="display:flex; gap:16px; flex-wrap:wrap">
+<div><h4>Low</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>pi_low</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3005</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.4453</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.1644</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>Median</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>pi_med</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3356</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.483</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.182</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h4>High</h4><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>pi_high</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3714</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.5229</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.201</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<h2>Generative Candidates</h2>
+<p>Top candidates guided by high-probability 3-step chains and early-hazard stability. Full list in phase2_generative_candidates.csv.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>guided_chain</th>
+      <th>chain_prob</th>
+      <th>stability</th>
+      <th>novelty</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cand_59</td>
+      <td>partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k)</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.9502130901871734</td>
+      <td>0.8887217477545344</td>
+      <td>0.979591836734694</td>
+      <td>0.9240631538511832</td>
+    </tr>
+    <tr>
+      <td>cand_7</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+      <td>0.8887217477545344</td>
+      <td>0.9591836734693876</td>
+      <td>0.879752078750522</td>
+    </tr>
+    <tr>
+      <td>cand_17</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+      <td>0.8887217477545344</td>
+      <td>0.9591836734693876</td>
+      <td>0.879752078750522</td>
+    </tr>
+    <tr>
+      <td>cand_14</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+      <td>0.8887217477545344</td>
+      <td>0.9387755102040816</td>
+      <td>0.5455283407066892</td>
+    </tr>
+    <tr>
+      <td>cand_16</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+      <td>0.8887217477545344</td>
+      <td>0.9387755102040816</td>
+      <td>0.5455283407066892</td>
+    </tr>
+    <tr>
+      <td>cand_54</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+      <td>0.8887217477545344</td>
+      <td>0.9387755102040816</td>
+      <td>0.5455283407066892</td>
+    </tr>
+    <tr>
+      <td>cand_3</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_9</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_40</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_51</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+      <td>0.8887217477545344</td>
+      <td>0.9183673469387756</td>
+      <td>0.5450449155015099</td>
+    </tr>
+    <tr>
+      <td>cand_10</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+      <td>0.8887217477545344</td>
+      <td>0.8979591836734694</td>
+      <td>0.5445804975657778</td>
+    </tr>
+    <tr>
+      <td>cand_35</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+      <td>0.8887217477545344</td>
+      <td>0.8979591836734694</td>
+      <td>0.5445804975657778</td>
+    </tr>
+    <tr>
+      <td>cand_4</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+      <td>0.8887217477545344</td>
+      <td>0.8775510204081632</td>
+      <td>0.5431668391608561</td>
+    </tr>
+    <tr>
+      <td>cand_23</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+      <td>0.8887217477545344</td>
+      <td>0.8775510204081632</td>
+      <td>0.5431668391608561</td>
+    </tr>
+    <tr>
+      <td>cand_18</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.02194788767968</td>
+      <td>0.8887217477545344</td>
+      <td>0.8367346938775511</td>
+      <td>0.5422603871932197</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Bandit Policy Learning</h2>
+<p>Adaptive tuning of step and conv_thresh. See reward curve PNG and best-arm summary.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>step</th>
+      <th>conv</th>
+      <th>Q_estimate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>0.6</td>
+      <td>0.8731334762271397</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Reward curve:</em> phase2_policy_learning_curve.png</p>
+<p class="note">All Phase 2 artifacts are indexed in phase2_artifact_index.csv for quick access.</p>
+<hr>
+<h1>Phase 3 — Historical Validation Sprint</h1>
+<p>Three-track validation of generated candidates against Ramanujan domains, mock theta order scoring, and predictive coherence.</p>
+<h2>Track 1: Historical Concordance</h2>
+<p>Concordance scored by domain/signature alignment with curated Ramanujan reference signatures.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>domain</th>
+      <th>n</th>
+      <th>concordance_mean</th>
+      <th>conf_mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>continued_fraction</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>0.536</td>
+    </tr>
+    <tr>
+      <td>other</td>
+      <td>13</td>
+      <td>0.0</td>
+      <td>0.565</td>
+    </tr>
+    <tr>
+      <td>partition</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>0.569</td>
+    </tr>
+    <tr>
+      <td>q_series</td>
+      <td>14</td>
+      <td>1.0</td>
+      <td>0.56</td>
+    </tr>
+    <tr>
+      <td>theta</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>0.537</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Plot:</em> phase3_track1_concordance_scatter.png</p>
+<h2>Track 2: Mock Theta Resolution</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>mock_theta_order_score</th>
+      <th>centrality</th>
+      <th>hazard_diff_E_minus_S</th>
+      <th>pi_exploration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.2764</td>
+      <td>1.0773</td>
+      <td>-0.028</td>
+      <td>0.4843</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Track 3: Predictive Validation</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>predictive_validity</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cand_59</td>
+      <td>partition_relation: p(n + k) approx c1 p(n) plus c2 p(n - k)</td>
+      <td>1.0</td>
+      <td>0.924</td>
+    </tr>
+    <tr>
+      <td>cand_7</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>0.956</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <td>cand_17</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.956</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <td>cand_14</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.628</td>
+      <td>0.546</td>
+    </tr>
+    <tr>
+      <td>cand_16</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>0.628</td>
+      <td>0.546</td>
+    </tr>
+    <tr>
+      <td>cand_54</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>0.628</td>
+      <td>0.546</td>
+    </tr>
+    <tr>
+      <td>cand_3</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_9</td>
+      <td>continued_fraction: x equals a0 + 1/(a1 + 1/(a2 + ...))</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_40</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_51</td>
+      <td>q_series: sum a_n q^n equals product (1 - q^{k})^{-b_k}</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_10</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_35</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.627</td>
+      <td>0.545</td>
+    </tr>
+    <tr>
+      <td>cand_4</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>0.625</td>
+      <td>0.543</td>
+    </tr>
+    <tr>
+      <td>cand_23</td>
+      <td>divisor_sum: sum_{d|n} f(d) equals g(n)</td>
+      <td>0.625</td>
+      <td>0.543</td>
+    </tr>
+    <tr>
+      <td>cand_18</td>
+      <td>theta_identity: theta3^4 equals theta2^4 plus theta4^4</td>
+      <td>0.624</td>
+      <td>0.542</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Full CSV:</em> phase3_track3_predictive_validation.csv</p>
+<h2>Overall Summary</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>track1_concordance_mean</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>track3_predictive_validity_mean</td>
+      <td>0.6358</td>
+    </tr>
+    <tr>
+      <td>mock_theta_order_score</td>
+      <td>0.2764</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">Artifacts indexed in phase3_artifact_index.csv</p>
+<hr>
+<h1>Phase 4 — Cross-Historical Genius Validation</h1>
+<p>Targets: Euler, Tesla, Mandelbrot. Methodology: domain mapping 3 candidate generation 3 historical concordance 3 predictive validation 3 regime analysis.</p>
+<h2>Per-Target Summary</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>balanced_chain_share</th>
+      <th>avg_confidence</th>
+      <th>avg_predictive_validity</th>
+      <th>avg_concordance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Euler</td>
+      <td>0.833</td>
+      <td>0.562</td>
+      <td>0.642</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>0.833</td>
+      <td>0.547</td>
+      <td>0.627</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>0.933</td>
+      <td>0.561</td>
+      <td>0.641</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Plots:</em> phase4_predictive_validity_by_target.png, phase4_concordance_by_target.png</p>
+<h3>Top Candidates — Euler</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>guided_chain</th>
+      <th>confidence</th>
+      <th>historical_concordance</th>
+      <th>predictive_validity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Euler_29</td>
+      <td>complex_analysis: analytic continuation of zeta via functional equation</td>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.933</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Euler_19</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.933</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Euler_24</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.546</td>
+      <td>1.0</td>
+      <td>0.626</td>
+    </tr>
+    <tr>
+      <td>Euler_12</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.543</td>
+      <td>1.0</td>
+      <td>0.623</td>
+    </tr>
+    <tr>
+      <td>Euler_40</td>
+      <td>number_theory: product over primes equals sum over n identity</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.543</td>
+      <td>1.0</td>
+      <td>0.623</td>
+    </tr>
+    <tr>
+      <td>Euler_28</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.542</td>
+      <td>1.0</td>
+      <td>0.623</td>
+    </tr>
+    <tr>
+      <td>Euler_33</td>
+      <td>complex_analysis: analytic continuation of zeta via functional equation</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.54</td>
+      <td>1.0</td>
+      <td>0.621</td>
+    </tr>
+    <tr>
+      <td>Euler_7</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.539</td>
+      <td>1.0</td>
+      <td>0.62</td>
+    </tr>
+    <tr>
+      <td>Euler_35</td>
+      <td>graph_theory: degree sum equals 2m and eulerian path criterion</td>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.539</td>
+      <td>1.0</td>
+      <td>0.62</td>
+    </tr>
+    <tr>
+      <td>Euler_5</td>
+      <td>number_theory: product over primes equals sum over n identity</td>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.537</td>
+      <td>1.0</td>
+      <td>0.618</td>
+    </tr>
+    <tr>
+      <td>Euler_39</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.537</td>
+      <td>1.0</td>
+      <td>0.618</td>
+    </tr>
+    <tr>
+      <td>Euler_38</td>
+      <td>complex_analysis: analytic continuation of zeta via functional equation</td>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.533</td>
+      <td>1.0</td>
+      <td>0.614</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Top Candidates — Tesla</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>guided_chain</th>
+      <th>confidence</th>
+      <th>historical_concordance</th>
+      <th>predictive_validity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tesla_45</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.88</td>
+      <td>1.0</td>
+      <td>0.948</td>
+    </tr>
+    <tr>
+      <td>Tesla_33</td>
+      <td>resonance: coupled oscillator identity with Q factor scaling</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.545</td>
+      <td>1.0</td>
+      <td>0.626</td>
+    </tr>
+    <tr>
+      <td>Tesla_8</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.545</td>
+      <td>1.0</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <td>Tesla_39</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.542</td>
+      <td>1.0</td>
+      <td>0.623</td>
+    </tr>
+    <tr>
+      <td>Tesla_13</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.54</td>
+      <td>1.0</td>
+      <td>0.621</td>
+    </tr>
+    <tr>
+      <td>Tesla_43</td>
+      <td>electromagnetics: frequency-amplitude energy relation E equals k f^2</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.54</td>
+      <td>1.0</td>
+      <td>0.621</td>
+    </tr>
+    <tr>
+      <td>Tesla_14</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.539</td>
+      <td>1.0</td>
+      <td>0.62</td>
+    </tr>
+    <tr>
+      <td>Tesla_32</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.537</td>
+      <td>1.0</td>
+      <td>0.618</td>
+    </tr>
+    <tr>
+      <td>Tesla_26</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.533</td>
+      <td>1.0</td>
+      <td>0.614</td>
+    </tr>
+    <tr>
+      <td>Tesla_28</td>
+      <td>resonance: coupled oscillator identity with Q factor scaling</td>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.533</td>
+      <td>1.0</td>
+      <td>0.614</td>
+    </tr>
+    <tr>
+      <td>Tesla_5</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.533</td>
+      <td>1.0</td>
+      <td>0.614</td>
+    </tr>
+    <tr>
+      <td>Tesla_9</td>
+      <td>electromagnetics: frequency-amplitude energy relation E equals k f^2</td>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.533</td>
+      <td>1.0</td>
+      <td>0.614</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Top Candidates — Mandelbrot</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>template</th>
+      <th>guided_chain</th>
+      <th>confidence</th>
+      <th>historical_concordance</th>
+      <th>predictive_validity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mandelbrot_28</td>
+      <td>multiscale: power-law spectrum S(f) proportional f^{-alpha}</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.924</td>
+      <td>1.0</td>
+      <td>0.991</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_15</td>
+      <td>multiscale: power-law spectrum S(f) proportional f^{-alpha}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.88</td>
+      <td>1.0</td>
+      <td>0.948</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_40</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.546</td>
+      <td>1.0</td>
+      <td>0.626</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_12</td>
+      <td>fractal: self-similarity scaling law D equals log N over log 1 over r</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.545</td>
+      <td>1.0</td>
+      <td>0.626</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_22</td>
+      <td>multiscale: power-law spectrum S(f) proportional f^{-alpha}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.545</td>
+      <td>1.0</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_3</td>
+      <td>fractal: self-similarity scaling law D equals log N over log 1 over r</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.543</td>
+      <td>1.0</td>
+      <td>0.623</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_17</td>
+      <td>multiscale: power-law spectrum S(f) proportional f^{-alpha}</td>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.542</td>
+      <td>1.0</td>
+      <td>0.623</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_16</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.54</td>
+      <td>1.0</td>
+      <td>0.621</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_20</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.54</td>
+      <td>1.0</td>
+      <td>0.621</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_32</td>
+      <td>fractal: self-similarity scaling law D equals log N over log 1 over r</td>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.54</td>
+      <td>1.0</td>
+      <td>0.62</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_7</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.539</td>
+      <td>1.0</td>
+      <td>0.62</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot_33</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.537</td>
+      <td>1.0</td>
+      <td>0.618</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">Full Phase 4 candidates: phase4_candidates_all.csv</p>
+<hr>
+<h1>Phase 4 Appendix — Numeric Verification and Refined Analysis (Fixed)</h1>
+<h2>Parametric Survival Fits</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>weibull_k</th>
+      <th>weibull_lambda</th>
+      <th>weibull_nll</th>
+      <th>ll_alpha</th>
+      <th>ll_beta</th>
+      <th>ll_nll</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.4</td>
+      <td>21.1552</td>
+      <td>4.1616</td>
+      <td>0.5586</td>
+      <td>14.2586</td>
+      <td>4.1434</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.4</td>
+      <td>72.7931</td>
+      <td>4.4949</td>
+      <td>0.4</td>
+      <td>76.1724</td>
+      <td>4.48</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.6</td>
+      <td>10.8276</td>
+      <td>3.5997</td>
+      <td>1.1931</td>
+      <td>7.3793</td>
+      <td>3.5536</td>
+    </tr>
+  </tbody>
+</table>
+<p>Refined hazard thresholds (t=3): phase4_appendix_refined_hazard_thresholds.csv</p>
+<h2>Refined Candidate Generation</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>avg_concordance</th>
+      <th>avg_pred</th>
+      <th>pass_numeric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Euler</td>
+      <td>1.0</td>
+      <td>0.6167</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>1.0</td>
+      <td>0.6168</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>1.0</td>
+      <td>0.6228</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>Plots:</em> phase4_appendix_predictive_validity_refined.png, phase4_appendix_concordance_refined.png</p>
+<h2>Numeric Verification Queue (Spot Checks)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>id</th>
+      <th>template</th>
+      <th>numeric_check_flag</th>
+      <th>predictive_validity_refined</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_58</td>
+      <td>multiscale: power-law spectrum S(f) proportional f^{-alpha}</td>
+      <td>1</td>
+      <td>0.9999999999994884</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>Tesla_ref_17</td>
+      <td>resonance: coupled oscillator identity with Q factor scaling</td>
+      <td>1</td>
+      <td>0.9999999999994884</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>Tesla_ref_44</td>
+      <td>harmonics_369: sequence mod 9 reveals resonance classes</td>
+      <td>1</td>
+      <td>0.9999999999994884</td>
+    </tr>
+    <tr>
+      <td>Euler</td>
+      <td>Euler_ref_15</td>
+      <td>complex_analysis: gamma-beta relation and reflection identity</td>
+      <td>1</td>
+      <td>0.9999999999994884</td>
+    </tr>
+    <tr>
+      <td>Euler</td>
+      <td>Euler_ref_51</td>
+      <td>complex_analysis: gamma-beta relation and reflection identity</td>
+      <td>1</td>
+      <td>0.6201764839788255</td>
+    </tr>
+    <tr>
+      <td>Euler</td>
+      <td>Euler_ref_7</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>1</td>
+      <td>0.6201764839788255</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>Tesla_ref_47</td>
+      <td>resonance: coupled oscillator identity with Q factor scaling</td>
+      <td>1</td>
+      <td>0.6201764839788255</td>
+    </tr>
+    <tr>
+      <td>Euler</td>
+      <td>Euler_ref_25</td>
+      <td>infinite_series: bernoulli-number expansion for trigonometric sums</td>
+      <td>1</td>
+      <td>0.6197220732480775</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_8</td>
+      <td>fractal: self-similarity scaling law D equals log N over log 1 over r</td>
+      <td>1</td>
+      <td>0.6183388761331854</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_22</td>
+      <td>fractal: box-counting dimension with dyadic scaling windows</td>
+      <td>1</td>
+      <td>0.6183388761331854</td>
+    </tr>
+    <tr>
+      <td>Euler</td>
+      <td>Euler_ref_50</td>
+      <td>complex_analysis: analytic continuation of zeta via functional equation</td>
+      <td>1</td>
+      <td>0.6178848101497917</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_13</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>1</td>
+      <td>0.6178848101497917</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>Tesla_ref_28</td>
+      <td>electromagnetics: frequency-amplitude energy relation E equals k f^2</td>
+      <td>1</td>
+      <td>0.6178848101497917</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_24</td>
+      <td>fractal: self-similarity scaling law D equals log N over log 1 over r</td>
+      <td>1</td>
+      <td>0.6178848101497917</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_20</td>
+      <td>fractal: self-similarity scaling law D equals log N over log 1 over r</td>
+      <td>1</td>
+      <td>0.6178848101497917</td>
+    </tr>
+    <tr>
+      <td>Euler</td>
+      <td>Euler_ref_33</td>
+      <td>infinite_series: zeta(s) equals sum n^{-s} with acceleration identity</td>
+      <td>1</td>
+      <td>0.6174519562506608</td>
+    </tr>
+    <tr>
+      <td>Tesla</td>
+      <td>Tesla_ref_31</td>
+      <td>electromagnetics: frequency-amplitude energy relation E equals k f^2</td>
+      <td>1</td>
+      <td>0.6174519562506608</td>
+    </tr>
+    <tr>
+      <td>Mandelbrot</td>
+      <td>Mandelbrot_ref_42</td>
+      <td>chaos: logistic r map bifurcation ratio approaches Feigenbaum constant</td>
+      <td>1</td>
+      <td>0.6174519562506608</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">Full refined candidates: phase4_appendix_candidates_refined_scored.csv</p>
+<hr>
+<h1>Phase 4 Appendix B — Deep Numeric Verification for Euler</h1>
+<h2>Summary</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>category</th>
+      <th>n</th>
+      <th>pass_rate</th>
+      <th>avg_confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>series_vs_zeta</td>
+      <td>10</td>
+      <td>0.1</td>
+      <td>0.075744</td>
+    </tr>
+    <tr>
+      <td>functional_equation</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>log_zeta_prime_power</td>
+      <td>2</td>
+      <td>0.5</td>
+      <td>0.230686</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Top Verified Identities (Lowest Errors)</h2>
+<h3>Series and Euler Product</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>test</th>
+      <th>s</th>
+      <th>N</th>
+      <th>value</th>
+      <th>target</th>
+      <th>abs_error</th>
+      <th>pass</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>euler_product_vs_zeta</td>
+      <td>3.0</td>
+      <td>600</td>
+      <td>1.2020568997060817423321067832088837082613704646648198263462363347402735792915179</td>
+      <td>1.2020569031595942853997381615114499907649862923404988817922715553418382057863131</td>
+      <td>3.454e-09</td>
+      <td>True</td>
+      <td>0.707971631703</td>
+    </tr>
+    <tr>
+      <td>zeta_dirichlet_series</td>
+      <td>3.0</td>
+      <td>4000</td>
+      <td>1.2020568719174058088372585065622617584861624149661738543669887218552404886360799</td>
+      <td>1.2020569031595942853997381615114499907649862923404988817922715553418382057863131</td>
+      <td>3.1242e-08</td>
+      <td>False</td>
+      <td>0.043971268471</td>
+    </tr>
+    <tr>
+      <td>euler_product_vs_zeta</td>
+      <td>3.0</td>
+      <td>200</td>
+      <td>1.2020568511172642604575467187914112055882258212350953426880962909326935187768832</td>
+      <td>1.2020569031595942853997381615114499907649862923404988817922715553418382057863131</td>
+      <td>5.2042e-08</td>
+      <td>False</td>
+      <td>0.005493262144</td>
+    </tr>
+    <tr>
+      <td>zeta_dirichlet_series</td>
+      <td>3.0</td>
+      <td>2000</td>
+      <td>1.2020567782220786604010402445192626372492595671804994458227400777784923951177493</td>
+      <td>1.2020569031595942853997381615114499907649862923404988817922715553418382057863131</td>
+      <td>1.24938e-07</td>
+      <td>False</td>
+      <td>3.750012e-06</td>
+    </tr>
+    <tr>
+      <td>euler_product_vs_zeta</td>
+      <td>2.0</td>
+      <td>600</td>
+      <td>1.644894246646634443275534632757094308190559912109521088576955918084005586488348</td>
+      <td>1.6449340668482264364724151666460251892189499012067984377355582293700074704032009</td>
+      <td>3.9820202e-05</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Functional Equation</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>test</th>
+      <th>s</th>
+      <th>lhs</th>
+      <th>rhs</th>
+      <th>abs_error</th>
+      <th>pass</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>zeta_functional_equation</td>
+      <td>-3</td>
+      <td>(0.0083333333333333333333333333333333333333333333333333333333333333333333333333333333 + 0.0j)</td>
+      <td>(0.0083333333333333333333333333333333333333333333333333333333333333333333333333333333 + 0.0j)</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>zeta_functional_equation</td>
+      <td>-2</td>
+      <td>(0.0 + 0.0j)</td>
+      <td>(-2.0773340858791777577805597514699766208769026966399063682088367590645679975502439e-83 + 0.0j)</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>zeta_functional_equation</td>
+      <td>(0.2+14j)</td>
+      <td>(-0.22976852703634849423338783628764983253823059851549918307206345737654382696091486 - 0.17939416920673802202289121267771277929467806504732841191785908427921170623235368j)</td>
+      <td>(-0.22976852703634849423338783628764983253823059851549918307206345737654382696091486 - 0.17939416920673802202289121267771277929467806504732841191785908427921170623235368j)</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>zeta_functional_equation</td>
+      <td>(0.7+9j)</td>
+      <td>(1.4014070466102842253371489440896484652858891390797293674227242954376042114361347 + 0.1604398044473119422510509889564855588914006979285901600143373496627301578163107j)</td>
+      <td>(1.4014070466102842253371489440896484652858891390797293674227242954376042114361347 + 0.16043980444731194225105098895648555889140069792859016001433734966273015781631069j)</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Log zeta Prime-power Expansion</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>test</th>
+      <th>s</th>
+      <th>primes</th>
+      <th>Kmax</th>
+      <th>value</th>
+      <th>target</th>
+      <th>abs_error</th>
+      <th>pass</th>
+      <th>confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>log_zeta_prime_power_series</td>
+      <td>3.0</td>
+      <td>1000</td>
+      <td>6</td>
+      <td>0.18403409803653639937668097571612004133288335445407469188177905130391674278052638</td>
+      <td>0.18403417539149142150495871104056237383272291847410747974512941759628452429132935</td>
+      <td>7.7355e-08</td>
+      <td>True</td>
+      <td>0.461372493546</td>
+    </tr>
+    <tr>
+      <td>log_zeta_prime_power_series</td>
+      <td>2.0</td>
+      <td>1000</td>
+      <td>6</td>
+      <td>0.4976763943616659293410967060991865407588274709602598520122470764403919954572169</td>
+      <td>0.49770030247074534747437734432541515057159893364761843717187179981338762458134848</td>
+      <td>2.3908109e-05</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Detailed Artifacts</h2>
+<p>phase4_appendixB_euler_series_checks.csv</p>
+<p>phase4_appendixB_euler_functional_equation_checks.csv</p>
+<p>phase4_appendixB_euler_log_zeta_checks.csv</p>
+<p><em>Plots:</em> phase4_appendixB_euler_series_errors.png, phase4_appendixB_euler_func_eq_errors.png, phase4_appendixB_euler_logzeta_errors.png</p>
+</body></html>

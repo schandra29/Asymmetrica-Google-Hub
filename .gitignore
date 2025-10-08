@@ -76,3 +76,34 @@ jules_workspace/*.tmp
 # OS
 Thumbs.db
 sinuous-impact-461715-d3-8d40d971ffa0.json
+
+# Prismatica Era Archive - Development Artifacts (added 2025-10-08)
+# Exclude Python bytecode from historical documents
+source_materials/prismatica_era/**/__pycache__/
+source_materials/prismatica_era/**/*.pyc
+
+# Exclude package-lock.json from archived projects (documentation only)
+source_materials/prismatica_era/**/package-lock.json
+source_materials/prismatica_era/**/yarn.lock
+
+# Exclude any accidentally copied node_modules
+source_materials/prismatica_era/**/node_modules/
+
+# Exclude build artifacts from archived projects
+source_materials/prismatica_era/**/dist/
+source_materials/prismatica_era/**/build/
+source_materials/prismatica_era/**/.next/
+source_materials/prismatica_era/**/out/
+
+# Exclude editor/IDE files from archived projects
+source_materials/prismatica_era/**/.vscode/
+source_materials/prismatica_era/**/.idea/
+
+# Exclude test coverage from archived projects
+source_materials/prismatica_era/**/coverage/
+source_materials/prismatica_era/**/.nyc_output/
+
+# Exclude large data files (GitHub 100MB limit)
+source_materials/prismatica_era/**/Large Files - Avoid/
+source_materials/prismatica_era/**/eeg-data.csv
+source_materials/prismatica_era/**/eeg_samples_with_regimes.csv

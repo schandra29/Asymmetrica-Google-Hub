@@ -1,0 +1,1 @@
+Block bootstrap chi-square CI vs original targets (95 percent): [41.519820226951424, 200.55167478139722]

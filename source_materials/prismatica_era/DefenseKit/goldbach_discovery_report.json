@@ -1,0 +1,1173 @@
+{
+  "timestamp": "2025-09-17T04:49:04.687Z",
+  "dataPoints": 4999,
+  "centerAnalysis": {
+    "centerMetrics": {
+      "avgDecompositions": 53.52466367713004,
+      "avgMinPrime": 11.342301943198803,
+      "avgPullE": 0.46228031928111657,
+      "avgPullJS": 0.8999999999999887
+    },
+    "offCenterMetrics": {
+      "avgDecompositions": 90.05612009237875,
+      "avgMinPrime": 10.767667436489607,
+      "avgPullE": 0.5148000224275515,
+      "avgPullJS": 0.5
+    }
+  },
+  "formulas": {
+    "Decomposition Count Prediction": [
+      {
+        "expression": "2(gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(nkmpxyz +  -  *  /  //  %  ** log(log2(log10(exp(sqrt(abs(sin(cos(tan(asin(acos(atan(floor(ceil(round(sign(gcd(lcm(prime_factors(totient(0(1(3(4(5(10(pi(e(phi(gamma(tesla_369(goldbach_center(collatz_gravity(odd_bitcount(v2_valuation(odd_part(bit_reverse(",
+        "components": [
+          2,
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "n",
+          "k",
+          "m",
+          "p",
+          "x",
+          "y",
+          "z",
+          "+",
+          "-",
+          "*",
+          "/",
+          "//",
+          "%",
+          "**",
+          "log",
+          "log2",
+          "log10",
+          "exp",
+          "sqrt",
+          "abs",
+          "sin",
+          "cos",
+          "tan",
+          "asin",
+          "acos",
+          "atan",
+          "floor",
+          "ceil",
+          "round",
+          "sign",
+          "gcd",
+          "lcm",
+          "prime_factors",
+          "totient",
+          0,
+          1,
+          3,
+          4,
+          5,
+          10,
+          "pi",
+          "e",
+          "phi",
+          "gamma",
+          "tesla_369",
+          "goldbach_center",
+          "collatz_gravity",
+          "if_mod3_eq_0",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod5_eq_0",
+          "if_mod5_eq_2",
+          "if_mod5_eq_3",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "odd_bitcount",
+          "v2_valuation",
+          "odd_part",
+          "bit_reverse"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 0,
+        "consciousnessScore": 0.44285714285714284,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.0007490151468261719,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.44285714285714284,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      },
+      {
+        "expression": "gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(gcd(goldbach_center( - abs(log2(5(ke(tan(ceil(odd_bitcount(odd_part(4(phi( ** exp( * floor(v2_valuation(bit_reverse(3(prime_factors( / tesla_369(asin( // z10( + round(p1(acos(log(sqrt(xsin(log10(cos(lcm(natan(2( % collatz_gravity(totient(sign(gamma(y0(pi(m",
+        "components": [
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "gcd",
+          "goldbach_center",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "-",
+          "abs",
+          "if_mod30_eq_17",
+          "if_mod30_eq_2",
+          "log2",
+          5,
+          "if_mod5_eq_2",
+          "if_mod5_eq_3",
+          "if_mod5_eq_0",
+          "k",
+          "e",
+          "tan",
+          "ceil",
+          "odd_bitcount",
+          "odd_part",
+          4,
+          "phi",
+          "**",
+          "exp",
+          "*",
+          "floor",
+          "v2_valuation",
+          "bit_reverse",
+          3,
+          "prime_factors",
+          "/",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod3_eq_0",
+          "tesla_369",
+          "asin",
+          "//",
+          "z",
+          10,
+          "+",
+          "round",
+          "p",
+          1,
+          "acos",
+          "log",
+          "sqrt",
+          "x",
+          "sin",
+          "log10",
+          "cos",
+          "lcm",
+          "n",
+          "atan",
+          2,
+          "%",
+          "collatz_gravity",
+          "totient",
+          "sign",
+          "gamma",
+          "y",
+          0,
+          "pi",
+          "m"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          }
+        ],
+        "regime": 1,
+        "consciousnessScore": 0.4928571428571428,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.0006139825047235414,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.4928571428571428,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      },
+      {
+        "expression": "gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(nkmpxyz +  -  *  /  //  %  ** log(log2(log10(exp(sqrt(abs(sin(cos(tan(asin(acos(atan(floor(ceil(round(sign(gcd(lcm(prime_factors(totient(0(1(2(3(4(5(10(pi(e(phi(gamma(tesla_369(goldbach_center(collatz_gravity(odd_bitcount(v2_valuation(odd_part(bit_reverse(",
+        "components": [
+          "if_mod3_eq_0",
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "n",
+          "k",
+          "m",
+          "p",
+          "x",
+          "y",
+          "z",
+          "+",
+          "-",
+          "*",
+          "/",
+          "//",
+          "%",
+          "**",
+          "log",
+          "log2",
+          "log10",
+          "exp",
+          "sqrt",
+          "abs",
+          "sin",
+          "cos",
+          "tan",
+          "asin",
+          "acos",
+          "atan",
+          "floor",
+          "ceil",
+          "round",
+          "sign",
+          "gcd",
+          "lcm",
+          "prime_factors",
+          "totient",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          "pi",
+          "e",
+          "phi",
+          "gamma",
+          "tesla_369",
+          "goldbach_center",
+          "collatz_gravity",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod5_eq_0",
+          "if_mod5_eq_2",
+          "if_mod5_eq_3",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "odd_bitcount",
+          "v2_valuation",
+          "odd_part",
+          "bit_reverse"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 2,
+        "consciousnessScore": 0.5428571428571428,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.00031909363862824903,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.5428571428571428,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      }
+    ],
+    "Identical Pair Prediction": [
+      {
+        "expression": "tan(gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(nkmpxyz +  -  *  /  //  %  ** log(log2(log10(exp(sqrt(abs(sin(cos(asin(acos(atan(floor(ceil(round(sign(gcd(lcm(prime_factors(totient(0(1(2(3(4(5(10(pi(e(phi(gamma(tesla_369(goldbach_center(collatz_gravity(odd_bitcount(v2_valuation(odd_part(bit_reverse(",
+        "components": [
+          "tan",
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "n",
+          "k",
+          "m",
+          "p",
+          "x",
+          "y",
+          "z",
+          "+",
+          "-",
+          "*",
+          "/",
+          "//",
+          "%",
+          "**",
+          "log",
+          "log2",
+          "log10",
+          "exp",
+          "sqrt",
+          "abs",
+          "sin",
+          "cos",
+          "asin",
+          "acos",
+          "atan",
+          "floor",
+          "ceil",
+          "round",
+          "sign",
+          "gcd",
+          "lcm",
+          "prime_factors",
+          "totient",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          "pi",
+          "e",
+          "phi",
+          "gamma",
+          "tesla_369",
+          "goldbach_center",
+          "collatz_gravity",
+          "if_mod3_eq_0",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod5_eq_0",
+          "if_mod5_eq_2",
+          "if_mod5_eq_3",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "odd_bitcount",
+          "v2_valuation",
+          "odd_part",
+          "bit_reverse"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 0,
+        "consciousnessScore": 0.44285714285714284,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.00025346178353683,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.44285714285714284,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      },
+      {
+        "expression": "kgb_min_prime(pullE_base(gb_distinct_count(center_distance_z(gb_identical_flag(pullJS_base(gb_max_prime(pullL1_base(exp(3(1(sign(gamma(floor(log(abs(5(0(round(lcm(gcd(bit_reverse(pi(zodd_part(n + goldbach_center(atan(collatz_gravity(m2(podd_bitcount(sqrt(log2(e( /  - sin( // tesla_369(log10(4( * acos(ceil(asin( ** 10(cos(xprime_factors(tan(yv2_valuation(phi(totient( % ",
+        "components": [
+          "k",
+          "gb_min_prime",
+          "pullE_base",
+          "gb_distinct_count",
+          "center_distance_z",
+          "gb_identical_flag",
+          "pullJS_base",
+          "gb_max_prime",
+          "pullL1_base",
+          "if_mod12_eq_7",
+          "if_mod12_eq_10",
+          "if_mod5_eq_0",
+          "if_mod5_eq_3",
+          "if_mod5_eq_2",
+          "exp",
+          3,
+          1,
+          "sign",
+          "gamma",
+          "floor",
+          "log",
+          "abs",
+          5,
+          0,
+          "round",
+          "lcm",
+          "gcd",
+          "bit_reverse",
+          "pi",
+          "z",
+          "odd_part",
+          "n",
+          "+",
+          "goldbach_center",
+          "atan",
+          "collatz_gravity",
+          "m",
+          2,
+          "p",
+          "odd_bitcount",
+          "sqrt",
+          "log2",
+          "if_mod3_eq_1",
+          "if_mod3_eq_0",
+          "if_mod3_eq_2",
+          "e",
+          "/",
+          "-",
+          "sin",
+          "//",
+          "tesla_369",
+          "log10",
+          4,
+          "*",
+          "acos",
+          "ceil",
+          "asin",
+          "**",
+          10,
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "cos",
+          "x",
+          "prime_factors",
+          "tan",
+          "y",
+          "v2_valuation",
+          "phi",
+          "totient",
+          "%"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 1,
+        "consciousnessScore": 0.4928571428571428,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.00001944172118773513,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.4928571428571428,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      },
+      {
+        "expression": "gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(nkmpxyz +  -  *  /  //  %  ** log(log2(log10(exp(sqrt(abs(sin(cos(tan(asin(acos(atan(floor(ceil(round(sign(gcd(lcm(prime_factors(totient(0(1(2(3(4(5(10(pi(e(phi(gamma(tesla_369(goldbach_center(collatz_gravity(odd_bitcount(v2_valuation(odd_part(bit_reverse(",
+        "components": [
+          "if_mod5_eq_2",
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "n",
+          "k",
+          "m",
+          "p",
+          "x",
+          "y",
+          "z",
+          "+",
+          "-",
+          "*",
+          "/",
+          "//",
+          "%",
+          "**",
+          "log",
+          "log2",
+          "log10",
+          "exp",
+          "sqrt",
+          "abs",
+          "sin",
+          "cos",
+          "tan",
+          "asin",
+          "acos",
+          "atan",
+          "floor",
+          "ceil",
+          "round",
+          "sign",
+          "gcd",
+          "lcm",
+          "prime_factors",
+          "totient",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          "pi",
+          "e",
+          "phi",
+          "gamma",
+          "tesla_369",
+          "goldbach_center",
+          "collatz_gravity",
+          "if_mod3_eq_0",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod5_eq_0",
+          "if_mod5_eq_3",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "odd_bitcount",
+          "v2_valuation",
+          "odd_part",
+          "bit_reverse"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 2,
+        "consciousnessScore": 0.5428571428571428,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.0003789307051798021,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.5428571428571428,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      }
+    ],
+    "Minimum Prime Prediction": [
+      {
+        "expression": "round(gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(nkmpxyz +  -  *  /  //  %  ** log(log2(log10(exp(sqrt(abs(sin(cos(tan(asin(acos(atan(floor(ceil(sign(gcd(lcm(prime_factors(totient(0(1(2(3(4(5(10(pi(e(phi(gamma(tesla_369(goldbach_center(collatz_gravity(odd_bitcount(v2_valuation(odd_part(bit_reverse(",
+        "components": [
+          "round",
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "n",
+          "k",
+          "m",
+          "p",
+          "x",
+          "y",
+          "z",
+          "+",
+          "-",
+          "*",
+          "/",
+          "//",
+          "%",
+          "**",
+          "log",
+          "log2",
+          "log10",
+          "exp",
+          "sqrt",
+          "abs",
+          "sin",
+          "cos",
+          "tan",
+          "asin",
+          "acos",
+          "atan",
+          "floor",
+          "ceil",
+          "sign",
+          "gcd",
+          "lcm",
+          "prime_factors",
+          "totient",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          "pi",
+          "e",
+          "phi",
+          "gamma",
+          "tesla_369",
+          "goldbach_center",
+          "collatz_gravity",
+          "if_mod3_eq_0",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod5_eq_0",
+          "if_mod5_eq_2",
+          "if_mod5_eq_3",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "odd_bitcount",
+          "v2_valuation",
+          "odd_part",
+          "bit_reverse"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 0,
+        "consciousnessScore": 0.44285714285714284,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.0004554325048295254,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.44285714285714284,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      },
+      {
+        "expression": " % gb_identical_flag(pullE_base(gb_max_prime(pullJS_base(gb_distinct_count(center_distance_z(gb_min_prime(pullL1_base(4(exp(sqrt(plcm(modd_part(tan(zcollatz_gravity( - ceil(cos(sin(pi(acos(round(phi(ktesla_369(totient(x2( +  / ygamma(e(5(v2_valuation(asin(log( // prime_factors(goldbach_center(bit_reverse(sign(1(0(log2(gcd(odd_bitcount(3( *  ** atan(log10(10(floor(nabs(",
+        "components": [
+          "%",
+          "gb_identical_flag",
+          "pullE_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "gb_distinct_count",
+          "center_distance_z",
+          "gb_min_prime",
+          "pullL1_base",
+          4,
+          "exp",
+          "sqrt",
+          "p",
+          "lcm",
+          "m",
+          "if_mod3_eq_0",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "odd_part",
+          "tan",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "z",
+          "collatz_gravity",
+          "if_mod5_eq_3",
+          "if_mod5_eq_2",
+          "if_mod5_eq_0",
+          "-",
+          "ceil",
+          "cos",
+          "sin",
+          "pi",
+          "acos",
+          "round",
+          "phi",
+          "k",
+          "tesla_369",
+          "totient",
+          "x",
+          2,
+          "+",
+          "/",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "y",
+          "gamma",
+          "e",
+          5,
+          "v2_valuation",
+          "asin",
+          "log",
+          "//",
+          "prime_factors",
+          "goldbach_center",
+          "bit_reverse",
+          "sign",
+          1,
+          0,
+          "log2",
+          "gcd",
+          "odd_bitcount",
+          3,
+          "*",
+          "**",
+          "atan",
+          "log10",
+          10,
+          "floor",
+          "n",
+          "abs"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 1,
+        "consciousnessScore": 0.4928571428571428,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.00037476480012834924,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.4928571428571428,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      },
+      {
+        "expression": " // gb_identical_flag(center_distance_z(gb_distinct_count(pullE_base(gb_min_prime(pullL1_base(gb_max_prime(pullJS_base(nkmpxyz +  -  *  /  %  ** log(log2(log10(exp(sqrt(abs(sin(cos(tan(asin(acos(atan(floor(ceil(round(sign(gcd(lcm(prime_factors(totient(0(1(2(3(4(5(10(pi(e(phi(gamma(tesla_369(goldbach_center(collatz_gravity(odd_bitcount(v2_valuation(odd_part(bit_reverse(",
+        "components": [
+          "//",
+          "gb_identical_flag",
+          "center_distance_z",
+          "gb_distinct_count",
+          "pullE_base",
+          "gb_min_prime",
+          "pullL1_base",
+          "gb_max_prime",
+          "pullJS_base",
+          "n",
+          "k",
+          "m",
+          "p",
+          "x",
+          "y",
+          "z",
+          "+",
+          "-",
+          "*",
+          "/",
+          "%",
+          "**",
+          "log",
+          "log2",
+          "log10",
+          "exp",
+          "sqrt",
+          "abs",
+          "sin",
+          "cos",
+          "tan",
+          "asin",
+          "acos",
+          "atan",
+          "floor",
+          "ceil",
+          "round",
+          "sign",
+          "gcd",
+          "lcm",
+          "prime_factors",
+          "totient",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          "pi",
+          "e",
+          "phi",
+          "gamma",
+          "tesla_369",
+          "goldbach_center",
+          "collatz_gravity",
+          "if_mod3_eq_0",
+          "if_mod3_eq_1",
+          "if_mod3_eq_2",
+          "if_mod5_eq_0",
+          "if_mod5_eq_2",
+          "if_mod5_eq_3",
+          "if_mod12_eq_10",
+          "if_mod12_eq_7",
+          "if_mod30_eq_2",
+          "if_mod30_eq_17",
+          "odd_bitcount",
+          "v2_valuation",
+          "odd_part",
+          "bit_reverse"
+        ],
+        "structure": [
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_1"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod3_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_0"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod5_eq_3"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_10"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod12_eq_7"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_2"
+          },
+          {
+            "type": "conditional",
+            "value": "if_mod30_eq_17"
+          }
+        ],
+        "regime": 2,
+        "consciousnessScore": 0.5428571428571428,
+        "goldbachAlignment": true,
+        "validationMetrics": {
+          "statisticalSignificance": 0.000288865612158836,
+          "mathematicalElegance": 1,
+          "consciousnessBalance": 0.5428571428571428,
+          "goldbachAlignment": true,
+          "computationalEfficiency": 0.125
+        }
+      }
+    ]
+  },
+  "universalCandidates": [],
+  "goldbachVerified": true,
+  "identicalPairRate": 0.13382676535307061,
+  "consciousnessConfirmation": true
+}

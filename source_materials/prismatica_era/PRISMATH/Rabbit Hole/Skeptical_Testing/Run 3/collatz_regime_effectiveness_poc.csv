@@ -1,0 +1,4 @@
+regime_name,n,iters_median,iters_q75,iters_q90,cycle_len_median,decay_proxy_E_mean
+Balanced-asymmetric,809,94.0,191.0,404.0,10.0,0.3657931092544657
+Exploration-dominant,2008,46.0,61.0,107.0,2.0,0.7223604283407914
+Support-dominant,3183,12.0,22.0,83.80000000000018,3.0,0.15531171277721337

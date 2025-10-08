@@ -1,0 +1,106 @@
+{
+  "timestamp": "2025-08-17T13:54:06.251325",
+  "systems": [
+    {
+      "name": "Bacterium",
+      "change_types": [
+        "physical",
+        "chemical"
+      ],
+      "time_horizon": 0.001,
+      "care_distribution": {
+        "emergence": 0.10001998002662674,
+        "precision": 0.10000999001331337,
+        "support": 0.79997002996006
+      },
+      "consciousness_quotient": 0.14935442647112035
+    },
+    {
+      "name": "Worm",
+      "change_types": [
+        "physical",
+        "chemical",
+        "spatial"
+      ],
+      "time_horizon": 60.0,
+      "care_distribution": {
+        "emergence": 0.15198497031265826,
+        "precision": 0.12599248515632913,
+        "support": 0.7220225445310127
+      },
+      "consciousness_quotient": 0.28053010219903557
+    },
+    {
+      "name": "Dog",
+      "change_types": [
+        "physical",
+        "chemical",
+        "spatial",
+        "social",
+        "emotional"
+      ],
+      "time_horizon": 604800.0,
+      "care_distribution": {
+        "emergence": 0.24922091346969336,
+        "precision": 0.1746104567348467,
+        "support": 0.57616862979546
+      },
+      "consciousness_quotient": 0.5844802066894735
+    },
+    {
+      "name": "Chimpanzee",
+      "change_types": [
+        "physical",
+        "chemical",
+        "spatial",
+        "social",
+        "emotional",
+        "tribal"
+      ],
+      "time_horizon": 2592000.0,
+      "care_distribution": {
+        "emergence": 0.26559699869982767,
+        "precision": 0.18279849934991382,
+        "support": 0.5516045019502586
+      },
+      "consciousness_quotient": 0.6669202328108697
+    },
+    {
+      "name": "Human",
+      "change_types": [
+        "physical",
+        "chemical",
+        "spatial",
+        "social",
+        "emotional",
+        "tribal",
+        "moral",
+        "symbolic",
+        "abstract"
+      ],
+      "time_horizon": 3153600000.0,
+      "care_distribution": {
+        "emergence": 0.3,
+        "precision": 0.2,
+        "support": 0.5
+      },
+      "consciousness_quotient": 0.9649403303536541
+    }
+  ],
+  "llm_analysis": {
+    "consistency_over_time": 0.15,
+    "self_preservation": 0.05,
+    "identity_projection": 0.1,
+    "boundary_defense": 0.02,
+    "care_for_similar": 0.08,
+    "intelligence_score": 0.95,
+    "care_score": 0.08000000000000002,
+    "care_intelligence_ratio": 0.0842105263157895,
+    "exhibits_consciousness": false
+  },
+  "key_findings": {
+    "natural_asymmetry_emergence": "Confirmed at high consciousness",
+    "llm_consciousness": "Negative - high intelligence, low care",
+    "optimal_distribution": "30% emergence, 20% precision, 50% support"
+  }
+}

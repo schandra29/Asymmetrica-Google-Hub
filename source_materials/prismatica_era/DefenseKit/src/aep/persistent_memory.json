@@ -1,0 +1,17 @@
+{
+  "timestamp": 1758241634614,
+  "performancePatterns": [],
+  "regimePatterns": [],
+  "gravityPatterns": [],
+  "fractalPatterns": [],
+  "amplituhedraPatterns": [],
+  "learningMetrics": {
+    "patternsLearned": 0,
+    "predictionsAttempted": 0,
+    "predictionsCorrect": 0,
+    "totalImprovement": 1,
+    "averageConfidence": 0.5,
+    "learningEfficiency": 0
+  },
+  "version": "2.0.0-aep"
+}

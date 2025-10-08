@@ -1,0 +1,198 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial, sans-serif; margin: 24px; }h1, h2, h3 { color: #222; }table { border-collapse: collapse; margin: 10px 0; }th, td { border: 1px solid #ddd; padding: 6px 8px; }.note { color: #555; font-size: 12px; }</style></head><body><h1>Cognitive Architecture Mapping — Summary Report</h1><p class="note">This report summarizes regime dynamics: multi-step cognitive pathways, equilibrium occupancy, and survival/hazard characteristics, based on the previously generated surrogate trajectories.</p><h2>Transition Intelligence</h2><p>We compute 1-step, 2-step, and 3-step transition matrices capturing immediate and short-horizon cognitive moves between regimes.</p><h3>P (1-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.983</td>
+      <td>0.0</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.991</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.031</td>
+      <td>0.025</td>
+      <td>0.944</td>
+    </tr>
+  </tbody>
+</table><h3>P2 (2-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.967</td>
+      <td>0.0</td>
+      <td>0.033</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.0</td>
+      <td>0.982</td>
+      <td>0.018</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.06</td>
+      <td>0.048</td>
+      <td>0.893</td>
+    </tr>
+  </tbody>
+</table><h3>P3 (3-step)</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Support-dominant</th>
+      <th>Exploration-dominant</th>
+      <th>Balanced-asymmetric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Support-dominant</th>
+      <td>0.952</td>
+      <td>0.001</td>
+      <td>0.047</td>
+    </tr>
+    <tr>
+      <th>Exploration-dominant</th>
+      <td>0.001</td>
+      <td>0.973</td>
+      <td>0.026</td>
+    </tr>
+    <tr>
+      <th>Balanced-asymmetric</th>
+      <td>0.086</td>
+      <td>0.069</td>
+      <td>0.845</td>
+    </tr>
+  </tbody>
+</table><p class="note">See PNG heatmaps for a visual view: collatz_P1_transition_matrix.png, collatz_P2_transition_matrix.png, collatz_P3_transition_matrix.png</p><h2>Top 3-step Cognitive Chains</h2><p>Most probable 3-step sequences (thought chains) aggregated from P. See interactive Sankey for flows.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>chain</th>
+      <th>prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.972507570473549</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.9502130901871734</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.8424809502090249</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0298931615092001</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0287178248297123</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0275886999338033</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.024151716181675</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant -&gt; Exploration-dominant</td>
+      <td>0.0230234479178708</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Exploration-dominant</td>
+      <td>0.02194788767968</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0163139441112203</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0156725138999953</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0150563033850661</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0090791187326119</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0086549798659467</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0082506550124598</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Support-dominant -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Support-dominant</td>
+      <td>0.0005132273710023</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Balanced-asymmetric -&gt; Support-dominant -&gt; Balanced-asymmetric</td>
+      <td>0.0004930483426359</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric -&gt; Support-dominant -&gt; Balanced-asymmetric -&gt; Balanced-asymmetric</td>
+      <td>0.0004930483426359</td>
+    </tr>
+  </tbody>
+</table><p class="note">Interactive Sankey: collatz_top_chains_sankey.html</p><h2>Equilibrium Mix</h2><p>Stationary distribution indicates long-run occupancy of regimes under observed transitions.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>stationary_prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Support-dominant</td>
+      <td>0.3336</td>
+    </tr>
+    <tr>
+      <td>Exploration-dominant</td>
+      <td>0.4843</td>
+    </tr>
+    <tr>
+      <td>Balanced-asymmetric</td>
+      <td>0.1821</td>
+    </tr>
+  </tbody>
+</table><h2>Survival Dynamics</h2><p>Kaplan–Meier survival curves quantify persistence; discrete hazard shows conditional switch probability at time t given survival up to t.</p><ul><li>KM Survival CSV: collatz_survival_km.csv</li><li>Discrete Hazard CSV: collatz_hazard_discrete.csv</li><li>KM Survival Plot: collatz_survival_km.png</li><li>Hazard Plot: collatz_hazard_discrete.png</li></ul><h2>Key Insights</h2><ul><li>Thought chains reinforce a search → reconcile → consolidate motif, with Balanced-asymmetric acting as a flexible staging bridge.</li><li>Equilibrium occupancy aligns with strong time in Support and Exploration, while Balanced remains transient but strategically central.</li><li>Survival and hazard reveal attention-span differences: regimes with rising hazard benefit from timely hand-offs; plateaus signal stable focus windows.</li></ul><p class="note">Parametric survival (Weibull/Log-logistic) was skipped due to missing lifelines. Nonparametric estimates are provided. We can add parametric fits later if the library becomes available.</p></body></html>

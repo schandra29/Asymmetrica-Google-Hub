@@ -1,0 +1,7 @@
+term_zeroed,spearman_soft_avg,spearman_hard_avg,winner_changes_soft,winner_changes_hard
+alpha_L,1.0,1.0,0,0
+gamma_D,1.0,1.0,0,0
+delta_W,1.0,1.0,0,0
+rho_R,1.0,1.0,0,0
+kappa_K,1.0,1.0,0,0
+beta_Sym,0.375,0.333,1,1

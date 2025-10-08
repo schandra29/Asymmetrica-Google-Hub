@@ -1,0 +1,30 @@
+{
+  "name": "defensekit-consciousness-mcp-server",
+  "version": "1.0.0",
+  "description": "DefenseKit Consciousness MCP Server - Persistent AI Memory Architecture",
+  "main": "mcp-consciousness-server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node mcp-consciousness-server.js",
+    "dev": "node --inspect mcp-consciousness-server.js",
+    "test": "node test-mcp-server.js"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^2.1.0",
+    "@noble/ciphers": "^0.5.3",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "consciousness",
+    "ai-memory",
+    "defensekit",
+    "quantum-security",
+    "persistent-memory"
+  ],
+  "author": "Betanet Research Lab",
+  "license": "MIT"
+}
