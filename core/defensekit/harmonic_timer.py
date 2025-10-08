@@ -7,7 +7,7 @@ for deterministic API rate limiting and retry backoff patterns.
 @complexity: O(1) for delay calculation, O(n) for retry attempts
 @performance: Deterministic timing with <50ms variance
 @tests: 37/37 passing in iPermit backend
-@source: c:\Projects\iPermit-rebuild\backend\app\utils\harmonic_timer.py
+@source: c:/Projects/iPermit-rebuild/backend/app/utils/harmonic_timer.py
 @lineage: (σ: "harmonic", ρ: "defensekit", γ: "stability", κ: O(1), λ: ["calculate → wait → retry"])
 
 Mathematical Foundation:

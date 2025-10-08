@@ -7,7 +7,7 @@ for document synthesis task classification and weighted confidence scoring.
 @complexity: O(1) - Constant time classification
 @performance: 9× faster convergence (TSP-optimized, Day 142)
 @tests: 36/36 passing in iPermit backend
-@source: c:\Projects\iPermit-rebuild\backend\app\utils\three_regime_planner.py
+@source: c:/Projects/iPermit-rebuild/backend/app/utils/three_regime_planner.py
 @lineage: (σ: "three_regime", ρ: "defensekit", γ: "balance", κ: O(1), λ: ["classify → weight → aggregate"])
 
 Mathematical Foundation:
