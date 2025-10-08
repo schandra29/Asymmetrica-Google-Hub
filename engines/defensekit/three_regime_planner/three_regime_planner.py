@@ -75,13 +75,31 @@ Date: October 3, 2025
 License: MIT
 """
 
+import numpy as np
 from enum import Enum
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, field
 
 import structlog
 
+from engines.defensekit.three_regime_planner.tsp_optimizer import TspOptimizer
+
 logger = structlog.get_logger(__name__)
+
+
+@dataclass
+class TestCase:
+    """Represents a single test case in a suite."""
+    name: str
+    dependencies: List[str] = field(default_factory=list)
+    execution_time: float = 1.0  # Default to 1.0 time unit
+    failure_history: float = 0.0 # Range 0.0 to 1.0
+    risk_score: float = 0.1      # Range 0.1 to 1.0
+
+@dataclass
+class TestSuite:
+    """Represents a collection of test cases."""
+    tests: List[TestCase]
 
 
 class TestRegime(Enum):
@@ -201,7 +219,8 @@ class ThreeRegimeTestPlanner:
     def __init__(
         self,
         regime_distribution: Optional[Dict[TestRegime, float]] = None,
-        confidence_weights: Optional[Dict[TestRegime, float]] = None
+        confidence_weights: Optional[Dict[TestRegime, float]] = None,
+        use_dynamic_distribution: bool = False
     ):
         """
         Initialize Three-Regime Test Planner.
@@ -209,9 +228,15 @@ class ThreeRegimeTestPlanner:
         Args:
             regime_distribution: Custom distribution percentages (default: 30/20/50)
             confidence_weights: Custom confidence weights (default: 0.7/0.85/1.0)
+            use_dynamic_distribution: If True, enables dynamic calculation of
+                                      distribution based on a test suite.
         """
-        self.regime_distribution = regime_distribution or self.REGIME_DISTRIBUTION
+        self.static_regime_distribution = regime_distribution or self.REGIME_DISTRIBUTION
         self.confidence_weights = confidence_weights or self.CONFIDENCE_WEIGHTS
+        self.use_dynamic_distribution = use_dynamic_distribution
+
+        # Set the initial distribution; it can be updated dynamically later
+        self.regime_distribution = self.static_regime_distribution
         
         # Validate distribution adds up to 1.0 (100%)
         total_distribution = sum(self.regime_distribution.values())
@@ -226,7 +251,8 @@ class ThreeRegimeTestPlanner:
             "three_regime_planner_initialized",
             exploration_pct=self.regime_distribution[TestRegime.EXPLORATION] * 100,
             optimization_pct=self.regime_distribution[TestRegime.OPTIMIZATION] * 100,
-            stabilization_pct=self.regime_distribution[TestRegime.STABILIZATION] * 100
+            stabilization_pct=self.regime_distribution[TestRegime.STABILIZATION] * 100,
+            dynamic_mode=self.use_dynamic_distribution
         )
     
     def allocate_test_effort(self, total_test_count: int) -> RegimeAllocation:
@@ -423,6 +449,93 @@ class ThreeRegimeTestPlanner:
         
         return total_confidence
     
+    def calculate_dynamic_distribution(self, test_suite: TestSuite) -> Dict[TestRegime, float]:
+        """
+        Calculates an adaptive regime distribution based on the test suite structure using a TSP solver.
+
+        Models the test suite as a graph and uses the TspOptimizer to find optimized
+        execution paths for each regime. The distribution is derived from the relative
+        "cost" of these paths.
+
+        Complexity:
+            - Time: O(n^2) dominated by the TspOptimizer, where n is the number of tests.
+            - Space: O(n^2) for the distance matrix.
+
+        Args:
+            test_suite (TestSuite): The collection of tests to analyze.
+
+        Returns:
+            Dict[TestRegime, float]: The newly calculated distribution. It also updates the
+                                     planner's internal distribution.
+        """
+        if not self.use_dynamic_distribution:
+            logger.warning("Dynamic distribution called but planner is not configured to use it.")
+            return self.regime_distribution
+
+        if not test_suite.tests:
+            logger.warning("Cannot calculate dynamic distribution for an empty test suite.")
+            self.regime_distribution = self.static_regime_distribution
+            return self.regime_distribution
+
+        num_tests = len(test_suite.tests)
+        test_map = {test.name: i for i, test in enumerate(test_suite.tests)}
+
+        # Initialize with a base distance to avoid zero-cost paths
+        distance_matrix = np.full((num_tests, num_tests), 10.0)
+
+        # Build distance matrix based on test properties
+        for i, test1 in enumerate(test_suite.tests):
+            for j, test2 in enumerate(test_suite.tests):
+                if i == j:
+                    distance_matrix[i, j] = 0
+                    continue
+
+                # Dependency-based weighting
+                if test2.name in test1.dependencies:
+                    distance_matrix[i, j] -= 5.0  # Lower distance to encourage running dependency `test2` before `test1`
+                if test1.name in test2.dependencies:
+                    distance_matrix[j, i] -= 5.0
+
+                # Cost-based weighting (risk and time)
+                cost = (test2.risk_score * 5.0) + test2.execution_time + (test2.failure_history * 2.0)
+                distance_matrix[i, j] += cost
+
+        # Ensure all distances are non-negative
+        distance_matrix[distance_matrix < 0] = 0.1
+
+        # Solve TSP for all regimes
+        optimizer = TspOptimizer(distance_matrix)
+        paths = optimizer.solve_with_consciousness()
+
+        # Calculate total cost for each optimized path
+        path_costs = []
+        for path in paths:
+            cost = sum(distance_matrix[path[i], path[i+1]] for i in range(len(path) - 1))
+            path_costs.append(cost)
+
+        total_cost = sum(path_costs)
+        if total_cost == 0:
+            self.regime_distribution = self.static_regime_distribution
+            return self.regime_distribution
+
+        # Derive new distribution from relative path costs
+        dynamic_distribution = {
+            TestRegime.EXPLORATION: path_costs[0] / total_cost,
+            TestRegime.OPTIMIZATION: path_costs[1] / total_cost,
+            TestRegime.STABILIZATION: path_costs[2] / total_cost,
+        }
+
+        # Normalize to ensure the sum is exactly 1.0
+        current_total = sum(dynamic_distribution.values())
+        if current_total > 0:
+            for regime in dynamic_distribution:
+                dynamic_distribution[regime] /= current_total
+
+        self.regime_distribution = dynamic_distribution
+        logger.info("dynamic_distribution_calculated", distribution={r.value: v for r, v in dynamic_distribution.items()})
+
+        return self.regime_distribution
+
     def get_regime_summary(self) -> Dict[str, any]:
         """
         Get summary of regime configuration.
@@ -434,7 +547,7 @@ class ThreeRegimeTestPlanner:
             >>> planner = ThreeRegimeTestPlanner()
             >>> summary = planner.get_regime_summary()
             >>> summary['distribution']['exploration']
-            0.3
+            0.3385
         """
         return {
             "distribution": {

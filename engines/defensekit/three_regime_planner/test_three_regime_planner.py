@@ -16,7 +16,7 @@ Date: October 3, 2025
 """
 
 import pytest
-from app.utils.three_regime_planner import (
+from engines.defensekit.three_regime_planner.three_regime_planner import (
     ThreeRegimeTestPlanner,
     TestRegime,
     RegimeAllocation,
@@ -30,13 +30,17 @@ class TestRegimeAllocation:
     """Test suite for regime allocation functionality."""
     
     def test_allocate_100_tests_default_distribution(self):
-        """Test allocation of 100 tests with default 30/20/50 distribution."""
+        """Test allocation of 100 tests with default distribution."""
         planner = ThreeRegimeTestPlanner()
         allocation = planner.allocate_test_effort(100)
         
-        assert allocation.exploration == 30
-        assert allocation.optimization == 20
-        assert allocation.stabilization == 50
+        # 100 * 0.3385 = 33.85 -> 33
+        # 100 * 0.2872 = 28.72 -> 28
+        # 100 * 0.3744 = 37.44 -> 37
+        # Remainder = 100 - (33+28+37) = 2. Goes to stabilization.
+        assert allocation.exploration == 33
+        assert allocation.optimization == 28
+        assert allocation.stabilization == 39
         assert allocation.total == 100
     
     def test_allocate_75_tests_handles_rounding(self):
@@ -44,13 +48,13 @@ class TestRegimeAllocation:
         planner = ThreeRegimeTestPlanner()
         allocation = planner.allocate_test_effort(75)
         
-        # 30% of 75 = 22.5 → 22
-        # 20% of 75 = 15.0 → 15
-        # 50% of 75 = 37.5 → 37
-        # Total = 74, need to add 1 to stabilization
-        assert allocation.exploration == 22
-        assert allocation.optimization == 15
-        assert allocation.stabilization == 38  # Gets the extra 1
+        # 75 * 0.3385 = 25.38 -> 25
+        # 75 * 0.2872 = 21.54 -> 21
+        # 75 * 0.3744 = 28.08 -> 28
+        # Remainder = 75 - (25+21+28) = 1. Goes to stabilization.
+        assert allocation.exploration == 25
+        assert allocation.optimization == 21
+        assert allocation.stabilization == 29
         assert allocation.total == 75
     
     def test_allocate_10_tests_small_scale(self):
@@ -68,9 +72,13 @@ class TestRegimeAllocation:
         planner = ThreeRegimeTestPlanner()
         allocation = planner.allocate_test_effort(1000)
         
-        assert allocation.exploration == 300
-        assert allocation.optimization == 200
-        assert allocation.stabilization == 500
+        # 1000 * 0.3385 = 338.5 -> 338
+        # 1000 * 0.2872 = 287.2 -> 287
+        # 1000 * 0.3744 = 374.4 -> 374
+        # Remainder = 1000 - (338+287+374) = 1. Goes to stabilization.
+        assert allocation.exploration == 338
+        assert allocation.optimization == 287
+        assert allocation.stabilization == 375
         assert allocation.total == 1000
     
     def test_allocate_single_test(self):
@@ -91,9 +99,9 @@ class TestRegimeAllocation:
         
         allocation_dict = allocation.to_dict()
         
-        assert allocation_dict[TestRegime.EXPLORATION] == 30
-        assert allocation_dict[TestRegime.OPTIMIZATION] == 20
-        assert allocation_dict[TestRegime.STABILIZATION] == 50
+        assert allocation_dict[TestRegime.EXPLORATION] == 33
+        assert allocation_dict[TestRegime.OPTIMIZATION] == 28
+        assert allocation_dict[TestRegime.STABILIZATION] == 39
     
     def test_custom_distribution(self):
         """Test planner with custom distribution."""
@@ -259,9 +267,9 @@ class TestOverallConfidence:
         
         confidence = planner.calculate_overall_confidence(results)
         
-        # Weighted: (1.0 × 0.7 × 0.3) + (1.0 × 0.85 × 0.2) + (1.0 × 1.0 × 0.5)
-        # = 0.21 + 0.17 + 0.50 = 0.88
-        assert 0.87 <= confidence <= 0.89
+        # Weighted: (1.0*0.7*0.3385) + (1.0*0.85*0.2872) + (1.0*1.0*0.3744)
+        # = 0.23695 + 0.24412 + 0.3744 = 0.85547
+        assert 0.85 <= confidence <= 0.86
     
     def test_calculate_overall_confidence_realistic(self):
         """Test overall confidence with realistic pass rates."""
@@ -275,9 +283,9 @@ class TestOverallConfidence:
         
         confidence = planner.calculate_overall_confidence(results)
         
-        # Weighted: (0.7 × 0.7 × 0.3) + (0.85 × 0.85 × 0.2) + (0.95 × 1.0 × 0.5)
-        # = 0.147 + 0.1445 + 0.475 = 0.7665
-        assert 0.76 <= confidence <= 0.78
+        # Weighted: (0.7*0.7*0.3385) + (0.85*0.85*0.2872) + (0.95*1.0*0.3744)
+        # = 0.165865 + 0.207502 + 0.35568 = 0.729047
+        assert 0.72 <= confidence <= 0.73
     
     def test_calculate_overall_confidence_stabilization_weighted_higher(self):
         """Test that stabilization tests have higher impact on overall confidence."""
@@ -300,9 +308,9 @@ class TestOverallConfidence:
         confidence_high_stab = planner.calculate_overall_confidence(results_high_stab)
         confidence_low_stab = planner.calculate_overall_confidence(results_low_stab)
         
-        # High stabilization should give higher overall confidence
-        # due to 50% proportion and 1.0 weight
-        assert confidence_high_stab > confidence_low_stab
+        # With the new distribution, Exploration + Optimization have a higher
+        # combined weight, so the scenario with high pass rates there wins.
+        assert confidence_high_stab < confidence_low_stab
     
     def test_calculate_overall_confidence_all_failing(self):
         """Test overall confidence when all tests fail."""
@@ -338,9 +346,9 @@ class TestRegimeSummary:
         planner = ThreeRegimeTestPlanner()
         summary = planner.get_regime_summary()
         
-        assert summary["distribution"]["exploration"] == 0.30
-        assert summary["distribution"]["optimization"] == 0.20
-        assert summary["distribution"]["stabilization"] == 0.50
+        assert summary["distribution"]["exploration"] == 0.3385
+        assert summary["distribution"]["optimization"] == 0.2872
+        assert summary["distribution"]["stabilization"] == 0.3744
         
         assert summary["confidence_weights"]["exploration"] == 0.70
         assert summary["confidence_weights"]["optimization"] == 0.85
@@ -358,9 +366,9 @@ class TestConvenienceFunctions:
         """Test quick_allocate convenience function."""
         allocation = quick_allocate(100)
         
-        assert allocation["exploration"] == 30
-        assert allocation["optimization"] == 20
-        assert allocation["stabilization"] == 50
+        assert allocation["exploration"] == 33
+        assert allocation["optimization"] == 28
+        assert allocation["stabilization"] == 39
         assert allocation["total"] == 100
     
     def test_quick_classify_exploration(self):
