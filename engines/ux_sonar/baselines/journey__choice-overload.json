@@ -1,0 +1,47 @@
+{
+  "id": "journey-telemetry-1759626864736",
+  "timestamp": 1759626864736,
+  "route": "/",
+  "telemetry": {
+    "hesitationEvents": [],
+    "rageClickEvents": [],
+    "navigationEvents": [],
+    "errorEvents": [],
+    "taskCompletions": [
+      {
+        "timestamp": 1759626853382,
+        "taskName": "Navigation with many options",
+        "duration": 4500,
+        "success": true,
+        "errorCount": 0
+      },
+      {
+        "timestamp": 1759626864736,
+        "taskName": "Navigation selection",
+        "duration": 10000,
+        "success": true,
+        "errorCount": 0
+      }
+    ],
+    "pointerEvents": []
+  },
+  "metrics": {
+    "frustrationScore": 0,
+    "hesitationRatio": 0,
+    "rageClickDensity": 0,
+    "backtrackRatio": 0,
+    "errorLoopScore": 0,
+    "taskSuccessRate": 100,
+    "avgTaskDuration": 4500,
+    "delightScore": 0.7
+  },
+  "asymmetrica": {
+    "regime": "stabilization",
+    "complexity": "O(n)"
+  },
+  "delight": {
+    "smoothPathRatio": 100,
+    "timeToWow": 4500,
+    "frustrationLevel": "none"
+  }
+}

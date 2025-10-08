@@ -1,0 +1,87 @@
+{
+  "id": "journey-telemetry-1759624026474",
+  "timestamp": 1759624026474,
+  "route": "/checkout",
+  "telemetry": {
+    "hesitationEvents": [
+      {
+        "timestamp": 2000,
+        "duration": 2500,
+        "beforeAction": "click",
+        "element": "button"
+      },
+      {
+        "timestamp": 5000,
+        "duration": 1800,
+        "beforeAction": "hover",
+        "element": "a"
+      }
+    ],
+    "rageClickEvents": [
+      {
+        "timestamp": 8000,
+        "clickCount": 5,
+        "radius": 15,
+        "element": "button",
+        "x": 500,
+        "y": 300
+      }
+    ],
+    "navigationEvents": [
+      {
+        "timestamp": 3000,
+        "from": "/",
+        "to": "/checkout",
+        "action": "click"
+      },
+      {
+        "timestamp": 6000,
+        "from": "/checkout",
+        "to": "/",
+        "action": "back"
+      },
+      {
+        "timestamp": 7000,
+        "from": "/",
+        "to": "/checkout",
+        "action": "forward"
+      }
+    ],
+    "errorEvents": [
+      {
+        "timestamp": 9000,
+        "errorType": "validation-error",
+        "count": 2
+      }
+    ],
+    "taskCompletions": [
+      {
+        "timestamp": 12000,
+        "taskName": "Complete checkout",
+        "duration": 12000,
+        "success": false,
+        "errorCount": 2
+      }
+    ],
+    "pointerEvents": []
+  },
+  "metrics": {
+    "frustrationScore": 0.029861111111111116,
+    "hesitationRatio": 0.35833333333333334,
+    "rageClickDensity": 0.08333333333333334,
+    "backtrackRatio": 0,
+    "errorLoopScore": 0.6666666666666666,
+    "taskSuccessRate": 0,
+    "avgTaskDuration": 12000,
+    "delightScore": 0
+  },
+  "asymmetrica": {
+    "regime": "exploration",
+    "complexity": "O(n)"
+  },
+  "delight": {
+    "smoothPathRatio": 0,
+    "timeToWow": 0,
+    "frustrationLevel": "none"
+  }
+}

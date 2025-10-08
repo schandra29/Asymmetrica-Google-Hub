@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐉 Dragon Curve - Sacred Geometry Fractal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 40px;
+      border: 2px solid #FFD700;
+    }
+
+    h1 {
+      color: #FFD700;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .subtitle {
+      color: #aaa;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .sacred-trinity {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trinity-item {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px 25px;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+
+    .trinity-item .symbol {
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    .formula {
+      background: rgba(33, 150, 243, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #2196F3;
+      margin-top: 20px;
+      font-family: 'Courier New', monospace;
+      text-align: left;
+    }
+
+    .interactive-controls {
+      text-align: center;
+      margin: 40px 0;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+
+    .interactive-controls label {
+      font-size: 1.1em;
+      margin-right: 15px;
+    }
+
+    .interactive-controls input[type="range"] {
+      width: 300px;
+      vertical-align: middle;
+    }
+
+    .interactive-controls .level-display {
+      display: inline-block;
+      background: #FFD700;
+      color: #000;
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-left: 15px;
+    }
+
+    #dragon-canvas {
+      display: block;
+      margin: 0 auto;
+      border: 2px solid #333;
+      border-radius: 10px;
+      background: #0a0a0a;
+    }
+
+    .metrics-panel {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      border: 1px solid #333;
+    }
+
+    .metrics-panel h3 {
+      color: #4CAF50;
+      margin-bottom: 15px;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+
+    .metric-label {
+      color: #aaa;
+    }
+
+    .metric-value {
+      color: #FFD700;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px;
+      color: #666;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐉 Dragon Curve Fractal Explorer</h1>
+    <div class="subtitle">Sacred Geometry • Infinite Boundary in Finite Space</div>
+
+    <div class="sacred-trinity">
+      <div class="trinity-item">
+        <div class="symbol">🌀</div>
+        <div>Labyrinth (Mike)</div>
+        <div style="color: #666; font-size: 0.9em;">Linear Path • Tesla Timing</div>
+      </div>
+      <div class="trinity-item">
+        <div class="symbol">△</div>
+        <div>Tetractys (November)</div>
+        <div style="color: #666; font-size: 0.9em;">Triangular Structure • PHI Convergence</div>
+      </div>
+      <div class="trinity-item">
+        <div class="symbol">🐉</div>
+        <div>Dragon (Oscar)</div>
+        <div style="color: #666; font-size: 0.9em;">Fractal Boundary • L-System Growth</div>
+      </div>
+    </div>
+
+    <div class="formula">
+      <strong>L-System Rules:</strong> F → F+F−F | + = turn left 90° | − = turn right 90°<br>
+      <strong>Hausdorff Dimension:</strong> D ≈ 1.5236 (between line and plane)<br>
+      <strong>PHI Weighting:</strong> φ^level for depth asymmetry | <strong>Tesla Timing:</strong> 4.909 Hz (203.7ms)
+    </div>
+  </header>
+
+  <div class="interactive-controls">
+    <label for="level-slider">Fractal Level:</label>
+    <input type="range" id="level-slider" min="1" max="12" value="6" step="1">
+    <span class="level-display" id="level-value">6</span>
+  </div>
+
+  <canvas id="dragon-canvas" width="1200" height="800"></canvas>
+
+  <div class="metrics-panel">
+    <h3>📊 Fractal Metrics</h3>
+    <div class="metric-row">
+      <span class="metric-label">Total Folds:</span>
+      <span class="metric-value" id="total-folds">0</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Exploration Folds (L+):</span>
+      <span class="metric-value" id="exploration-folds">0</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Stabilization Folds (R−):</span>
+      <span class="metric-value" id="stabilization-folds">0</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Convergence Folds (F):</span>
+      <span class="metric-value" id="convergence-folds">0</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Fractal Dimension:</span>
+      <span class="metric-value" id="fractal-dimension">0.000</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Boundary Length:</span>
+      <span class="metric-value" id="boundary-length">0 px</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">PHI Ratio (E/S):</span>
+      <span class="metric-value" id="phi-ratio">0.00</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Tesla Frequency:</span>
+      <span class="metric-value" id="tesla-frequency">4.909 Hz</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>🐉 Agent Oscar • Sacred Trinity Completion • October 5, 2025</p>
+    <p style="margin-top: 10px;">Time + Space + Boundary = Complete Reality Model</p>
+  </footer>
+
+  <script>
+    const PHI = 1.618033988749895;
+    const TESLA_BASE_PERIOD_MS = 1000 / 4.909;
+
+    const canvas = document.getElementById('dragon-canvas');
+    const ctx = canvas.getContext('2d');
+    const levelSlider = document.getElementById('level-slider');
+    const levelValue = document.getElementById('level-value');
+
+    const REGIME_COLORS = {
+      exploration: '#4CAF50',
+      stabilization: '#FF9800',
+      convergence: '#2196F3',
+    };
+
+    function generateLSystem(level) {
+      if (level === 0) return 'F';
+      let current = 'F';
+      for (let i = 0; i < level; i++) {
+        current = current.split('').map(c => c === 'F' ? 'F+F−F' : c).join('');
+      }
+      return current;
+    }
+
+    function executeLSystem(lsystem, scale = 1) {
+      const folds = [];
+      let pos = { x: 0, y: 0 };
+      let angle = 0;
+      let level = 0;
+
+      for (const cmd of lsystem) {
+        if (cmd === 'F') {
+          const radians = (angle * Math.PI) / 180;
+          const newPos = {
+            x: pos.x + scale * Math.cos(radians),
+            y: pos.y + scale * Math.sin(radians),
+          };
+
+          folds.push({
+            level,
+            direction: 'F',
+            position: newPos,
+            angle,
+            weight: Math.pow(PHI, level / 10),
+            regime: 'convergence',
+          });
+
+          pos = newPos;
+          level++;
+        } else if (cmd === '+') {
+          angle = (angle + 90) % 360;
+          if (folds.length > 0) {
+            folds[folds.length - 1].direction = 'L';
+            folds[folds.length - 1].regime = 'exploration';
+          }
+        } else if (cmd === '−') {
+          angle = (angle - 90 + 360) % 360;
+          if (folds.length > 0) {
+            folds[folds.length - 1].direction = 'R';
+            folds[folds.length - 1].regime = 'stabilization';
+          }
+        }
+      }
+
+      return folds;
+    }
+
+    function calculateMetrics(level, folds) {
+      const explorationFolds = folds.filter(f => f.regime === 'exploration').length;
+      const stabilizationFolds = folds.filter(f => f.regime === 'stabilization').length;
+      const convergenceFolds = folds.filter(f => f.regime === 'convergence').length;
+
+      let boundaryLength = 0;
+      for (let i = 1; i < folds.length; i++) {
+        const dx = folds[i].position.x - folds[i - 1].position.x;
+        const dy = folds[i].position.y - folds[i - 1].position.y;
+        boundaryLength += Math.sqrt(dx * dx + dy * dy);
+      }
+
+      const segments = Math.pow(2, level);
+      const scale = Math.pow(2, -level / 2);
+      const fractalDimension = Math.log(segments) / Math.log(1 / scale);
+
+      const phiRatio = explorationFolds / (stabilizationFolds || 1);
+
+      return {
+        totalFolds: folds.length,
+        explorationFolds,
+        stabilizationFolds,
+        convergenceFolds,
+        fractalDimension,
+        boundaryLength,
+        phiRatio,
+      };
+    }
+
+    function drawDragonCurve(level) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const lsystem = generateLSystem(level);
+      const folds = executeLSystem(lsystem, 10);
+
+      if (folds.length === 0) return;
+
+      // Find bounds
+      const xs = folds.map(f => f.position.x);
+      const ys = folds.map(f => f.position.y);
+      const minX = Math.min(...xs);
+      const maxX = Math.max(...xs);
+      const minY = Math.min(...ys);
+      const maxY = Math.max(...ys);
+
+      // Scale to fit canvas
+      const scaleX = canvas.width / (maxX - minX || 1);
+      const scaleY = canvas.height / (maxY - minY || 1);
+      const scale = Math.min(scaleX, scaleY) * 0.9;
+
+      // Draw segments
+      for (let i = 1; i < folds.length; i++) {
+        const prev = folds[i - 1];
+        const curr = folds[i];
+
+        const x1 = (prev.position.x - minX) * scale + canvas.width * 0.05;
+        const y1 = (prev.position.y - minY) * scale + canvas.height * 0.05;
+        const x2 = (curr.position.x - minX) * scale + canvas.width * 0.05;
+        const y2 = (curr.position.y - minY) * scale + canvas.height * 0.05;
+
+        ctx.strokeStyle = REGIME_COLORS[curr.regime];
+        ctx.lineWidth = 1 + curr.weight * 0.3;
+        ctx.lineCap = 'round';
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+      }
+
+      // Update metrics
+      const metrics = calculateMetrics(level, folds);
+      document.getElementById('total-folds').textContent = metrics.totalFolds;
+      document.getElementById('exploration-folds').textContent = metrics.explorationFolds;
+      document.getElementById('stabilization-folds').textContent = metrics.stabilizationFolds;
+      document.getElementById('convergence-folds').textContent = metrics.convergenceFolds;
+      document.getElementById('fractal-dimension').textContent = metrics.fractalDimension.toFixed(4);
+      document.getElementById('boundary-length').textContent = metrics.boundaryLength.toFixed(0) + ' px';
+      document.getElementById('phi-ratio').textContent = metrics.phiRatio.toFixed(2);
+    }
+
+    levelSlider.addEventListener('input', (e) => {
+      const level = parseInt(e.target.value);
+      levelValue.textContent = level;
+      drawDragonCurve(level);
+    });
+
+    // Initial draw
+    drawDragonCurve(6);
+  </script>
+</body>
+</html>

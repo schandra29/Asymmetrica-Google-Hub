@@ -1,0 +1,55 @@
+
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0a0a0a"/>
+  
+<line x1="138.1818181818182" y1="30" x2="138.1818181818182" y2="79.0909090909091" stroke="#FF9800" stroke-width="1.5246489020788072" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="79.0909090909091" x2="187.27272727272728" y2="79.0909090909091" stroke="#4CAF50" stroke-width="1.5505129409049956" stroke-linecap="round"/>
+<line x1="187.27272727272728" y1="79.0909090909091" x2="187.27272727272728" y2="128.1818181818182" stroke="#4CAF50" stroke-width="1.5776520200519624" stroke-linecap="round"/>
+<line x1="187.27272727272728" y1="128.1818181818182" x2="138.1818181818182" y2="128.1818181818182" stroke="#FF9800" stroke-width="1.6061289962077343" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="128.1818181818182" x2="138.1818181818182" y2="177.27272727272728" stroke="#FF9800" stroke-width="1.6360098247570345" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="177.27272727272728" x2="187.27272727272728" y2="177.27272727272728" stroke="#4CAF50" stroke-width="1.6673637125402254" stroke-linecap="round"/>
+<line x1="187.27272727272728" y1="177.27272727272728" x2="187.27272727272728" y2="226.36363636363637" stroke="#FF9800" stroke-width="1.7002632781429319" stroke-linecap="round"/>
+<line x1="187.27272727272728" y1="226.36363636363637" x2="236.36363636363637" y2="226.36363636363637" stroke="#4CAF50" stroke-width="1.7347847200875912" stroke-linecap="round"/>
+<line x1="236.36363636363637" y1="226.36363636363637" x2="236.36363636363637" y2="275.4545454545455" stroke="#4CAF50" stroke-width="1.7710079933164766" stroke-linecap="round"/>
+<line x1="236.36363636363637" y1="275.4545454545455" x2="187.27272727272728" y2="275.4545454545455" stroke="#FF9800" stroke-width="1.8090169943749475" stroke-linecap="round"/>
+<line x1="187.27272727272728" y1="275.4545454545455" x2="187.27272727272728" y2="324.54545454545456" stroke="#4CAF50" stroke-width="1.8488997557238254" stroke-linecap="round"/>
+<line x1="187.27272727272728" y1="324.54545454545456" x2="138.1818181818182" y2="324.54545454545456" stroke="#4CAF50" stroke-width="1.8907486496309451" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="324.54545454545456" x2="138.1818181818182" y2="275.4545454545455" stroke="#FF9800" stroke-width="1.9346606021141108" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="275.4545454545455" x2="89.0909090909091" y2="275.4545454545455" stroke="#FF9800" stroke-width="1.9807373174309701" stroke-linecap="round"/>
+<line x1="89.0909090909091" y1="275.4545454545455" x2="89.0909090909091" y2="324.54545454545456" stroke="#4CAF50" stroke-width="2.029085513635746" stroke-linecap="round"/>
+<line x1="89.0909090909091" y1="324.54545454545456" x2="40" y2="324.54545454545456" stroke="#FF9800" stroke-width="2.079817169748399" stroke-linecap="round"/>
+<line x1="40" y1="324.54545454545456" x2="40" y2="373.6363636363636" stroke="#FF9800" stroke-width="2.133049785108685" stroke-linecap="round"/>
+<line x1="40" y1="373.6363636363636" x2="89.0909090909091" y2="373.6363636363636" stroke="#4CAF50" stroke-width="2.1889066515157998" stroke-linecap="round"/>
+<line x1="89.0909090909091" y1="373.6363636363636" x2="89.0909090909091" y2="422.72727272727275" stroke="#FF9800" stroke-width="2.247517138783911" stroke-linecap="round"/>
+<line x1="89.0909090909091" y1="422.72727272727275" x2="138.1818181818182" y2="422.72727272727275" stroke="#4CAF50" stroke-width="2.3090169943749475" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="422.72727272727275" x2="138.1818181818182" y2="471.8181818181818" stroke="#4CAF50" stroke-width="2.3735486578026324" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="471.8181818181818" x2="89.0909090909091" y2="471.8181818181818" stroke="#FF9800" stroke-width="2.441261590535941" stroke-linecap="round"/>
+<line x1="89.0909090909091" y1="471.8181818181818" x2="89.0909090909091" y2="520.909090909091" stroke="#FF9800" stroke-width="2.512312622166073" stroke-linecap="round"/>
+<line x1="89.0909090909091" y1="520.909090909091" x2="138.1818181818182" y2="520.909090909091" stroke="#4CAF50" stroke-width="2.5868663136387045" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="520.909090909091" x2="138.1818181818182" y2="570" stroke="#FF9800" stroke-width="2.6650953383927805" stroke-linecap="round"/>
+<line x1="138.1818181818182" y1="570" x2="187.27272727272728" y2="570" stroke="#2196F3" stroke-width="2.7471808822886246" stroke-linecap="round"/>
+
+  <!-- Legend -->
+  <rect x="10" y="10" width="250" height="130" fill="#1a1a1a" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="20" y="35" fill="#FFD700" font-family="monospace" font-size="16" font-weight="bold">
+    Dragon Curve Level 3
+  </text>
+  <text x="20" y="55" fill="#aaa" font-family="monospace" font-size="12">
+    Folds: 27 | Dimension: 2.000
+  </text>
+
+  <circle cx="20" cy="75" r="5" fill="#4CAF50"/>
+  <text x="35" y="80" fill="#4CAF50" font-family="monospace" font-size="12">
+    Exploration (13)
+  </text>
+
+  <circle cx="20" cy="95" r="5" fill="#FF9800"/>
+  <text x="35" y="100" fill="#FF9800" font-family="monospace" font-size="12">
+    Stabilization (13)
+  </text>
+
+  <circle cx="20" cy="115" r="5" fill="#2196F3"/>
+  <text x="35" y="120" fill="#2196F3" font-family="monospace" font-size="12">
+    Convergence (1)
+  </text>
+</svg>

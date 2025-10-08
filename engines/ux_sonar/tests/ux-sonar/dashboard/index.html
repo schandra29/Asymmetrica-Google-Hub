@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonar Suite Dashboard - System Health Monitor</title>
+  <style>
+    /**
+ * Sonar Dashboard Styles
+ * Agent Foxtrot - Dashboard Architect
+ * Dark mode friendly, responsive design
+ */
+
+:root {
+  /* Asymmetrica Brand Colors */
+  --color-primary: #3B82F6;
+  --color-secondary: #10B981;
+  --color-accent: #F59E0B;
+
+  /* Regime Colors */
+  --color-exploration: #F59E0B;
+  --color-optimization: #3B82F6;
+  --color-stabilization: #10B981;
+
+  /* Status Colors */
+  --color-critical: #EF4444;
+  --color-warning: #F59E0B;
+  --color-healthy: #10B981;
+
+  /* Neutral Colors */
+  --color-bg-dark: #1F2937;
+  --color-bg-light: #F9FAFB;
+  --color-card-dark: #374151;
+  --color-card-light: #FFFFFF;
+  --color-text-dark: #F9FAFB;
+  --color-text-light: #1F2937;
+  --color-border: #E5E7EB;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-bg-dark);
+    --color-card: var(--color-card-dark);
+    --color-text: var(--color-text-dark);
+    --color-border: #4B5563;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: var(--color-bg-light);
+    --color-card: var(--color-card-light);
+    --color-text: var(--color-text-light);
+    --color-border: #E5E7EB;
+  }
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: var(--spacing-md);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* Header */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-sm);
+}
+
+.timestamp {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  font-family: var(--font-mono);
+}
+
+/* Praise Mode Section */
+.praise-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.praise-mode {
+  background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  border: 2px solid var(--color-healthy);
+}
+
+@media (prefers-color-scheme: dark) {
+  .praise-mode {
+    background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+    color: #D1FAE5;
+  }
+}
+
+.praise-mode h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.praise-mode.empty {
+  background: var(--color-card);
+  border: 2px dashed var(--color-border);
+  text-align: center;
+  padding: var(--spacing-lg);
+  opacity: 0.7;
+}
+
+.praise-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .praise-item {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.praise-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.praise-content {
+  flex: 1;
+}
+
+.praise-content code {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  margin-left: var(--spacing-sm);
+}
+
+/* System Health Metric Section */
+.shm-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.shm-container {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.shm-container h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.shm-gauge-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.shm-gauge {
+  width: 200px;
+  height: 120px;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gauge-progress {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.gauge-value {
+  font-size: 2rem;
+  font-weight: 700;
+  fill: var(--color-text);
+}
+
+.gauge-label {
+  font-size: 1rem;
+  fill: var(--color-text);
+  opacity: 0.7;
+}
+
+.shm-details {
+  text-align: left;
+}
+
+.shm-percentage {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.shm-regime {
+  margin-bottom: var(--spacing-md);
+}
+
+.shm-delta {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Regime Badge */
+.regime-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 9999px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.regime-badge.large {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 1rem;
+}
+
+/* Regime Distribution */
+.regime-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.regime-distribution {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.regime-distribution h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.regime-bar {
+  display: flex;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.regime-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: white;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.regime-segment:hover {
+  filter: brightness(1.1);
+}
+
+.regime-segment.exploration {
+  background-color: var(--color-exploration);
+}
+
+.regime-segment.optimization {
+  background-color: var(--color-optimization);
+}
+
+.regime-segment.stabilization {
+  background-color: var(--color-stabilization);
+}
+
+.regime-legend {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+}
+
+.regime-legend span {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.exploration {
+  background-color: var(--color-exploration);
+}
+
+.legend-dot.optimization {
+  background-color: var(--color-optimization);
+}
+
+.legend-dot.stabilization {
+  background-color: var(--color-stabilization);
+}
+
+/* Sonar Cards Section */
+.sonars-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.sonars-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.sonar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .sonar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .sonar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Sonar Card */
+.sonar-card {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.sonar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.score-display {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .score-display {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.score-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
+}
+
+.key-metric {
+  padding: var(--spacing-sm);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .key-metric {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.metric-name {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  margin-bottom: var(--spacing-xs);
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.delta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Sparkline */
+.sparkline {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.sparkline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.sparkline-chars {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.sparkline-trend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Alerts Section */
+.alerts-container {
+  margin-bottom: var(--spacing-xl);
+}
+
+.alerts-section {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alerts-section.empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-healthy);
+  font-weight: 600;
+}
+
+.alert-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.alert-group:last-child {
+  margin-bottom: 0;
+}
+
+.alert-group h4 {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.alert-group.critical {
+  border-left: 4px solid var(--color-critical);
+  padding-left: var(--spacing-md);
+}
+
+.alert-group.critical h4 {
+  color: var(--color-critical);
+}
+
+.alert-group.warning {
+  border-left: 4px solid var(--color-warning);
+  padding-left: var(--spacing-md);
+}
+
+.alert-group.warning h4 {
+  color: var(--color-warning);
+}
+
+.alert-item {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .alert-item {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.alert-item code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  margin-left: var(--spacing-sm);
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  padding: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  border-top: 2px solid var(--color-border);
+  opacity: 0.7;
+}
+
+.dashboard-footer p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-note {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .shm-gauge-wrapper {
+    flex-direction: column;
+  }
+
+  .shm-details {
+    text-align: center;
+  }
+
+  .sonar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sonar-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.sonar-card:nth-child(1) { animation-delay: 0.1s; }
+.sonar-card:nth-child(2) { animation-delay: 0.2s; }
+.sonar-card:nth-child(3) { animation-delay: 0.3s; }
+.sonar-card:nth-child(4) { animation-delay: 0.4s; }
+.sonar-card:nth-child(5) { animation-delay: 0.5s; }
+.sonar-card:nth-child(6) { animation-delay: 0.6s; }
+
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="header-content">
+        <h1>🎯 Sonar Suite Dashboard</h1>
+        <p class="subtitle">Unified System Health Monitor</p>
+        <div class="timestamp">Generated: 2025-10-05T01:16:28.724Z</div>
+      </div>
+    </header>
+
+    <!-- Praise Mode Section (Top) -->
+    <section class="praise-section">
+      
+      <div class="praise-mode">
+        <h3>🎉 Praise Mode - Celebrating Wins!</h3>
+        
+      <div class="praise-item">
+        <span class="praise-icon">✅</span>
+        <div class="praise-content">
+          <strong>UX</strong>: Minimal layout shift - stable visual experience!
+          <code>CLS: 0.000</code>
+        </div>
+      </div>
+    
+      </div>
+    
+    </section>
+
+    <!-- System Health Metric (North Star) -->
+    <section class="shm-section">
+      <div class="shm-container">
+        <h2>System Health Metric (SHM)</h2>
+        <div class="shm-gauge-wrapper">
+          <div class="shm-gauge">
+            <svg viewBox="0 0 200 120" class="gauge-svg">
+              <!-- Background arc -->
+              <path
+                d="M 20 100 A 80 80 0 0 1 180 100"
+                fill="none"
+                stroke="#E5E7EB"
+                stroke-width="12"
+                stroke-linecap="round"
+              />
+              <!-- Value arc -->
+              <path
+                d="M 20 100 A 80 80 0 0 1 180 100"
+                fill="none"
+                stroke="#F59E0B"
+                stroke-width="12"
+                stroke-linecap="round"
+                stroke-dasharray="251.2"
+                stroke-dashoffset="0"
+                style="stroke-dashoffset: calc(251.2 - (251.2 * 0.00));"
+                class="gauge-progress"
+              />
+              <!-- Center value -->
+              <text x="100" y="85" text-anchor="middle" class="gauge-value">{{SHM_VALUE}}</text>
+              <text x="100" y="105" text-anchor="middle" class="gauge-label">/ 1.0</text>
+            </svg>
+          </div>
+          <div class="shm-details">
+            <div class="shm-percentage" style="color: {{SHM_COLOR}};">0%</div>
+            <div class="shm-regime">
+              <span class="regime-badge large" style="background-color: #F59E0B;">EXPLORATION</span>
+            </div>
+            <div class="shm-delta" style="color: #EF4444;">
+              ▼ 0.75 from baseline
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regime Distribution -->
+    <section class="regime-section">
+      
+      <div class="regime-distribution">
+        <h3>Regime Distribution</h3>
+        <div class="regime-bar">
+          <div class="regime-segment exploration" style="width: 50%;" title="Exploration: 50.0%">
+            50%
+          </div>
+          <div class="regime-segment optimization" style="width: 16.666666666666664%;" title="Optimization: 16.7%">
+            17%
+          </div>
+          <div class="regime-segment stabilization" style="width: 33.33333333333333%;" title="Stabilization: 33.3%">
+            33%
+          </div>
+        </div>
+        <div class="regime-legend">
+          <span><span class="legend-dot exploration"></span> Exploration (3)</span>
+          <span><span class="legend-dot optimization"></span> Optimization (1)</span>
+          <span><span class="legend-dot stabilization"></span> Stabilization (2)</span>
+        </div>
+      </div>
+    
+    </section>
+
+    <!-- Sonar Cards Grid -->
+    <section class="sonars-section">
+      <h2>Individual Sonar Metrics</h2>
+      <div class="sonar-grid">
+        
+      <div class="sonar-card" style="border-left: 4px solid #F59E0B;">
+        <div class="card-header">
+          <h3>UX Sonar</h3>
+          <span class="regime-badge" style="background-color: #F59E0B;">Expl</span>
+        </div>
+        <div class="card-body">
+          <div class="score-display">
+            <div class="score-value" style="color: #EF4444;">0.00</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="key-metric">
+            <div class="metric-name">FPS</div>
+            <div class="metric-value">35/60</div>
+          </div>
+          <div class="delta" style="color: #EF4444;">
+            ▼ 0.75 from baseline
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="sonar-card" style="border-left: 4px solid #F59E0B;">
+        <div class="card-header">
+          <h3>Design Sonar</h3>
+          <span class="regime-badge" style="background-color: #F59E0B;">Expl</span>
+        </div>
+        <div class="card-body">
+          <div class="score-display">
+            <div class="score-value" style="color: #10B981;">0.78</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="key-metric">
+            <div class="metric-name">Harmony</div>
+            <div class="metric-value">0.72</div>
+          </div>
+          <div class="delta" style="color: #10B981;">
+            ▲ 0.08 from baseline
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="sonar-card" style="border-left: 4px solid #10B981;">
+        <div class="card-header">
+          <h3>Code Sonar</h3>
+          <span class="regime-badge" style="background-color: #10B981;">Stab</span>
+        </div>
+        <div class="card-body">
+          <div class="score-display">
+            <div class="score-value" style="color: #10B981;">0.92</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="key-metric">
+            <div class="metric-name">Density</div>
+            <div class="metric-value">0.03</div>
+          </div>
+          <div class="delta" style="color: #10B981;">
+            ▲ 0.12 from baseline
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="sonar-card" style="border-left: 4px solid #3B82F6;">
+        <div class="card-header">
+          <h3>Semantic Sonar</h3>
+          <span class="regime-badge" style="background-color: #3B82F6;">Opti</span>
+        </div>
+        <div class="card-body">
+          <div class="score-display">
+            <div class="score-value" style="color: #10B981;">0.81</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="key-metric">
+            <div class="metric-name">AQS</div>
+            <div class="metric-value">0.68</div>
+          </div>
+          <div class="delta" style="color: #10B981;">
+            ▲ 0.06 from baseline
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="sonar-card" style="border-left: 4px solid #F59E0B;">
+        <div class="card-header">
+          <h3>Journey Sonar</h3>
+          <span class="regime-badge" style="background-color: #F59E0B;">Expl</span>
+        </div>
+        <div class="card-body">
+          <div class="score-display">
+            <div class="score-value" style="color: #F59E0B;">0.76</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="key-metric">
+            <div class="metric-name">Flow Score</div>
+            <div class="metric-value">0.12</div>
+          </div>
+          <div class="delta" style="color: #EF4444;">
+            ▼ 0.04 from baseline
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="sonar-card" style="border-left: 4px solid #10B981;">
+        <div class="card-header">
+          <h3>State Sonar</h3>
+          <span class="regime-badge" style="background-color: #10B981;">Stab</span>
+        </div>
+        <div class="card-body">
+          <div class="score-display">
+            <div class="score-value" style="color: #10B981;">0.88</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="key-metric">
+            <div class="metric-name">SMT</div>
+            <div class="metric-value">7.2ms</div>
+          </div>
+          <div class="delta" style="color: #10B981;">
+            ▲ 0.10 from baseline
+          </div>
+          
+        </div>
+      </div>
+    
+      </div>
+    </section>
+
+    <!-- Alerts Section (Bottom) -->
+    <section class="alerts-container">
+      
+      <div class="alerts-section">
+        
+        
+      <div class="alert-group warning">
+        <h4>⚠️ Warnings (1)</h4>
+        
+          <div class="alert-item">
+            <strong>UX</strong>: Frame rate below target - optimization needed.
+            <code>35 FPS</code>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+    </section>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <p>Powered by Asymmetrica Protocol - Better Math for Everyone!</p>
+      <p class="footer-note">
+        Dashboard generated by Agent Foxtrot |
+        Data sources: UX, Design, Code, Semantic, Journey, State Sonars
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Add interactivity for drill-down (future enhancement)
+    document.querySelectorAll('.sonar-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const sonarName = this.querySelector('h3').textContent;
+        console.log(`Drill-down to ${sonarName} (not yet implemented)`);
+        // Future: Navigate to detailed sonar report
+      });
+    });
+
+    // Add hover effects for metrics
+    document.querySelectorAll('.key-metric').forEach(metric => {
+      metric.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+      });
+      metric.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+
+    // Auto-refresh indicator (if needed)
+    const timestamp = new Date('{{TIMESTAMP}}');
+    const age = Math.floor((Date.now() - timestamp.getTime()) / 1000);
+    if (age > 300) { // 5 minutes
+      console.warn(`Dashboard data is ${age} seconds old. Consider refreshing.`);
+    }
+  </script>
+</body>
+</html>

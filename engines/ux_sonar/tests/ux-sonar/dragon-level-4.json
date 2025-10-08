@@ -1,0 +1,828 @@
+{
+  "level": 4,
+  "lsystem": "F+F−F+F+F−F−F+F−F+F+F−F+F+F−F−F+F−F−F+F−F+F+F−F−F+F−F+F+F−F+F+F−F−F+F−F+F+F−F+F+F−F−F+F−F−F+F−F+F+F−F−F+F−F−F+F−F+F+F−F−F+F−F+F+F−F+F+F−F−F+F−F−F+F−F+F+F−F−F+F−F",
+  "metrics": {
+    "level": 4,
+    "totalFolds": 81,
+    "explorationFolds": 40,
+    "stabilizationFolds": 40,
+    "convergenceFolds": 1,
+    "fractalDimension": 2,
+    "boundaryLength": 80,
+    "area": 312,
+    "phiRatio": 1,
+    "teslaFrequency": 4.909
+  },
+  "folds": [
+    {
+      "position": {
+        "x": 1,
+        "y": 0
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 1
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 1
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 1.0492978041576144
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 1
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 1.1010258818099912
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 2
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 1.1553040401039247
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 2
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 1.2122579924154686
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 3
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 1.272019649514069
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 3
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 1.3347274250804508
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 4
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 1.4005265562858635
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 4
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 1.4695694401751822
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 5
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 1.5420159866329533
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 5
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 1.618033988749895
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 6
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 1.6977995114476507
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 6
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 1.7814972992618903
+    },
+    {
+      "position": {
+        "x": 0.9999999999999998,
+        "y": 5
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 1.8693212042282217
+    },
+    {
+      "position": {
+        "x": -2.220446049250313e-16,
+        "y": 5
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 1.9614746348619403
+    },
+    {
+      "position": {
+        "x": -1.6081226496766364e-16,
+        "y": 6
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 2.0581710272714924
+    },
+    {
+      "position": {
+        "x": -1.0000000000000002,
+        "y": 6
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 2.1596343394967983
+    },
+    {
+      "position": {
+        "x": -1.0000000000000002,
+        "y": 7
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 2.26609957021737
+    },
+    {
+      "position": {
+        "x": -2.220446049250313e-16,
+        "y": 7
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 2.3778133030316
+    },
+    {
+      "position": {
+        "x": -1.6081226496766364e-16,
+        "y": 8
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 2.4950342775678216
+    },
+    {
+      "position": {
+        "x": 0.9999999999999999,
+        "y": 8
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 2.618033988749895
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 9
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 2.747097315605265
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 9
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 2.882523181071882
+    },
+    {
+      "position": {
+        "x": 6.123233995736766e-17,
+        "y": 10
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 3.0246252443321464
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 10
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 3.173732627277409
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 11
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 3.3301906767855614
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 11
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 3.494361764577249
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 12
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 3.6666261265032345
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 12
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 3.847382743206782
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 13
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 4.037050264200775
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 13
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 4.23606797749979
+    },
+    {
+      "position": {
+        "x": -1.8369701987210297e-16,
+        "y": 12
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 4.444896827052916
+    },
+    {
+      "position": {
+        "x": -1.0000000000000002,
+        "y": 12
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 4.664020480333773
+    },
+    {
+      "position": {
+        "x": -1.0000000000000002,
+        "y": 13
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 4.893946448560368
+    },
+    {
+      "position": {
+        "x": -2,
+        "y": 13
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 5.13520726213935
+    },
+    {
+      "position": {
+        "x": -2,
+        "y": 14
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 5.388361704057054
+    },
+    {
+      "position": {
+        "x": -3,
+        "y": 14
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 5.653996104074048
+    },
+    {
+      "position": {
+        "x": -3,
+        "y": 13
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 5.932725696720604
+    },
+    {
+      "position": {
+        "x": -4,
+        "y": 13
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 6.225196046238382
+    },
+    {
+      "position": {
+        "x": -4,
+        "y": 12
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 270,
+      "weight": 6.532084541768597
+    },
+    {
+      "position": {
+        "x": -3,
+        "y": 12
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 0,
+      "weight": 6.854101966249686
+    },
+    {
+      "position": {
+        "x": -3,
+        "y": 11
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 7.191994142658181
+    },
+    {
+      "position": {
+        "x": -4,
+        "y": 11
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 7.5465436614056545
+    },
+    {
+      "position": {
+        "x": -4,
+        "y": 10
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 7.918571692892515
+    },
+    {
+      "position": {
+        "x": -5,
+        "y": 10
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 8.308939889416761
+    },
+    {
+      "position": {
+        "x": -5,
+        "y": 11
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 8.718552380842617
+    },
+    {
+      "position": {
+        "x": -6,
+        "y": 11
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 9.148357868651296
+    },
+    {
+      "position": {
+        "x": -6,
+        "y": 12
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 9.59935182322384
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 12
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 10.072578789445165
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 11
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 10.569134805969375
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 11
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 11.090169943749476
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 12
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 11.636890969711096
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 12
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 12.210564141739427
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 13
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 12.812518141452884
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 13
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 13.444147151556113
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 14
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 14.106914084899671
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 14
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 14.802353972725344
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 15
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 15.532077519944446
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 15
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 16.297774835683548
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 16
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 17.101219347737974
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 16
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 17.944271909999163
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 17
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 18.828885112369278
+    },
+    {
+      "position": {
+        "x": -6,
+        "y": 17
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 19.757107803145082
+    },
+    {
+      "position": {
+        "x": -6,
+        "y": 18
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 20.7310898343454
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 18
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 21.753087040972872
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 19
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 22.825466465742288
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 19
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 180,
+      "weight": 23.95071184137664
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 18
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 270,
+      "weight": 25.131429343168286
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 18
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 26.370353625128715
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 19
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 27.67035415370735
+    },
+    {
+      "position": {
+        "x": -10,
+        "y": 19
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 29.03444185374864
+    },
+    {
+      "position": {
+        "x": -10,
+        "y": 20
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 30.465776082080374
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 20
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 31.96767194488451
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 21
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 33.54360797579828
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 21
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 35.19723419252899
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 22
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 90,
+      "weight": 36.93238055064196
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 22
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 180,
+      "weight": 38.75306581410199
+    },
+    {
+      "position": {
+        "x": -9,
+        "y": 23
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 40.66350686311273
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 23
+      },
+      "direction": "L",
+      "regime": "exploration",
+      "angle": 0,
+      "weight": 42.66812846081226
+    },
+    {
+      "position": {
+        "x": -8,
+        "y": 24
+      },
+      "direction": "R",
+      "regime": "stabilization",
+      "angle": 90,
+      "weight": 44.771573501445324
+    },
+    {
+      "position": {
+        "x": -7,
+        "y": 24
+      },
+      "direction": "F",
+      "regime": "convergence",
+      "angle": 0,
+      "weight": 46.978713763747805
+    }
+  ]
+}

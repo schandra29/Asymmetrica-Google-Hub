@@ -1,0 +1,34 @@
+# Asymmetrica Google Hub - Python Dependencies
+
+# Google API Client Libraries
+google-api-python-client==2.108.0
+google-auth==2.25.2
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+
+# Async & Concurrency
+aiofiles==23.2.1
+asyncio==3.4.3
+
+# Configuration & Environment
+python-dotenv==1.0.0
+
+# Structured Logging
+structlog==23.2.0
+
+# Data Validation & Serialization
+pydantic==2.5.3
+
+# Testing (optional, for future development)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# Code Quality (optional)
+black==23.12.1
+mypy==1.7.1
+ruff==0.1.8
+
+# Documentation (optional)
+mkdocs==1.5.3
+mkdocs-material==9.5.3

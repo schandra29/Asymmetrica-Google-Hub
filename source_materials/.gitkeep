@@ -1,0 +1,29 @@
+# Source Materials
+
+Place your markdown files here for synthesis processing.
+
+## Recommended Structure
+
+```
+source_materials/
+├── ipermit/           # iPermit project documentation
+├── defensekit/        # DefenseKit research and specs
+├── vaql/              # VAQL specifications
+└── research/          # Research papers and notes
+```
+
+## Supported File Types
+
+- `.md` - Markdown files (primary)
+- `.markdown` - Alternative markdown extension
+
+## Processing
+
+All markdown files in this directory (recursive) will be:
+1. Scanned by RepoParser
+2. Optimized into batches by Williams Optimizer
+3. Synthesized by Jules (Neutral Historian protocol)
+4. Written to Google Doc
+5. Metrics stored in memory system
+
+Add your files here and run `python main.py` to start synthesis!

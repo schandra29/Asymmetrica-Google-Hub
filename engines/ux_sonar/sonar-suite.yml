@@ -1,0 +1,416 @@
+name: Unified Sonar Suite CI/CD
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      regime:
+        description: 'Force specific regime'
+        required: false
+        type: choice
+        options:
+          - 'auto'
+          - 'exploration'
+          - 'optimization'
+          - 'stabilization'
+
+env:
+  NODE_VERSION: '20.x'
+  PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/ms-playwright
+
+jobs:
+  # Job 1: UX + Design + Journey (Playwright - browser-bound sonars)
+  browser-sonars:
+    name: Browser Sonars (UX + Design + Journey)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for baseline comparison
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Start dev server
+        run: |
+          npm run dev &
+          npx wait-on http://localhost:3000 --timeout 60000
+        env:
+          CI: true
+
+      - name: Run UX Sonar
+        run: npm run test:ux-sonar
+        continue-on-error: true
+
+      - name: Run Design Sonar
+        run: npm run test:design-sonar
+        continue-on-error: true
+
+      - name: Run Journey Sonar
+        run: npm run test:journey-sonar
+        continue-on-error: true
+
+      - name: Upload browser sonar results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-sonar-results
+          path: |
+            tests/ux-sonar/baselines/*.json
+            tests/ux-sonar/reports/*.md
+            tests/ux-sonar/reports/*.json
+          retention-days: 30
+
+  # Job 2: Code + Semantic (Static analysis - no browser)
+  static-sonars:
+    name: Static Analysis Sonars (Code + Semantic)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Code Sonar
+        run: npm run test:code-sonar
+        continue-on-error: true
+
+      - name: Run Semantic Sonar
+        run: npm run test:semantic-sonar
+        continue-on-error: true
+
+      - name: Upload static sonar results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: static-sonar-results
+          path: |
+            tests/ux-sonar/baselines/*.json
+            tests/ux-sonar/reports/*.md
+            tests/ux-sonar/reports/*.json
+          retention-days: 30
+
+  # Job 3: State Sonar (Playwright - state analysis)
+  state-sonar:
+    name: State Machine Sonar
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run State Sonar
+        run: npm run test:state-sonar
+        continue-on-error: true
+
+      - name: Upload state sonar results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: state-sonar-results
+          path: |
+            tests/ux-sonar/baselines/*.json
+            tests/ux-sonar/reports/*.md
+            tests/ux-sonar/reports/*.json
+          retention-days: 30
+
+  # Job 4: Dashboard Generation (depends on all sonars)
+  generate-dashboard:
+    name: Generate Unified Dashboard
+    runs-on: ubuntu-latest
+    needs: [browser-sonars, static-sonars, state-sonar]
+    if: always()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download all sonar results
+        uses: actions/download-artifact@v4
+        with:
+          path: sonar-artifacts
+
+      - name: Merge sonar results
+        run: |
+          mkdir -p tests/ux-sonar/baselines
+          mkdir -p tests/ux-sonar/reports
+
+          # Copy all baseline files
+          find sonar-artifacts -name "*.json" -path "*/baselines/*" -exec cp {} tests/ux-sonar/baselines/ \;
+
+          # Copy all report files
+          find sonar-artifacts -name "*.md" -path "*/reports/*" -exec cp {} tests/ux-sonar/reports/ \;
+          find sonar-artifacts -name "*.json" -path "*/reports/*" -exec cp {} tests/ux-sonar/reports/ \;
+
+      - name: Generate unified dashboard
+        run: npm run generate:dashboard
+        continue-on-error: true
+
+      - name: Upload unified dashboard
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sonar-dashboard
+          path: |
+            tests/ux-sonar/reports/sonar-dashboard.html
+            tests/ux-sonar/reports/system-health-report.md
+            tests/ux-sonar/reports/system-health-report.json
+          retention-days: 90
+
+  # Job 5: Quality Gates (depends on dashboard)
+  quality-gates:
+    name: Apply Quality Gates
+    runs-on: ubuntu-latest
+    needs: [generate-dashboard]
+    if: always()
+
+    outputs:
+      shm_score: ${{ steps.gates.outputs.shm }}
+      regime: ${{ steps.gates.outputs.regime }}
+      gate_status: ${{ steps.gates.outputs.status }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download dashboard
+        uses: actions/download-artifact@v4
+        with:
+          name: sonar-dashboard
+          path: tests/ux-sonar/reports
+
+      - name: Download all sonar results
+        uses: actions/download-artifact@v4
+        with:
+          path: sonar-artifacts
+
+      - name: Restore baselines
+        run: |
+          mkdir -p tests/ux-sonar/baselines
+          find sonar-artifacts -name "*.json" -path "*/baselines/*" -exec cp {} tests/ux-sonar/baselines/ \;
+
+      - name: Apply quality gates
+        id: gates
+        run: npm run quality:gates
+        continue-on-error: true
+
+      - name: Upload gate results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-gate-results
+          path: |
+            tests/ux-sonar/reports/quality-gates-report.md
+            tests/ux-sonar/reports/quality-gates-report.json
+          retention-days: 90
+
+  # Job 6: PR Comment (only on PRs)
+  pr-comment:
+    name: Post PR Comment
+    runs-on: ubuntu-latest
+    needs: [quality-gates]
+    if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download dashboard
+        uses: actions/download-artifact@v4
+        with:
+          name: sonar-dashboard
+          path: tests/ux-sonar/reports
+
+      - name: Download quality gates
+        uses: actions/download-artifact@v4
+        with:
+          name: quality-gate-results
+          path: tests/ux-sonar/reports
+
+      - name: Download all sonar results
+        uses: actions/download-artifact@v4
+        with:
+          path: sonar-artifacts
+
+      - name: Restore baselines
+        run: |
+          mkdir -p tests/ux-sonar/baselines
+          find sonar-artifacts -name "*.json" -path "*/baselines/*" -exec cp {} tests/ux-sonar/baselines/ \;
+
+      - name: Generate PR comment
+        id: pr_comment
+        run: |
+          npm run generate:pr-comment > pr-comment.md
+          echo "comment_file=pr-comment.md" >> $GITHUB_OUTPUT
+
+      - name: Post PR comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const comment = fs.readFileSync('pr-comment.md', 'utf8');
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' &&
+              comment.body.includes('🎯 Sonar Suite Results')
+            );
+
+            if (botComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: comment
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: comment
+              });
+            }
+
+      - name: Upload PR comment
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pr-comment
+          path: pr-comment.md
+          retention-days: 30
+
+  # Job 7: Baseline Update (only on main branch push)
+  update-baseline:
+    name: Update Baselines
+    runs-on: ubuntu-latest
+    needs: [quality-gates]
+    if: github.ref == 'refs/heads/main' && needs.quality-gates.outputs.gate_status == 'passed'
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download all sonar results
+        uses: actions/download-artifact@v4
+        with:
+          path: sonar-artifacts
+
+      - name: Update baselines
+        run: |
+          mkdir -p tests/ux-sonar/baselines
+          find sonar-artifacts -name "*.json" -path "*/baselines/*" -exec cp {} tests/ux-sonar/baselines/ \;
+
+          # Update global baseline with new SHM
+          npm run update:baseline
+
+      - name: Commit updated baselines
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add tests/ux-sonar/baselines/
+
+          if git diff --staged --quiet; then
+            echo "No baseline changes to commit"
+          else
+            git commit -m "chore: update sonar baselines [skip ci]
+
+            SHM: ${{ needs.quality-gates.outputs.shm_score }}
+            Regime: ${{ needs.quality-gates.outputs.regime }}
+
+            🤖 Generated with Claude Code
+            "
+            git push
+          fi

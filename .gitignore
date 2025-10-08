@@ -1,0 +1,77 @@
+# Asymmetrica Google Hub - Security & Temporary Files
+
+# CRITICAL: Google API Credentials (NEVER commit!)
+credentials.json
+token.json
+service-account-key.json
+
+# Environment & Secrets
+.env
+.env.local
+.env.production
+*.pem
+*.key
+
+# Memory Database
+*.db
+*.sqlite
+*.sqlite3
+asymmetrica_memory.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Jupyter
+.ipynb_checkpoints
+
+# Jules Workspace (temporary outputs)
+jules_workspace/temp/
+jules_workspace/*.tmp
+
+# OS
+Thumbs.db

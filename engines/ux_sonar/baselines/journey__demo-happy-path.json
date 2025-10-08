@@ -1,0 +1,47 @@
+{
+  "id": "journey-telemetry-1759624026470",
+  "timestamp": 1759624026470,
+  "route": "/dashboard",
+  "telemetry": {
+    "hesitationEvents": [],
+    "rageClickEvents": [],
+    "navigationEvents": [
+      {
+        "timestamp": 1000,
+        "from": "/",
+        "to": "/dashboard",
+        "action": "click"
+      }
+    ],
+    "errorEvents": [],
+    "taskCompletions": [
+      {
+        "timestamp": 2500,
+        "taskName": "View dashboard",
+        "duration": 2500,
+        "success": true,
+        "errorCount": 0
+      }
+    ],
+    "pointerEvents": []
+  },
+  "metrics": {
+    "frustrationScore": 0,
+    "hesitationRatio": 0,
+    "rageClickDensity": 0,
+    "backtrackRatio": 0,
+    "errorLoopScore": 0,
+    "taskSuccessRate": 100,
+    "avgTaskDuration": 2500,
+    "delightScore": 1
+  },
+  "asymmetrica": {
+    "regime": "stabilization",
+    "complexity": "O(n)"
+  },
+  "delight": {
+    "smoothPathRatio": 100,
+    "timeToWow": 2500,
+    "frustrationLevel": "none"
+  }
+}

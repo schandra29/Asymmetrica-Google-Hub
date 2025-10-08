@@ -1,0 +1,26 @@
+{
+  "teamId": "team-qa",
+  "weights": {
+    "ux": 0.35,
+    "design": 0.15,
+    "code": 0.15,
+    "semantic": 0.10,
+    "journey": 0.15,
+    "state": 0.20
+  },
+  "regimeBlend": [0.20, 0.30, 0.50],
+  "thresholds": {
+    "ux": {
+      "harmony": 0.88
+    },
+    "state": {
+      "harmony": 0.85
+    },
+    "journey": {
+      "harmony": 0.82
+    }
+  },
+  "lastUpdated": "2025-10-05T00:00:00Z",
+  "commitsSinceUpdate": 0,
+  "description": "QA-focused team with emphasis on UX validation and state management testing"
+}

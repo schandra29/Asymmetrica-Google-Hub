@@ -1,0 +1,1994 @@
+{
+  "id": "semantic-telemetry-1759626766380",
+  "timestamp": 1759626766380,
+  "projectPath": "C:\\Projects\\asymmbill",
+  "telemetry": {
+    "cycles": [],
+    "coupling": [
+      {
+        "module": "next-env.d.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "next.config.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "playwright-debug.config.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "playwright.config.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "playwright.config.ux-sonar.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\layout.tsx",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../globals",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "app\\page.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "components\\EnhancedInvoiceCanvas.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "components\\HeroSection.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "components\\HowItWorks.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "components\\InvoiceDemo.tsx",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../TaxConfigForm",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "components\\TaxConfigForm.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "components\\TrustSection.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\relume-gsap-converter.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\utils.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\global-setup.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\global-teardown.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "types\\canvas-zones.d.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "types\\fabric-helpers.d.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "types\\security.d.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "types\\template-forge.d.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": ".next\\types\\routes.d.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": ".next\\types\\validator.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../routes",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "app\\canvas-enhanced\\page.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\test-visual\\page.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\core\\mathalive-pdf-engine.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../mathalive/constants",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "lib\\htx-auth\\htx-bridge.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../types/security",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "lib\\mathalive\\constants.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\security\\defensekit-middleware.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "lib\\utils\\color-utils.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\utils\\file-utils.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\e2e\\asymmbill-reality.spec.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../utils/instrumentation",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "tests\\integration\\core-flows.spec.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\smoke\\basic.spec.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\utils\\diagnostic-reporter.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\utils\\instrumentation.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\ai-vision-e2e.spec.ts",
+        "fanIn": 0,
+        "fanOut": 5,
+        "couplingScore": 5,
+        "zScore": 2.662105794002189
+      },
+      {
+        "module": "../../collectors/frontend-collector",
+        "fanIn": 4,
+        "fanOut": 0,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "../../normalizer",
+        "fanIn": 4,
+        "fanOut": 0,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "../../ai-vision/critique-adapter",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../feedback/report-generator",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../feedback/ci-integration",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\baseline-drift-checker.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../multi-team-baseline",
+        "fanIn": 4,
+        "fanOut": 0,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "tests\\ux-sonar\\cli.ts",
+        "fanIn": 0,
+        "fanOut": 4,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar-engine.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\cross-team-reporter.ts",
+        "fanIn": 0,
+        "fanOut": 2,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../baseline-drift-checker",
+        "fanIn": 4,
+        "fanOut": 0,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\design-radar-engine.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar.spec.ts",
+        "fanIn": 0,
+        "fanOut": 4,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "../../design-radar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../design-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../design-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../design-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\drift-scenarios-demo.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\example.spec.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../sonic-radar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\full-pipeline-standalone.spec.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../../collectors/backend-collector",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "tests\\ux-sonar\\full-pipeline.spec.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "tests\\ux-sonar\\generate-dashboard.ts",
+        "fanIn": 0,
+        "fanOut": 2,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../dashboard-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../dashboard/report-aggregator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-radar-engine.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar-demo.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../../journey-sonar/normalizer",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../journey-sonar/critique-adapter",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../journey-sonar/report-generator",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar.spec.ts",
+        "fanIn": 0,
+        "fanOut": 4,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "../../journey-radar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\multi-team-baseline.spec.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../../cross-team-reporter",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "tests\\ux-sonar\\multi-team-baseline.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\normalizer.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\pr-comment-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\quality-gates.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\run-sonar-tests.ts",
+        "fanIn": 0,
+        "fanOut": 10,
+        "couplingScore": 10,
+        "zScore": 6.107183880357963
+      },
+      {
+        "module": "../../code-sonar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../code-sonar/heuristics",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../code-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../code-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../code-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../semantic-sonar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../semantic-sonar/heuristics",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../semantic-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../semantic-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../semantic-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\run-unit-tests.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar-engine.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\sonic-radar-engine.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\state-radar-engine.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar-demo.ts",
+        "fanIn": 0,
+        "fanOut": 4,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "../../state-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../state-sonar/heuristics",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../state-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../state-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "app\\_legacy\\canvas-editor\\page.tsx",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\api\\generate\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\api\\languages\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\api\\templates\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\api\\test-languages\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\api\\test-letterhead\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "app\\api\\test-pdf\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\features\\canvas-zones\\index.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\features\\canvas-zones\\RichTextZone.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\features\\canvas-zones\\TableZone.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "lib\\features\\langpack\\index.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../mathalive/constants",
+        "fanIn": 2,
+        "fanOut": 0,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "lib\\features\\template-forge\\index.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../langpack",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../../types/template-forge",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\ai-vision\\critique-adapter.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../../../heuristics",
+        "fanIn": 4,
+        "fanOut": 0,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "tests\\ux-sonar\\ai-vision\\heuristics.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\critique-adapter.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\heuristics.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\normalizer.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\report-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\collectors\\backend-collector.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\collectors\\frontend-collector.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../sonic-radar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard\\praise-mode-detector.ts",
+        "fanIn": 0,
+        "fanOut": 2,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../dashboard-generator",
+        "fanIn": 3,
+        "fanOut": 0,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../../../report-aggregator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard\\report-aggregator.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard\\sparkline-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\critique-adapter.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\heuristics.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\normalizer.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\report-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\feedback\\ci-integration.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\feedback\\report-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\critique-adapter.ts",
+        "fanIn": 0,
+        "fanOut": 2,
+        "couplingScore": 2,
+        "zScore": 0.5950589421887246
+      },
+      {
+        "module": "../../../normalizer",
+        "fanIn": 3,
+        "fanOut": 0,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\heuristics.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\normalizer.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\report-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\critique-adapter.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\heuristics.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\normalizer.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\report-generator.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\critique-adapter.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../state-radar-engine",
+        "fanIn": 5,
+        "fanOut": 0,
+        "couplingScore": 5,
+        "zScore": 2.662105794002189
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\heuristics.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\normalizer.ts",
+        "fanIn": 0,
+        "fanOut": 1,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\report-generator.ts",
+        "fanIn": 0,
+        "fanOut": 3,
+        "couplingScore": 3,
+        "zScore": 1.2840745594598793
+      },
+      {
+        "module": "../../../critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\code-sonar.spec.ts",
+        "fanIn": 0,
+        "fanOut": 5,
+        "couplingScore": 5,
+        "zScore": 2.662105794002189
+      },
+      {
+        "module": "../code-sonar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../code-sonar/heuristics",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../code-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../code-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../code-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\dashboard.spec.ts",
+        "fanIn": 0,
+        "fanOut": 4,
+        "couplingScore": 4,
+        "zScore": 1.973090176731034
+      },
+      {
+        "module": "../dashboard/report-aggregator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../dashboard/sparkline-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../dashboard/praise-mode-detector",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\semantic-sonar.spec.ts",
+        "fanIn": 0,
+        "fanOut": 5,
+        "couplingScore": 5,
+        "zScore": 2.662105794002189
+      },
+      {
+        "module": "../semantic-sonar-engine",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../semantic-sonar/heuristics",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../semantic-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../semantic-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../semantic-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\state-sonar.spec.ts",
+        "fanIn": 0,
+        "fanOut": 5,
+        "couplingScore": 5,
+        "zScore": 2.662105794002189
+      },
+      {
+        "module": "../state-sonar/heuristics",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../state-sonar/normalizer",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../state-sonar/critique-adapter",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "../state-sonar/report-generator",
+        "fanIn": 1,
+        "fanOut": 0,
+        "couplingScore": 1,
+        "zScore": -0.09395667508243027
+      },
+      {
+        "module": "app\\api\\security\\metrics\\route.ts",
+        "fanIn": 0,
+        "fanOut": 0,
+        "couplingScore": 0,
+        "zScore": -0.7829722923535851
+      }
+    ],
+    "godModules": [
+      {
+        "module": "tests\\ux-sonar\\ai-vision-e2e.spec.ts",
+        "centrality": 5,
+        "inboundDeps": 0,
+        "outboundDeps": 5,
+        "score": 4.3999999999999995
+      },
+      {
+        "module": "../../collectors/frontend-collector",
+        "centrality": 4,
+        "inboundDeps": 4,
+        "outboundDeps": 0,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "../../normalizer",
+        "centrality": 4,
+        "inboundDeps": 4,
+        "outboundDeps": 0,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "../../multi-team-baseline",
+        "centrality": 4,
+        "inboundDeps": 4,
+        "outboundDeps": 0,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "tests\\ux-sonar\\cli.ts",
+        "centrality": 4,
+        "inboundDeps": 0,
+        "outboundDeps": 4,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "../../baseline-drift-checker",
+        "centrality": 4,
+        "inboundDeps": 4,
+        "outboundDeps": 0,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar.spec.ts",
+        "centrality": 4,
+        "inboundDeps": 0,
+        "outboundDeps": 4,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "tests\\ux-sonar\\full-pipeline-standalone.spec.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\full-pipeline.spec.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar-demo.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar.spec.ts",
+        "centrality": 4,
+        "inboundDeps": 0,
+        "outboundDeps": 4,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "tests\\ux-sonar\\multi-team-baseline.spec.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\run-sonar-tests.ts",
+        "centrality": 10,
+        "inboundDeps": 0,
+        "outboundDeps": 10,
+        "score": 8.799999999999999
+      },
+      {
+        "module": "tests\\ux-sonar\\run-unit-tests.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar-demo.ts",
+        "centrality": 4,
+        "inboundDeps": 0,
+        "outboundDeps": 4,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "lib\\features\\template-forge\\index.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "../../../heuristics",
+        "centrality": 4,
+        "inboundDeps": 4,
+        "outboundDeps": 0,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "../dashboard-generator",
+        "centrality": 3,
+        "inboundDeps": 3,
+        "outboundDeps": 0,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "../../../normalizer",
+        "centrality": 3,
+        "inboundDeps": 3,
+        "outboundDeps": 0,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\critique-adapter.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "../state-radar-engine",
+        "centrality": 5,
+        "inboundDeps": 5,
+        "outboundDeps": 0,
+        "score": 4.3999999999999995
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\report-generator.ts",
+        "centrality": 3,
+        "inboundDeps": 0,
+        "outboundDeps": 3,
+        "score": 2.6399999999999997
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\code-sonar.spec.ts",
+        "centrality": 5,
+        "inboundDeps": 0,
+        "outboundDeps": 5,
+        "score": 4.3999999999999995
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\dashboard.spec.ts",
+        "centrality": 4,
+        "inboundDeps": 0,
+        "outboundDeps": 4,
+        "score": 3.5199999999999996
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\semantic-sonar.spec.ts",
+        "centrality": 5,
+        "inboundDeps": 0,
+        "outboundDeps": 5,
+        "score": 4.3999999999999995
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\state-sonar.spec.ts",
+        "centrality": 5,
+        "inboundDeps": 0,
+        "outboundDeps": 5,
+        "score": 4.3999999999999995
+      }
+    ],
+    "layeringViolations": [],
+    "orphanDomains": [
+      {
+        "module": "next-env.d.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "next.config.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "playwright-debug.config.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "playwright.config.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "playwright.config.ux-sonar.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\layout.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\page.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "components\\EnhancedInvoiceCanvas.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "components\\HeroSection.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "components\\HowItWorks.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "components\\InvoiceDemo.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "components\\TaxConfigForm.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "components\\TrustSection.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\relume-gsap-converter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\utils.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\global-setup.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\global-teardown.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "types\\canvas-zones.d.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "types\\fabric-helpers.d.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "types\\security.d.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "types\\template-forge.d.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": ".next\\types\\routes.d.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": ".next\\types\\validator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\canvas-enhanced\\page.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\test-visual\\page.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\core\\mathalive-pdf-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\htx-auth\\htx-bridge.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\mathalive\\constants.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\security\\defensekit-middleware.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\utils\\color-utils.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\utils\\file-utils.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\e2e\\asymmbill-reality.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\integration\\core-flows.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\smoke\\basic.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\utils\\diagnostic-reporter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\utils\\instrumentation.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\ai-vision-e2e.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\baseline-drift-checker.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\cli.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\cross-team-reporter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\design-radar-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\drift-scenarios-demo.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\example.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\full-pipeline-standalone.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\full-pipeline.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\generate-dashboard.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-radar-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar-demo.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\multi-team-baseline.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\multi-team-baseline.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\normalizer.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\pr-comment-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\quality-gates.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\run-sonar-tests.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\run-unit-tests.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\sonic-radar-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\state-radar-engine.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar-demo.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\_legacy\\canvas-editor\\page.tsx",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\generate\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\languages\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\templates\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\test-languages\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\test-letterhead\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\test-pdf\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\features\\canvas-zones\\index.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\features\\canvas-zones\\RichTextZone.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\features\\canvas-zones\\TableZone.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\features\\langpack\\index.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "lib\\features\\template-forge\\index.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\ai-vision\\critique-adapter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\ai-vision\\heuristics.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\critique-adapter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\heuristics.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\normalizer.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\code-sonar\\report-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\collectors\\backend-collector.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\collectors\\frontend-collector.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard\\praise-mode-detector.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard\\report-aggregator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\dashboard\\sparkline-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\critique-adapter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\heuristics.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\normalizer.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\design-sonar\\report-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\feedback\\ci-integration.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\feedback\\report-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\critique-adapter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\heuristics.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\normalizer.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\journey-sonar\\report-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\critique-adapter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\heuristics.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\normalizer.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\semantic-sonar\\report-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\critique-adapter.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\heuristics.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\normalizer.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\state-sonar\\report-generator.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\code-sonar.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\dashboard.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\semantic-sonar.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "tests\\ux-sonar\\tests\\state-sonar.spec.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      },
+      {
+        "module": "app\\api\\security\\metrics\\route.ts",
+        "type": "unused",
+        "reason": "No imports found (zero fan-in)"
+      }
+    ],
+    "metrics": {
+      "totalModules": 176,
+      "avgCoupling": 1.1,
+      "maxCoupling": 10,
+      "avgCohesion": 0.9,
+      "modularityIndex": 0.84,
+      "architectureScore": 84
+    }
+  },
+  "metrics": {
+    "aqs": 0.3436363636363636,
+    "cohesion": 0.9,
+    "coupling": 1.1,
+    "modularityIndex": 0.84,
+    "maintainabilityScore": 45,
+    "architectureHealth": 87
+  },
+  "asymmetrica": {
+    "regime": "exploration",
+    "complexity": "O(n)"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "journey-telemetry-1759626848262",
+  "timestamp": 1759626848262,
+  "route": "/",
+  "telemetry": {
+    "hesitationEvents": [],
+    "rageClickEvents": [],
+    "navigationEvents": [],
+    "errorEvents": [],
+    "taskCompletions": [
+      {
+        "timestamp": 1759626844656,
+        "taskName": "Error recovery",
+        "duration": 7114,
+        "success": true,
+        "errorCount": 0
+      },
+      {
+        "timestamp": 1759626848261,
+        "taskName": "Form submission",
+        "duration": 9000,
+        "success": false,
+        "errorCount": 0
+      }
+    ],
+    "pointerEvents": []
+  },
+  "metrics": {
+    "frustrationScore": 0,
+    "hesitationRatio": 0,
+    "rageClickDensity": 0,
+    "backtrackRatio": 0,
+    "errorLoopScore": 0,
+    "taskSuccessRate": 100,
+    "avgTaskDuration": 7114,
+    "delightScore": 0.45
+  },
+  "asymmetrica": {
+    "regime": "stabilization",
+    "complexity": "O(n)"
+  },
+  "delight": {
+    "smoothPathRatio": 50,
+    "timeToWow": 7114,
+    "frustrationLevel": "none"
+  }
+}

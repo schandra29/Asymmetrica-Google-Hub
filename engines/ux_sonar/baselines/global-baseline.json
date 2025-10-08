@@ -1,0 +1,28 @@
+{
+  "shm": 0.82,
+  "regimeBlend": [0.30, 0.20, 0.50],
+  "weights": {
+    "ux": 0.25,
+    "design": 0.25,
+    "code": 0.125,
+    "semantic": 0.125,
+    "journey": 0.125,
+    "state": 0.125
+  },
+  "commitsSinceUpdate": 3,
+  "lastUpdated": "2025-10-05T00:00:00Z",
+  "history": [
+    {
+      "shm": 0.80,
+      "timestamp": "2025-10-04T12:00:00Z",
+      "commitHash": "abc123",
+      "teamId": "team-ux"
+    },
+    {
+      "shm": 0.81,
+      "timestamp": "2025-10-04T18:00:00Z",
+      "commitHash": "def456",
+      "teamId": "team-backend"
+    }
+  ]
+}

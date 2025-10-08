@@ -1,0 +1,62 @@
+{
+  "id": "telemetry-1759617506304",
+  "timestamp": 1759617506304,
+  "route": "/",
+  "layers": {
+    "frontend": {
+      "layer": "frontend",
+      "route": "http://localhost:3000",
+      "context": {
+        "timestamp": 1759617506303,
+        "env": "development",
+        "browser": "chromium"
+      },
+      "metrics": {
+        "fps": 31.49,
+        "cls": 0,
+        "consoleErrors": 0,
+        "requests": 24,
+        "longTasks": 0
+      },
+      "events": [
+        {
+          "type": "paint",
+          "name": "first-paint",
+          "timestamp": 736
+        },
+        {
+          "type": "paint",
+          "name": "first-contentful-paint",
+          "timestamp": 736
+        },
+        {
+          "type": "fps",
+          "timestamp": 2720.0999999996275,
+          "value": 31.49
+        }
+      ]
+    },
+    "backend": {
+      "layer": "backend",
+      "route": "/",
+      "context": {
+        "timestamp": 1759617506304,
+        "env": "development"
+      },
+      "metrics": {
+        "latency": 0,
+        "errorCount": 0,
+        "statusCodes": {}
+      }
+    }
+  },
+  "metrics": {
+    "smoothnessIndex": 31.49,
+    "energyEfficiency": 524.8333333333333,
+    "stabilizationTime": 0
+  },
+  "asymmetrica": {
+    "regime": "exploration",
+    "complexity": "O(n)"
+  }
+}

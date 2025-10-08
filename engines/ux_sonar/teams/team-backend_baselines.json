@@ -1,0 +1,26 @@
+{
+  "teamId": "team-backend",
+  "weights": {
+    "ux": 0.15,
+    "design": 0.10,
+    "code": 0.30,
+    "semantic": 0.25,
+    "journey": 0.10,
+    "state": 0.20
+  },
+  "regimeBlend": [0.25, 0.25, 0.50],
+  "thresholds": {
+    "code": {
+      "harmony": 0.85
+    },
+    "semantic": {
+      "harmony": 0.82
+    },
+    "state": {
+      "harmony": 0.80
+    }
+  },
+  "lastUpdated": "2025-10-05T00:00:00Z",
+  "commitsSinceUpdate": 0,
+  "description": "Backend-focused team with emphasis on code quality and semantic correctness"
+}

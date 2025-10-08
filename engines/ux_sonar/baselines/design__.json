@@ -1,0 +1,625 @@
+{
+  "id": "design-telemetry-1759626686731",
+  "timestamp": 1759626686731,
+  "route": "/",
+  "telemetry": {
+    "colors": [
+      {
+        "hex": "rgb(0, 0, 0)",
+        "lch": {
+          "l": 0,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "html"
+      },
+      {
+        "hex": "rgb(0, 0, 0)",
+        "lch": {
+          "l": 0,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "script"
+      },
+      {
+        "hex": "rgb(0, 0, 0)",
+        "lch": {
+          "l": 0,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "script"
+      },
+      {
+        "hex": "rgb(0, 0, 0)",
+        "lch": {
+          "l": 0,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "link"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(255, 255, 255)",
+        "lch": {
+          "l": 25500,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "svg"
+      },
+      {
+        "hex": "rgb(76, 3898, 14)",
+        "lch": {
+          "l": 195600,
+          "c": -99.33503836317136,
+          "h": 119.0422245108136
+        },
+        "usage": "text",
+        "element": "svg"
+      },
+      {
+        "hex": "rgb(8, 11897, 0)",
+        "lch": {
+          "l": 594850,
+          "c": -100.01681378730558,
+          "h": 119.95965369420863
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(8, 11897, 0)",
+        "lch": {
+          "l": 594850,
+          "c": -100.01681378730558,
+          "h": 119.95965369420863
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(35, 6337, 1)",
+        "lch": {
+          "l": 316900,
+          "c": -100,
+          "h": 119.67803030303031
+        },
+        "usage": "text",
+        "element": "p"
+      },
+      {
+        "hex": "rgb(44, 605, 29)",
+        "lch": {
+          "l": 31700,
+          "c": -91.13924050632912,
+          "h": 118.4375
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "button"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "button"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "input"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(43, 295, 75)",
+        "lch": {
+          "l": 16900,
+          "c": -75,
+          "h": 127.61904761904762
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(27, 1134, 0)",
+        "lch": {
+          "l": 56700,
+          "c": -100.17667844522968,
+          "h": 118.57142857142858
+        },
+        "usage": "text",
+        "element": "label"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(47, 7841, 0)",
+        "lch": {
+          "l": 392050,
+          "c": -100.02551345834927,
+          "h": 119.64035199591889
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(55, 4814, 75)",
+        "lch": {
+          "l": 243450,
+          "c": -97.78097390589686,
+          "h": 120.25215381382642
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(55, 4814, 75)",
+        "lch": {
+          "l": 243450,
+          "c": -97.78097390589686,
+          "h": 120.25215381382642
+        },
+        "usage": "text",
+        "element": "button"
+      },
+      {
+        "hex": "rgb(255, 255, 255)",
+        "lch": {
+          "l": 25500,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(35, 6337, 1)",
+        "lch": {
+          "l": 316900,
+          "c": -100,
+          "h": 119.67803030303031
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "stop"
+      },
+      {
+        "hex": "rgb(255, 255, 255)",
+        "lch": {
+          "l": 25500,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(255, 255, 255)",
+        "lch": {
+          "l": 25500,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "background",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div",
+        "contrast": 509751.3283333903
+      },
+      {
+        "hex": "rgb(65, 9269, 0)",
+        "lch": {
+          "l": 463450,
+          "c": -100.02158195748353,
+          "h": 119.57924263674614
+        },
+        "usage": "text",
+        "element": "svg"
+      },
+      {
+        "hex": "rgb(255, 255, 255)",
+        "lch": {
+          "l": 25500,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(8, 11897, 0)",
+        "lch": {
+          "l": 594850,
+          "c": -100.01681378730558,
+          "h": 119.95965369420863
+        },
+        "usage": "text",
+        "element": "h2"
+      },
+      {
+        "hex": "rgb(96, 492, 1)",
+        "lch": {
+          "l": 24650,
+          "c": -100,
+          "h": 108.39103869653768
+        },
+        "usage": "background",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "div",
+        "contrast": 160597.79516410467
+      },
+      {
+        "hex": "rgb(78, 503, 64)",
+        "lch": {
+          "l": 28350,
+          "c": -77.69911504424779,
+          "h": 118.08656036446469
+        },
+        "usage": "background",
+        "element": "span"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "span",
+        "contrast": 152909.55158874652
+      },
+      {
+        "hex": "rgb(59, 978, 58)",
+        "lch": {
+          "l": 51800,
+          "c": -88.97485493230174,
+          "h": 119.93478260869566
+        },
+        "usage": "text",
+        "element": "svg"
+      },
+      {
+        "hex": "rgb(43, 295, 75)",
+        "lch": {
+          "l": 16900,
+          "c": -75,
+          "h": 127.61904761904762
+        },
+        "usage": "text",
+        "element": "path"
+      },
+      {
+        "hex": "rgb(65, 9269, 0)",
+        "lch": {
+          "l": 463450,
+          "c": -100.02158195748353,
+          "h": 119.57924263674614
+        },
+        "usage": "text",
+        "element": "div"
+      },
+      {
+        "hex": "rgb(2, 75381, 0)",
+        "lch": {
+          "l": 3769050,
+          "c": -100.0026532588652,
+          "h": 119.99840808691846
+        },
+        "usage": "text",
+        "element": "script"
+      },
+      {
+        "hex": "rgb(117, 117, 117)",
+        "lch": {
+          "l": 11700,
+          "c": 0,
+          "h": 0
+        },
+        "usage": "text",
+        "element": "nextjs-portal"
+      }
+    ],
+    "typography": [
+      {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "lineHeight": 20,
+        "element": "span",
+        "selector": "span:nth-of-type(1)"
+      },
+      {
+        "fontSize": 18,
+        "fontWeight": "400",
+        "lineHeight": 28,
+        "element": "span",
+        "selector": "span:nth-of-type(2)"
+      },
+      {
+        "fontSize": 48,
+        "fontWeight": "700",
+        "lineHeight": 48,
+        "element": "span",
+        "selector": "span:nth-of-type(3)"
+      },
+      {
+        "fontSize": 16,
+        "fontWeight": "400",
+        "lineHeight": 24,
+        "element": "button",
+        "selector": "button:nth-of-type(4)"
+      },
+      {
+        "fontSize": 16,
+        "fontWeight": "400",
+        "lineHeight": 24,
+        "element": "button",
+        "selector": "button:nth-of-type(5)"
+      },
+      {
+        "fontSize": 16,
+        "fontWeight": "400",
+        "lineHeight": 24,
+        "element": "button",
+        "selector": "button:nth-of-type(6)"
+      },
+      {
+        "fontSize": 14,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "element": "p",
+        "selector": "p:nth-of-type(7)"
+      },
+      {
+        "fontSize": 14,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "element": "span",
+        "selector": "span:nth-of-type(8)"
+      },
+      {
+        "fontSize": 48,
+        "fontWeight": "700",
+        "lineHeight": 48,
+        "element": "h2",
+        "selector": "h2:nth-of-type(9)"
+      },
+      {
+        "fontSize": 20,
+        "fontWeight": "600",
+        "lineHeight": 28,
+        "element": "h3",
+        "selector": "h3:nth-of-type(10)"
+      },
+      {
+        "fontSize": 16,
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "element": "button",
+        "selector": "button:nth-of-type(11)"
+      },
+      {
+        "fontSize": 16,
+        "fontWeight": "400",
+        "lineHeight": 24,
+        "element": "span",
+        "selector": "span:nth-of-type(12)"
+      },
+      {
+        "fontSize": 18,
+        "fontWeight": "400",
+        "lineHeight": 28,
+        "element": "p",
+        "selector": "p:nth-of-type(13)"
+      },
+      {
+        "fontSize": 16,
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "element": "button",
+        "selector": "button:nth-of-type(14)"
+      }
+    ],
+    "spacing": [
+      {
+        "type": "margin",
+        "value": 4,
+        "element": "div",
+        "selector": "div:nth-of-type(5)"
+      },
+      {
+        "type": "padding",
+        "value": 24,
+        "element": "div",
+        "selector": "div:nth-of-type(11)"
+      },
+      {
+        "type": "padding",
+        "value": 24,
+        "element": "div",
+        "selector": "div:nth-of-type(11)"
+      }
+    ],
+    "focusStates": [
+      {
+        "element": "button",
+        "selector": "button:nth-of-type(1)",
+        "hasFocus": false,
+        "outlineWidth": 0
+      },
+      {
+        "element": "button",
+        "selector": "button:nth-of-type(2)",
+        "hasFocus": false,
+        "outlineWidth": 0
+      },
+      {
+        "element": "input",
+        "selector": "input:nth-of-type(3)",
+        "hasFocus": false,
+        "outlineWidth": 0
+      },
+      {
+        "element": "input",
+        "selector": "input:nth-of-type(4)",
+        "hasFocus": false,
+        "outlineWidth": 0
+      },
+      {
+        "element": "input",
+        "selector": "input:nth-of-type(5)",
+        "hasFocus": false,
+        "outlineWidth": 0
+      },
+      {
+        "element": "button",
+        "selector": "button:nth-of-type(6)",
+        "hasFocus": false,
+        "outlineWidth": 0
+      }
+    ],
+    "layoutMetrics": {
+      "totalElements": 402,
+      "sampledElements": 41
+    }
+  },
+  "metrics": {
+    "harmonyIndex": 0,
+    "breathabilityIndex": 0.28571428571428575,
+    "contrastScore": 100,
+    "hierarchyScore": 100,
+    "spacingScore": 100
+  },
+  "asymmetrica": {
+    "regime": "exploration",
+    "complexity": "O(n log n)"
+  }
+}

@@ -1,0 +1,15 @@
+# Jules Workspace
+
+This directory contains Jules' synthesis outputs and working files.
+
+## Structure
+
+- `synthesis_reports/` - Batch synthesis results
+- `validation_dashboards/` - Quality metrics and validation
+- `experiments/` - Research experiments and prototypes
+- `meta_analysis/` - Cross-project analysis and insights
+
+## Usage
+
+Jules will populate this directory with synthesis results during processing.
+These files are temporary working outputs - canonical docs go to `canonical_docs/`.

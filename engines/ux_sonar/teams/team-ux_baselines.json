@@ -1,0 +1,26 @@
+{
+  "teamId": "team-ux",
+  "weights": {
+    "ux": 0.25,
+    "design": 0.30,
+    "code": 0.10,
+    "semantic": 0.10,
+    "journey": 0.25,
+    "state": 0.10
+  },
+  "regimeBlend": [0.35, 0.20, 0.45],
+  "thresholds": {
+    "design": {
+      "harmony": 0.75
+    },
+    "ux": {
+      "harmony": 0.80
+    },
+    "journey": {
+      "harmony": 0.78
+    }
+  },
+  "lastUpdated": "2025-10-05T00:00:00Z",
+  "commitsSinceUpdate": 0,
+  "description": "UX-focused team with emphasis on design harmony and user journey smoothness"
+}
