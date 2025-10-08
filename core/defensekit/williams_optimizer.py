@@ -7,7 +7,7 @@ for document synthesis batch optimization.
 @complexity: O(√t log t) - Williams breakthrough formula
 @performance: 4.3× efficiency at 20K documents (empirically validated)
 @tests: 29/29 passing in iPermit backend
-@source: c:\Projects\iPermit-rebuild\backend\app\utils\williams_optimizer.py
+@source: c:/Projects/iPermit-rebuild/backend/app/utils/williams_optimizer.py
 @lineage: (σ: "williams", ρ: "defensekit", γ: "optimization", κ: O(√t log t), λ: ["calculate → optimize → apply"])
 
 Mathematical Foundation:
