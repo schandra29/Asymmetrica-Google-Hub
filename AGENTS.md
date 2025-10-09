@@ -1,215 +1,89 @@
-# Asymmetrica Google Hub - Context for Jules (Google's Coding Agent)
+# Asymmetrica Google Hub - Jules Agent Context
 
-## What This Project Is
+## Project Purpose
+Autonomous R&D lab for synthesizing documentation into rigorous knowledge archives using DefenseKit engines + Google Docs API.
 
-An autonomous R&D laboratory for synthesizing scattered documentation from multiple projects into rigorous, evidence-based knowledge archives using DefenseKit optimization components and Google Docs API.
-
-## Your Role (Jules.Google)
-
-You are interfacing with the Asymmetrica Google Hub as **Jules** - Google's experimental coding agent (https://jules.google.com). Your job is to:
-
-1. Monitor this repository for new documentation in `source_materials/`
-2. Execute synthesis workflows using the provided Python framework
-3. Implement synthesis logic in the designated placeholder functions
-4. Write synthesized knowledge to Google Docs via our API integration
-
-## Key Components Available
-
-### Production-Ready Engines (α₀ - 102/102 Tests Passing):
-
-1. **Williams Space Optimizer** (`core/defensekit/williams_optimizer.py`)
-   - Formula: √t × log₂(t) batch sizing
-   - Performance: 4.3× efficiency at 20K documents
-   - Tests: 29/29 passing
-   - Use for: Calculating optimal batch sizes
-
-2. **Three-Regime Test Planner** (`core/defensekit/three_regime_planner.py`)
-   - Distribution: [33.85%, 28.72%, 37.44%] (TSP-optimized)
-   - Performance: 9× convergence improvement
-   - Tests: 36/36 passing
-   - Use for: Task classification and confidence scoring
-
-3. **Harmonic Timer** (`core/defensekit/harmonic_timer.py`)
-   - Frequency: Tesla 4.909 Hz (≈203.7ms period)
-   - Performance: <50ms variance, deterministic
-   - Tests: 37/37 passing
-   - Use for: API rate limiting and retry backoff
-
-4. **Google Docs Handler** (`core/google_api/docs_handler.py`)
-   - Authenticated read/write to Google Docs
-   - Harmonic rate limiting built-in (~4.9 req/sec)
-   - Use for: Writing synthesis results
-
-5. **Memory System** (`core/memory/asymmetrica_memory.py`)
-   - Storage: <20ms, Retrieval: <1ms
-   - SQLite with B-tree indexes
-   - Use for: Storing batch metrics and results
-
-### Your Primary Task: Implement Synthesis Logic
-
-**File:** `main.py`, function `synthesize_batch()` (line 138-183)
-
-**Current State:** Placeholder function that returns dummy text
-
-**What You Need to Do:**
-
-Implement the "Neutral Historian" protocol:
-
-1. Read batch of markdown documents
-2. Identify esoteric/grimoire language (spiritual, overly dramatic terms)
-3. Translate to rigorous, evidence-based scientific language
-4. Preserve timeline and discoveries with perfect fidelity
-5. Return synthesized text
-
-**Example transformations:**
-- "The grimoire revealed sacred geometry" → "Analysis identified geometric patterns"
-- "Blessed journey of discovery" → "Research investigation"
-- "Universe blessed us with insights" → "Empirical validation confirmed"
-- "The stars aligned" → "Conditions converged"
-
-**Guidelines:**
-
-- Preserve ALL factual information
-- Translate tone only, not content
-- Keep mathematical proofs intact
-- Maintain chronological accuracy
-- Output should be publication-quality
-
-**Asymmetrica Protocol Annotations Required:**
-
-```python
-"""
-@complexity: O(k) where k = batch size
-@lineage: (σ: "synthesis", ρ: "neutral_historian", γ: "optimization", κ: O(k), λ: ["read → extract → translate → annotate"])
-"""
-```
-
-## How to Execute
-
-### Manual Execution:
-
+## Core Commands
 ```bash
-# From project root
-python main.py
+python main.py                    # Run synthesis pipeline
+pytest engines/defensekit/        # Test DefenseKit engines
+pandoc input.html -o output.md    # Convert documents (HTML/PDF → MD)
 ```
 
-### What Happens:
-
-1. Scans `source_materials/` for *.md files
-2. Calculates optimal batch size (Williams Optimizer)
-3. Classifies documents by regime (Three-Regime Planner)
-4. Waits for harmonic pulse (Tesla Timer)
-5. Calls `synthesize_batch()` ← **YOU IMPLEMENT THIS**
-6. Writes to Google Doc (ID in config.py)
-7. Stores metadata in memory database
-
-## Configuration
-
-**Google Doc Target:** See `config.py` → `GOOGLE_DOC_ID`
-
-**Credentials:** `credentials.json` (service account, already configured)
-
-**Source Materials:** `source_materials/` (Sarat will populate with documentation from other projects)
-
-## Integration with Asymmetrica Ecosystem
-
-This hub synthesizes documentation from:
-
-- **iPermit-rebuild** - Document management system with AI-powered OCR
-- **asymmetrica-masterhub** - Research experiments and mathematical discoveries
-- **vaql-quantum-language** - Quantum programming language specification
-- **asymmbill** - UX/UI design projects
-
-## Example Synthesis Workflow
-
-### Input (source_materials/):
+## Project Layout
 ```
-- ipermit/ARCHITECTURE.md (5000 lines, mixed tone)
-- defensekit/WILLIAMS_OPTIMIZER.md (1000 lines)
-- research/DAY_143_DISCOVERY.md (2000 lines, grimoire language)
+engines/defensekit/          # Williams (29 tests), ThreeRegime (36), Harmonic (37)
+source_materials/            # Input docs (MD, HTML, PDF)
+jules_workspace/             # Your outputs
+JULES_MATH_CONTEXT.md        # ALL validated formulas
+JULES_PROTOCOL_GUIDE.md      # Quality standards
 ```
 
-### Your Processing:
-```python
-async def synthesize_batch(batch):
-    synthesis = []
+## WORKFLOW LOOPS
 
-    for doc in batch.documents:
-        content = await read_file(doc.file_path)
+### 1. RESEARCH LOOP
+**When:** "Synthesize documents from source_materials/"
+**Do:** Convert (pandoc) → Parse → Apply Neutral Historian → Cross-ref JULES_MATH_CONTEXT.md → Output synthesis
+**Output:** `jules_workspace/synthesis_reports/` (rigorous, no grimoire language)
+**Gates:** Mystical language removed, facts preserved, formulas verified, sources cited
 
-        # Extract key concepts
-        concepts = extract_concepts(content)
+### 2. SOFTWARE DEVELOPER LOOP
+**When:** "Implement [feature] using DefenseKit"
+**Do:** Review JULES_MATH_CONTEXT.md → Implement with engines/defensekit/ → Add @complexity/@lineage → Test (33.85/28.72/37.44) → Integrate
+**Output:** Tested feature implementation
+**Gates:** Type hints, docstrings, tests ≥70%/85%/100% pass, coverage ≥80%
 
-        # Translate esoteric language
-        rigorous_content = translate_to_rigorous(concepts)
+### 3. DOCUMENTATION LOOP
+**When:** "Document [component]"
+**Do:** Extract APIs → Examples from tests → Diagrams (Mermaid) → Metrics from reports → Integration guides
+**Output:** `jules_workspace/docs/`
+**Gates:** All APIs documented, examples executable, complexity included, cross-refs present
 
-        # Add Asymmetrica annotations
-        annotated = add_semantic_tuples(rigorous_content)
+### 4. TESTING & VALIDATION LOOP
+**When:** "Validate [component]"
+**Do:** Design tests (33.85% explore, 28.72% optimize, 37.44% stabilize) → pytest → Metrics → Coverage → Benchmark
+**Output:** `jules_workspace/validation_reports/`
+**Gates:** Distribution matches TSP ratios, pass 70%/85%/100%, benchmarks documented
 
-        synthesis.append(annotated)
+### 5. DATA ANALYSIS LOOP
+**When:** "Analyze [experiment] results"
+**Do:** Parse JSON/CSV → Extract metrics → Stats (p-values, CI) → SQLite DB → Visualizations
+**Output:** `jules_workspace/analysis/`
+**Gates:** p < 0.05, baseline comparison, effect sizes, clear viz
 
-    return "\n\n---\n\n".join(synthesis)
-```
+### 6. FRONTEND/VISUALIZATION LOOP
+**When:** "Visualize [engine output]"
+**Do:** React/Vue component → FastAPI endpoint → Dashboard (matplotlib/plotly/D3) → Responsive UI → Visual tests
+**Output:** `jules_workspace/frontend/`
+**Gates:** API tested, responsive, visual tests pass, WCAG 2.1 AA
 
-### Output (Google Doc):
-```markdown
-# DefenseKit Williams Optimizer - Canonical Summary
+## DEVELOPMENT PATTERNS
 
-@lineage: (σ: "williams_canonical", ρ: "defensekit", γ: "optimization", κ: O(√t log t), λ: ["calculate → optimize → validate"])
+**Before:** Read JULES_MATH_CONTEXT.md + JULES_PROTOCOL_GUIDE.md, consider all relevant context
+**During:** Type hints, @complexity/@lineage annotations, test-driven, document continuously
+**After:** Test suite pass, protocol compliance check, update docs, commit
 
-## Mathematical Foundation
+## CONSTRAINTS
 
-The Williams Space-Efficient Optimizer applies the formula:
+**Critical Rules:**
+- NO unvalidated claims (need empirical proof)
+- NO grimoire language (Neutral Historian only)
+- NO theoretical-only (must be validated)
+- ALWAYS cite sources (link validation files)
 
-Space Bound = √t × log₂(t)
+**Standards:**
+- Formulas: Use exactly as in JULES_MATH_CONTEXT.md
+- Tests: Stabilization 100% pass, three-regime distribution (33.85/28.72/37.44)
+- Coverage: ≥80% line, all public APIs documented
+- Complexity: Annotate all functions
 
-Empirically validated performance (29/29 tests passing):
-- 100 documents: 1.5× efficiency, 34% space reduction
-- 10,000 documents: 7.5× efficiency, 87% space reduction
+## KEY REFERENCES
 
-## Integration Pattern
+- **JULES_MATH_CONTEXT.md** - All validated formulas & metrics
+- **JULES_PROTOCOL_GUIDE.md** - Quality standards & Asymmetrica Protocol
+- **README.md** - Project overview
+- **Validation:** C:\Projects\iPermit-rebuild\backend\tests\unit\ (102/102 tests ✓)
 
-```python
-williams = WilliamsOptimizer()
-batch_config = williams.calculate(total_documents=1000)
-optimal_batch = batch_config.optimal_batch_size  # 32
-```
+**Mission:** Execute workflows with protocol compliance → rigorous, validated outputs
 
-*Synthesized by Neutral Historian Protocol*
-```
-
-## Next Steps
-
-1. **Implement** `synthesize_batch()` function in `main.py`
-2. **Test** with sample documents in `source_materials/`
-3. **Verify** Google Doc output contains rigorous, publication-quality synthesis
-4. **Iterate** based on synthesis quality
-
-## Important Notes
-
-- Use DefenseKit components - they're production-ready with 102/102 tests passing!
-- Follow Asymmetrica Protocol (semantic tuples in docstrings)
-- Respect API rate limits (Harmonic Timer handles this automatically)
-- Store results in Memory System for tracking
-
-## Questions?
-
-Refer to:
-- `README.md` - Setup and overview
-- `ARCHITECTURE.md` - System design
-- `JULES_QUICK_START.md` - Implementation guide
-- `PROJECT_SUMMARY.md` - Complete component catalog
-
----
-
-**Framework Status:** Complete and ready for your implementation
-
-**Your Mission:** Transform esoteric research documentation into rigorous, publication-quality canonical knowledge
-
-**Success Criteria:** Google Doc contains clear, evidence-based synthesis with perfect factual fidelity
-
----
-
-*"Better Math for Everyone!"* - Asymmetrica R&D Laboratory
-
-**Let's build something incredible!**
+*"Better Math for Everyone!"*
