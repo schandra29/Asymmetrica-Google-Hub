@@ -131,10 +131,10 @@ export class ProtectiveGuardian {
    * }
    * ```
    */
-  public withErrorBoundaries<T extends (...args: any[]) => any>(fn: T): (...args: Parameters<T>) => ReturnType<T> {
+  public withErrorBoundaries<T extends (...args: unknown[]) => unknown>(fn: T): (...args: Parameters<T>) => ReturnType<T> {
     return (...args: Parameters<T>): ReturnType<T> => {
       try {
-        return fn(...args);
+        return fn(...args) as ReturnType<T>;
       } catch (error) {
         // In a real application, you would add structured logging here.
         console.error("An exception was caught by the Protective Guardian's error boundary.", {
