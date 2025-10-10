@@ -35,8 +35,8 @@ enum SentimentLabel {
 model Document {
   id              String   @id @default(cuid())
   content         String
+  source_url      String?  // The original URL of the document source
   structured_data Json     @default("{}") // Stores extracted entities (NER) as JSONB.
-  embedding       Json?    // Stores the 4D quaternion embedding: {a, bi, cj, dk}.
   confidence      Float    // Harmonic mean confidence score (0-1).
   regime          Regime   // Classified regime for sharding and analysis.
   created_at      DateTime @default(now())
@@ -50,9 +50,7 @@ model Document {
   // Indexes for performance optimization.
   @@index([regime]) // Speeds up queries filtered by regime.
   @@index([created_at]) // Optimizes sorting by creation date.
-  @@index([structured_data], type: Gin) // GIN index for fast searching within the JSONB data.
-  // Note: A GiST index for quaternion similarity will be added via a custom SQL migration
-  // as it depends on a custom similarity function.
+  @@index([structured_data], type: Gin)
 }
 
 /// Model for storing Named Entity Recognition (NER) results.
