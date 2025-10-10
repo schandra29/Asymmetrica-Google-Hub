@@ -1,0 +1,49 @@
+{
+  "name": "asymmetrica-deep-sensing-studio",
+  "version": "1.0.0",
+  "description": "Asymmetrica Intelligence Studio - Phase 1: Deep-Sensing Studio",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:backend dev:frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm-run-all build:shared build:backend build:frontend",
+    "build:shared": "npm run build --workspace=shared",
+    "build:backend": "npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "test": "npm-run-all test:backend test:frontend",
+    "test:backend": "npm run test --workspace=backend",
+    "test:frontend": "npm run test --workspace=frontend",
+    "test:contract": "npm run test:contract --workspace=backend",
+    "test:ux-sonar": "npm run test:ux-sonar --workspace=frontend",
+    "lint": "npm-run-all lint:backend lint:frontend",
+    "lint:backend": "npm run lint --workspace=backend",
+    "lint:frontend": "npm run lint --workspace=frontend",
+    "typecheck": "npm-run-all typecheck:backend typecheck:frontend",
+    "typecheck:backend": "npm run typecheck --workspace=backend",
+    "typecheck:frontend": "npm run typecheck --workspace=frontend",
+    "deploy": "npm run deploy --workspace=backend"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "asymmetrica",
+    "intelligence-studio",
+    "deep-sensing",
+    "document-processing",
+    "vedic-mathematics",
+    "quaternion-rag"
+  ],
+  "author": "Asymmetrica Intelligence",
+  "license": "UNLICENSED"
+}

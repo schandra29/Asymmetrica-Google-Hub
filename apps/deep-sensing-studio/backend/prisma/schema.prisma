@@ -1,0 +1,62 @@
+// Asymmetrica Deep-Sensing Studio - Database Schema
+// Three-Regime Architecture with Quaternion Support
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// TODO (JULES-03): Complete this schema with the following tables:
+// 1. documents - Core document storage with regime sharding
+// 2. entities - Extracted entities (NER results)
+// 3. sentiments - Sentiment analysis results
+// 4. embeddings - Quaternion embeddings (4D vectors!)
+// 5. users - User accounts (for future auth)
+// 6. api_keys - API key management
+
+/// Document model with Three-Regime classification
+/// TODO (JULES-03): Add fields for:
+/// - id: String @id @default(cuid())
+/// - content: String (full text)
+/// - structured_data: Json (extracted fields)
+/// - embedding: Json? (quaternion {a, bi, cj, dk})
+/// - confidence: Float (harmonic mean!)
+/// - regime: Regime enum
+/// - created_at: DateTime @default(now())
+/// - updated_at: DateTime @updatedAt
+model Document {
+  id String @id @default(cuid())
+  // TODO (JULES-03): Add remaining fields here
+}
+
+/// Three-Regime classification enum
+/// Support (α₀): 32.1x leverage - Maximum efficiency
+/// Exploration (α₁): 26.8x leverage - High creativity
+/// Balance (α₂): 11.5x leverage - Integration
+enum Regime {
+  Support
+  Exploration
+  Balance
+}
+
+// TODO (JULES-03): Add Entity model for NER results
+// Fields: id, document_id, entity_type, entity_value, confidence, position_start, position_end
+
+// TODO (JULES-03): Add Sentiment model
+// Fields: id, document_id, sentiment_score, sentiment_label, confidence
+
+// TODO (JULES-03): Add Embedding model for quaternion vectors
+// Fields: id, document_id, quaternion (Json: {a, bi, cj, dk}), created_at
+
+// TODO (JULES-03): Add User model for auth (future Phase 2)
+// Fields: id, email, name, api_key_hash, created_at
+
+// TODO (JULES-03): Add indexes:
+// - @@index([regime]) on Document
+// - @@index([document_id]) on Entity
+// - GIN index on structured_data JSONB field
+// - GiST index for quaternion similarity search
