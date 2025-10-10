@@ -1,67 +1,57 @@
 /**
- * VEDIC STATISTICAL FRAMEWORK - NIKHILAM CORRECTION
+ * Utility for calculating the Nikhilam correction.
+ * Part of the Asymmetrica Protocol's Vedic mathematics toolkit.
  *
- * This utility provides the Nikhilam correction, a method for finding the
- * complement of a number relative to a power of 10. It is used as a
- * fallback mechanism for low-quality inputs, transforming a deficit into
- * a surplus measure.
+ * This function implements the "Nikhilam Navatashcaramam Dashatah" sutra, which
+ * translates to "All from 9 and the last from 10". It's used to find the
+ * complement of a number from the next highest power of 10.
  *
- * @file This file contains the TypeScript implementation of the Nikhilam correction.
- * @author Jules AI (JULES-05)
+ * @file This file contains the nikhilamCorrection function.
+ * @author Jules AI (JULES-01)
  * @date 2025-10-10
  */
 
 /**
- * Calculates the Vedic complement of a number using the "Nikhilam Navatashcaramam Dashatah"
- * sutra, which translates to "All from 9 and the last from 10".
+ * Calculates the Nikhilam complement of a positive number.
  *
- * This function finds the next power of 10 that is greater than or equal to the input value
- * and calculates the difference (the complement). It is particularly useful for
- * inverting low-quality scores into a measure of potential. For example, a low
- * confidence score of 0.15 is complemented to 0.85 (from a base of 1.0).
+ * This method finds the difference between a number and the next highest
+ * power of 10. It is used as a fallback or correction mechanism for certain
+ * data points, effectively inverting a score. For example, a low score of 0.15
+ * is transformed into a high score of 0.85.
  *
- * @param value The number to correct. Must be a positive number.
- * @returns The Nikhilam complement of the value. Returns 0 if the input is not positive.
- *
- * @remarks
- * The function determines the base automatically. For `87`, the base is `100`, complement is `13`.
- * For `0.15`, the base is `1`, complement is `0.85`.
- * Source: Interpretation of Nikhilam Sutra for modern data correction.
+ * @param value The positive number for which to find the complement. Must be non-negative.
+ * @returns The Nikhilam complement.
  *
  * @example
  * ```typescript
- * // Correcting a low confidence score
- * const lowConfidence = 0.2;
- * const corrected = nikhilamCorrection(lowConfidence); // 0.8
+ * // For numbers between 0 and 1, the next power of 10 is 1.
+ * nikhilamCorrection(0.15); // returns 0.85 (since 1 - 0.15 = 0.85)
+ * nikhilamCorrection(0.8); // returns 0.2
  *
- * // Finding the complement of an integer
- * const integerValue = 980;
- * const complement = nikhilamCorrection(integerValue); // 20 (from base 1000)
+ * // For numbers >= 1.
+ * nikhilamCorrection(1);   // returns 9 (since 10 - 1 = 9)
+ * nikhilamCorrection(7);   // returns 3 (since 10 - 7 = 3)
+ * nikhilamCorrection(88);  // returns 12 (since 100 - 88 = 12)
  * ```
  */
 export function nikhilamCorrection(value: number): number {
-  if (value <= 0) {
+  if (value < 0) {
+    // Nikhilam is not defined for negative numbers in this context.
     return 0;
   }
 
-  let base: number;
-  if (value < 1) {
-    // For values between 0 and 1 (like confidence scores), the base is 1.
-    base = 1;
-  } else {
-    // For values >= 1, find the next power of 10.
-    base = 1;
-    // Use a small epsilon to handle floating point inaccuracies if comparing directly
-    while (base <= value) {
-      base *= 10;
-    }
+  let nextPowerOf10 = 1;
+
+  // Find the smallest power of 10 that is strictly greater than the value.
+  // For value = 1, we need 10. For value = 10, we need 100.
+  while (nextPowerOf10 <= value) {
+    nextPowerOf10 *= 10;
   }
 
-  // The Nikhilam complement is simply the base minus the value.
-  // The "All from 9..." is a mental shortcut for this operation.
-  // We use high precision multiplication to avoid floating point errors.
-  const precision = 1e12;
-  const result = (Math.round(base * precision) - Math.round(value * precision)) / precision;
+  // The result is the difference.
+  // To handle potential floating point inaccuracies, we can round the result.
+  const result = nextPowerOf10 - value;
 
-  return result;
+  // Round to a reasonable number of decimal places to avoid floating point noise.
+  return parseFloat(result.toPrecision(15));
 }

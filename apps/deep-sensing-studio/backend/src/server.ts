@@ -8,31 +8,30 @@
  * @author JULES-01
  */
 
-import Fastify from 'fastify';
+import Fastify, { FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
 import swagger from '@fastify/swagger';
 import swaggerUI from '@fastify/swagger-ui';
 
-// TODO (JULES-01): Import your route handlers
-// import documentRoutes from './api/routes/document-processing.js';
-// import entityRoutes from './api/routes/entity-recognition.js';
-// import sentimentRoutes from './api/routes/sentiment-analysis.js';
+// Import route handlers
+import healthRoutes from './api/routes/health.js';
+import documentRoutes from './api/routes/documents.js';
+import documentProcessingRoutes from './api/routes/document-processing.js';
 
-// TODO (JULES-01): Import middleware
-// import { authMiddleware } from './middleware/auth.js';
-// import { errorHandler } from './middleware/error-handler.js';
+// Import middleware
+import { registerErrorHandler } from './middleware/error-handler.js';
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 
 /**
- * Initialize Fastify server with plugins
+ * Initialize Fastify server with plugins and routes.
  *
- * @returns {Promise<FastifyInstance>} Configured Fastify instance
+ * @returns {Promise<FastifyInstance>} Configured Fastify instance.
  */
-async function buildServer() {
+async function buildServer(): Promise<FastifyInstance> {
   const fastify = Fastify({
     logger: {
       level: process.env.LOG_LEVEL || 'info',
@@ -47,30 +46,21 @@ async function buildServer() {
     },
   });
 
-  // Security plugins
-  await fastify.register(helmet, {
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        styleSrc: ["'self'", "'unsafe-inline'"],
-        scriptSrc: ["'self'"],
-        imgSrc: ["'self'", 'data:', 'https:'],
-      },
-    },
-  });
+  // Register centralized error handler
+  registerErrorHandler(fastify);
 
+  // Security plugins
+  await fastify.register(helmet);
   await fastify.register(cors, {
     origin: process.env.CORS_ORIGIN || '*',
     credentials: true,
   });
 
-  // TODO (JULES-01): Implement Tesla 4.909 Hz rate limiting
-  // Tesla frequency = 4.909 Hz = ~5 requests per second
-  // Period = 1/4.909 ≈ 203.7ms
+  // Tesla 4.909 Hz Rate Limiting
+  // The frequency is approximately 5 Hz, so we allow 5 requests per second.
   await fastify.register(rateLimit, {
-    max: 5, // 5 requests
-    timeWindow: 1000, // per 1 second (203.7ms × 5 ≈ 1018ms)
-    // TODO: Add harmonic backoff logic (203ms, 407ms, 815ms, 1630ms, 3259ms)
+    max: 5,
+    timeWindow: '1 second',
   });
 
   // Swagger/OpenAPI documentation
@@ -78,19 +68,14 @@ async function buildServer() {
     openapi: {
       info: {
         title: 'Asymmetrica Deep-Sensing Studio API',
-        description: 'AI-powered document processing with Vedic optimization',
+        description: 'AI-powered document processing with Vedic optimization and Three-Regime architecture.',
         version: '1.0.0',
+        contact: { name: 'Jules AI Swarm', email: 'jules@asymmetrica.ai' }
       },
-      servers: [
-        {
-          url: 'http://localhost:3000',
-          description: 'Development server',
-        },
-      ],
+      servers: [{ url: `http://${HOST}:${PORT}`, description: 'Development Server' }],
       tags: [
-        { name: 'documents', description: 'Document processing endpoints' },
-        { name: 'entities', description: 'Entity recognition endpoints' },
-        { name: 'sentiment', description: 'Sentiment analysis endpoints' },
+        { name: 'utility', description: 'Health and utility endpoints' },
+        { name: 'documents', description: 'Document processing and retrieval endpoints' },
       ],
     },
   });
@@ -103,23 +88,20 @@ async function buildServer() {
     },
   });
 
-  // TODO (JULES-01): Register route handlers
-  // await fastify.register(documentRoutes, { prefix: '/api/documents' });
-  // await fastify.register(entityRoutes, { prefix: '/api/entities' });
-  // await fastify.register(sentimentRoutes, { prefix: '/api/sentiment' });
+  // Register all API routes under the /api/v1 prefix
+  await fastify.register(healthRoutes, { prefix: '/api/v1' });
+  await fastify.register(documentRoutes, { prefix: '/api/v1/documents' });
+  await fastify.register(documentProcessingRoutes, { prefix: '/api/v1/documents' });
 
-  // Health check endpoint
-  fastify.get('/health', async () => {
-    return { status: 'ok', timestamp: new Date().toISOString() };
-  });
+  fastify.log.info('All routes and plugins registered successfully.');
 
   return fastify;
 }
 
 /**
- * Start the server
+ * Start the server.
  */
-async function start() {
+async function start(): Promise<void> {
   try {
     const fastify = await buildServer();
     await fastify.listen({ port: PORT, host: HOST });
@@ -132,8 +114,9 @@ async function start() {
 }
 
 // Start server if this file is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  start();
+if (import.meta.url.startsWith('file://') && process.argv[1] === new URL(import.meta.url).pathname) {
+    void start();
 }
 
-export { buildServer, start };
+
+export { buildServer };

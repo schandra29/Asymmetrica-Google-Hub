@@ -1,5 +1,6 @@
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import parser from '@typescript-eslint/parser';
+import jsdoc from 'eslint-plugin-jsdoc';
 
 export default [
   {
@@ -14,6 +15,7 @@ export default [
     },
     plugins: {
       '@typescript-eslint': typescriptEslint,
+      'jsdoc': jsdoc,
     },
     rules: {
       // Asymmetrica Protocol: No `any` types allowed!
@@ -32,13 +34,17 @@ export default [
       'no-var': 'error',
 
       // JSDoc requirement (Asymmetrica Protocol)
-      'require-jsdoc': ['warn', {
+      'jsdoc/require-jsdoc': ['warn', {
         require: {
           FunctionDeclaration: true,
           MethodDefinition: true,
           ClassDeclaration: true,
+          ArrowFunctionExpression: true,
+          FunctionExpression: true,
         },
       }],
+      'jsdoc/require-param-description': 'warn',
+      'jsdoc/require-returns-description': 'warn',
     },
   },
 ];

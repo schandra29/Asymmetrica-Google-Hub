@@ -20,8 +20,9 @@ describe('Vedic Math: nikhilamCorrection', () => {
     expect(nikhilamCorrection(0.5)).toBeCloseTo(0.5);
   });
 
-  it('should return 0 for an input of 0', () => {
-    expect(nikhilamCorrection(0)).toBe(0);
+  it('should return 1 for an input of 0', () => {
+    // The next power of 10 greater than 0 is 1. The complement is 1 - 0 = 1.
+    expect(nikhilamCorrection(0)).toBe(1);
   });
 
   it('should return 0 for a negative input', () => {

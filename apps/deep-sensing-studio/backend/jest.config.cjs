@@ -1,5 +1,5 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-export default {
+module.exports = {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
   // Automatically clear mock calls and instances between every test
@@ -29,6 +29,12 @@ export default {
   testMatch: [
     '**/tests/**/*.test.ts'
   ],
+
+  // An array of file extensions your modules use
+  moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+
+  // Tell Jest to handle .ts files as ESM
+  extensionsToTreatAsEsm: ['.ts'],
 
   // A map from regular expressions to paths to transformers
   transform: {
