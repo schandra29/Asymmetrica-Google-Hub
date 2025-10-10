@@ -20,7 +20,7 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
-    "@asymmetrica/shared": "workspace:*",
+    "@asymmetrica/shared": "file:../../shared",
     "framer-motion": "^11.11.11",
     "gsap": "^3.12.5",
     "lenis": "^1.1.17",
