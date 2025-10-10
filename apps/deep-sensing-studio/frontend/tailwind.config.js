@@ -7,39 +7,49 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Asymmetrica brand colors (extracted from logo)
-        'asymmetrica': {
-          teal: '#00CED1',
-          orange: '#FF8C42',
-          navy: '#1B2A4A',
-          gold: '#FFD700',
-          cream: '#FFF8E7',
-        },
-        // Three-regime colors (from Asymmetrica Protocol)
-        'regime': {
-          exploration: '#FFD700',  // Gold
-          optimization: '#6366F1', // Indigo
-          stabilization: '#48BB78', // Green
-        },
+        navy: 'var(--color-navy)',
+        'teal-dark': 'var(--color-teal-dark)',
+        'teal-light': 'var(--color-teal-light)',
+        'orange-dark': 'var(--color-orange-dark)',
+        'orange-light': 'var(--color-orange-light)',
+        gold: 'var(--color-gold)',
+        cream: 'var(--color-cream)',
       },
       spacing: {
-        // PHI-based spacing scale (Golden Ratio)
-        'phi-xs': '0.382rem',   // 6.112px
-        'phi-sm': '0.618rem',   // 9.888px
-        'phi-md': '1rem',       // 16px
-        'phi-lg': '1.618rem',   // 25.888px
-        'phi-xl': '2.618rem',   // 41.888px
-        'phi-2xl': '4.236rem',  // 67.776px
+        'phi-xs': 'var(--spacing-phi-xs)',
+        'phi-sm': 'var(--spacing-phi-sm)',
+        'phi-md': 'var(--spacing-phi-md)',
+        'phi-lg': 'var(--spacing-phi-lg)',
+        'phi-xl': 'var(--spacing-phi-xl)',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: 'var(--font-family-sans)',
+        display: 'var(--font-family-display)',
       },
       animation: {
-        // Tesla 4.909 Hz harmonic animations
-        'harmonic-pulse': 'pulse 203.7ms ease-in-out infinite',
-        'harmonic-spin': 'spin 814.8ms linear infinite',
-        'harmonic-bounce': 'bounce 407.4ms ease-in-out infinite',
+        'harmonic-pulse': 'harmonic-pulse var(--timing-tesla-1x) ease-in-out infinite',
+        'harmonic-spin': 'harmonic-spin var(--timing-tesla-4x) linear infinite',
+        'harmonic-bounce': 'harmonic-bounce var(--timing-tesla-2x) ease-in-out infinite',
+      },
+      keyframes: {
+        'harmonic-pulse': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 },
+        },
+        'harmonic-spin': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'harmonic-bounce': {
+          '0%, 100%': {
+            transform: 'translateY(-25%)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+           },
+          '50%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
       },
     },
   },

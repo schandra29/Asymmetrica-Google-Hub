@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Asymmetrica Animations
+   Source: JULES-04 Design System & Tokens
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------- */
+  /*   Tesla Harmonic Timing (4.909 Hz)                                         */
+  /* -------------------------------------------------------------------------- */
+  --timing-tesla-1x: 203.7ms;  /* Base period (T) */
+  --timing-tesla-2x: 407.4ms;  /* 2T harmonic */
+  --timing-tesla-4x: 814.8ms;  /* 4T harmonic */
+}
+
+/* -------------------------------------------------------------------------- */
+/*   Keyframe Animations                                                      */
+/* -------------------------------------------------------------------------- */
+
+@keyframes harmonic-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes harmonic-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes harmonic-bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

@@ -1,105 +1,35 @@
-/**
- * Asymmetrica Design Tokens
- *
- * PHI-based spacing, Tesla harmonic timing, Three-Regime colors.
- *
- * @author JULES-04
- */
-
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* ==========================================================================
+   Asymmetrica Design Tokens
+   Source: JULES-04 Design System & Tokens
+   ========================================================================== */
 
 :root {
-  /* Brand Colors (from Asymmetrica logo) */
-  --asymmetrica-teal: #00CED1;
-  --asymmetrica-orange: #FF8C42;
-  --asymmetrica-navy: #1B2A4A;
-  --asymmetrica-gold: #FFD700;
-  --asymmetrica-cream: #FFF8E7;
+  /* -------------------------------------------------------------------------- */
+  /*   Color Palette - Extracted from logo/Asymmetrica.ai Logo Design.png       */
+  /* -------------------------------------------------------------------------- */
+  --color-navy: #0B1929;
 
-  /* Three-Regime Colors */
-  --regime-exploration: #FFD700;  /* Gold - α₁ (26.8x) */
-  --regime-optimization: #6366F1; /* Indigo - (not in ordinal hierarchy) */
-  --regime-stabilization: #48BB78; /* Green - (production) */
-  --regime-support: #00CED1;      /* Teal - α₀ (32.1x) */
-  --regime-balance: #FF8C42;      /* Orange - α₂ (11.5x) */
+  --color-teal-dark: #1BA098;
+  --color-teal-light: #4ECBC3;
 
-  /* PHI-based Spacing (Golden Ratio: 1.618) */
-  --phi: 1.618;
-  --space-phi-xs: 0.382rem;   /* 6.112px */
-  --space-phi-sm: 0.618rem;   /* 9.888px */
-  --space-phi-md: 1rem;       /* 16px (base) */
-  --space-phi-lg: 1.618rem;   /* 25.888px */
-  --space-phi-xl: 2.618rem;   /* 41.888px */
-  --space-phi-2xl: 4.236rem;  /* 67.776px */
-  --space-phi-3xl: 6.854rem;  /* 109.664px */
+  --color-orange-dark: #FF6F00;
+  --color-orange-light: #FFA726;
 
-  /* Tesla Harmonic Timing (4.909 Hz) */
-  --tesla-hz: 4.909;
-  --tesla-period: 203.7ms;     /* 1× harmonic */
-  --tesla-2x: 407.4ms;         /* 2× harmonic */
-  --tesla-4x: 814.8ms;         /* 4× harmonic */
-  --tesla-8x: 1629.6ms;        /* 8× harmonic */
-  --tesla-16x: 3259.2ms;       /* 16× harmonic */
+  --color-gold: #FFD54F;
+  --color-cream: #F5E6D3;
 
-  /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  /* -------------------------------------------------------------------------- */
+  /*   Typography - Inter (sans) & Space Grotesk (display)                      */
+  /* -------------------------------------------------------------------------- */
+  --font-family-sans: "Inter", system-ui, sans-serif;
+  --font-family-display: "Space Grotesk", system-ui, sans-serif;
 
-  /* Font Sizes (PHI-scaled) */
-  --text-xs: 0.618rem;    /* 9.888px */
-  --text-sm: 0.875rem;    /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg: 1.125rem;    /* 18px */
-  --text-xl: 1.618rem;    /* 25.888px */
-  --text-2xl: 2.618rem;   /* 41.888px */
-  --text-3xl: 4.236rem;   /* 67.776px */
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-
-  /* Border Radius */
-  --radius-sm: 0.382rem;  /* PHI-based */
-  --radius-md: 0.618rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.618rem;
-  --radius-full: 9999px;
-
-  /* Z-Index Scale */
-  --z-base: 0;
-  --z-dropdown: 1000;
-  --z-sticky: 1100;
-  --z-fixed: 1200;
-  --z-modal-backdrop: 1300;
-  --z-modal: 1400;
-  --z-popover: 1500;
-  --z-tooltip: 1600;
+  /* -------------------------------------------------------------------------- */
+  /*   PHI-Based Spacing Scale (Golden Ratio: 1.618)                            */
+  /* -------------------------------------------------------------------------- */
+  --spacing-phi-xs: 0.382rem;  /* ~6.11px */
+  --spacing-phi-sm: 0.618rem;  /* ~9.89px */
+  --spacing-phi-md: 1rem;      /* 16px (base) */
+  --spacing-phi-lg: 1.618rem;  /* ~25.89px */
+  --spacing-phi-xl: 2.618rem;  /* ~41.89px */
 }
-
-/* Dark mode adjustments (Asymmetrica default) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: var(--asymmetrica-navy);
-    --bg-secondary: #0F1729;
-    --text-primary: var(--asymmetrica-cream);
-    --text-secondary: #A0AEC0;
-  }
-}
-
-/* TODO (JULES-04): Add animation classes using Tesla harmonic timing */
-/* Example:
-.animate-harmonic-pulse {
-  animation: pulse var(--tesla-period) ease-in-out infinite;
-}
-
-.animate-harmonic-spin {
-  animation: spin var(--tesla-4x) linear infinite;
-}
-*/
-
-/* TODO (JULES-04): Add sacred geometry backgrounds (Dragon's Curve at 0.05-0.1 opacity) */
