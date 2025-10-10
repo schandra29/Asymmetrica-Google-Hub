@@ -1,0 +1,97 @@
+/* ==========================================================================
+   SearchBar Component Styles
+   ========================================================================== */
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--font-family-sans);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-phi-md) var(--spacing-phi-lg);
+  padding-right: 50px; /* Space for spinner */
+  font-size: 1.2rem;
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+  border: 2px solid var(--color-teal-dark);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--color-gold);
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(11, 25, 41, 0.3); /* Navy transparent */
+  border-top-color: var(--color-navy);
+  border-radius: 50%;
+  animation: harmonic-spin var(--timing-tesla-4x) linear infinite;
+}
+
+.resultsList {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-navy);
+  border: 1px solid var(--color-teal-dark);
+  border-radius: 8px;
+  list-style: none;
+  padding: var(--spacing-phi-sm);
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.resultItem {
+  padding: var(--spacing-phi-md);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.resultItem:hover {
+  background-color: rgba(78, 203, 195, 0.1);
+}
+
+.resultTitle {
+  font-weight: bold;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-phi-xs);
+}
+
+.resultSnippet {
+  font-size: 0.9rem;
+  color: var(--color-cream);
+}
+
+.resultSimilarity {
+  font-size: 0.8rem;
+  color: var(--color-teal-light);
+  font-family: var(--font-family-display);
+}
+
+.historyItem {
+  color: var(--color-teal-light);
+  font-style: italic;
+}
+
+.historyItem:hover {
+  color: var(--color-gold);
+}

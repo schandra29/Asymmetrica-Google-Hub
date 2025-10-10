@@ -1,0 +1,80 @@
+/* ==========================================================================
+   DocumentViewer Component Styles
+   ========================================================================== */
+
+.wrapper {
+  width: 100%;
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  padding: var(--spacing-phi-lg);
+  border-radius: 8px;
+  border: 1px solid var(--color-teal-dark);
+  font-family: var(--font-family-sans);
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-phi-md);
+  margin-bottom: var(--spacing-phi-md);
+}
+
+.controlButton {
+  background: var(--color-teal-dark);
+  color: var(--color-navy);
+  border: none;
+  padding: var(--spacing-phi-xs) var(--spacing-phi-sm);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.documentPreview {
+  height: 400px;
+  overflow-y: auto;
+  padding: var(--spacing-phi-md);
+  background-color: rgba(245, 230, 211, 0.9); /* Lighter cream for text readability */
+  color: var(--color-navy);
+  border-radius: 4px;
+  white-space: pre-wrap; /* To respect newlines in text */
+  line-height: 1.6;
+}
+
+.entity {
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Confidence-based colors */
+.entity_high { background-color: rgba(78, 203, 195, 0.7); } /* Teal light */
+.entity_medium { background-color: rgba(255, 213, 79, 0.7); } /* Gold */
+.entity_low { background-color: rgba(255, 111, 0, 0.7); }  /* Orange dark */
+
+/* Sentiment-based gradients */
+.sentiment_positive {
+  background: linear-gradient(90deg, rgba(78, 203, 195, 0) 0%, rgba(78, 203, 195, 0.3) 100%);
+}
+.sentiment_negative {
+  background: linear-gradient(90deg, rgba(255, 111, 0, 0) 0%, rgba(255, 111, 0, 0.3) 100%);
+}
+
+.quaternionVis {
+  margin-top: var(--spacing-phi-lg);
+  padding: var(--spacing-phi-md);
+  border: 1px dashed var(--color-gold);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.quaternionVis h4 {
+  margin-top: 0;
+  color: var(--color-gold);
+  font-family: var(--font-family-display);
+}
+
+.quaternionData {
+  font-family: monospace;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}

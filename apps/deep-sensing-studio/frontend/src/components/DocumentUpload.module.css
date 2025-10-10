@@ -1,0 +1,62 @@
+/* ==========================================================================
+   DocumentUpload Component Styles
+   ========================================================================== */
+
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-phi-lg);
+  background-color: var(--color-navy);
+  border: 1px dashed var(--color-teal-dark);
+  border-radius: 8px;
+  font-family: var(--font-family-sans);
+  color: var(--color-cream);
+  text-align: center;
+}
+
+.dropzone {
+  padding: var(--spacing-phi-xl);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropzoneActive {
+  background-color: rgba(78, 203, 195, 0.1);
+  border-color: var(--color-teal-light);
+}
+
+.dropzone p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.fileList {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--spacing-phi-md);
+  text-align: left;
+}
+
+.fileItem {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-phi-sm) var(--spacing-phi-md);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-phi-xs);
+  font-size: 0.9rem;
+}
+
+.progressWrapper {
+  margin-top: var(--spacing-phi-md);
+}
+
+.progressIndicator {
+  background-color: var(--color-teal-dark) !important; /* Radix override */
+  animation: harmonic-pulse var(--timing-tesla-2x) infinite;
+}
+
+.error {
+  color: var(--color-orange-dark);
+  margin-top: var(--spacing-phi-md);
+  font-weight: bold;
+}

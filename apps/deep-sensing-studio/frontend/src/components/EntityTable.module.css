@@ -1,0 +1,76 @@
+/* ==========================================================================
+   EntityTable Component Styles
+   ========================================================================== */
+
+.wrapper {
+  width: 100%;
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  padding: var(--spacing-phi-lg);
+  border-radius: 8px;
+  border: 1px solid var(--color-teal-dark);
+  font-family: var(--font-family-sans);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-phi-md);
+  flex-wrap: wrap;
+  gap: var(--spacing-phi-md);
+}
+
+.filters {
+  display: flex;
+  gap: var(--spacing-phi-md);
+  align-items: center;
+}
+
+.sliderWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-phi-sm);
+}
+
+.exportButton {
+  background: var(--color-gold);
+  color: var(--color-navy);
+  border: none;
+  padding: var(--spacing-phi-xs) var(--spacing-phi-sm);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-phi-md);
+}
+
+.table th, .table td {
+  padding: var(--spacing-phi-sm) var(--spacing-phi-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-teal-dark);
+}
+
+.table th {
+  cursor: pointer;
+  user-select: none;
+}
+
+.table th:hover {
+  background-color: rgba(78, 203, 195, 0.1);
+}
+
+/* Three-Regime Color Coding */
+.regime_support {
+  border-left: 4px solid #4CAF50; /* Green */
+}
+.regime_exploration {
+  border-left: 4px solid #FFC107; /* Yellow */
+}
+.regime_balance {
+  border-left: 4px solid #2196F3; /* Blue */
+}
