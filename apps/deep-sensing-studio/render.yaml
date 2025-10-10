@@ -1,0 +1,67 @@
+# Asymmetrica - Deep-Sensing Studio
+# Render.com Deployment Configuration (Infrastructure-as-Code)
+# JULES-10: Deployment & Infrastructure
+
+services:
+  # 1. PostgreSQL Database
+  # Provides persistent storage for documents, entities, sentiments, and user data.
+  - type: psql
+    name: deep-sensing-db
+    plan: free # Use 'starter' for production
+    # Render will automatically provision a database and set the DATABASE_URL
+    # environment variable in the web service.
+    # Version can be specified, e.g., '16'
+
+  # 2. Redis Cache
+  # Used for caching quaternion embeddings and other frequently accessed data.
+  - type: redis
+    name: deep-sensing-cache
+    plan: free # Use 'starter' for production
+    # Render will automatically provision a Redis instance and set the REDIS_URL
+    # environment variable in the web service.
+    # maxmemoryPolicy: allkeys-lru is a good default for caching.
+
+  # 3. Web Service (Backend API)
+  # The core Node.js/Fastify application, served via Docker.
+  - type: web
+    name: deep-sensing-studio-api
+    runtime: docker
+    # Points to the Dockerfile in the same directory
+    dockerfilePath: ./apps/deep-sensing-studio/Dockerfile
+    # Specifies the root directory for the build context
+    repo: https://github.com/asymmetrica/headquarters
+    # Automatic deployments on push to the main branch
+    autoDeploy: true
+    # Branch to monitor for deployments
+    branch: main
+    # Health check endpoint to ensure the service is running
+    healthCheckPath: /health
+    # Environment variables
+    envVars:
+      - key: DATABASE_URL
+        fromService:
+          type: psql
+          name: deep-sensing-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: deep-sensing-cache
+          property: connectionString
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Secrets should be set in the Render dashboard, not here.
+      # e.g., JWT_SECRET, API_KEY_SALT
+      - fromGroup: deep-sensing-secrets
+
+# Environment variable groups can be used to manage secrets
+# across different services and environments.
+envVarGroups:
+  - name: deep-sensing-secrets
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true # Or set a specific value in the dashboard
+      - key: CORS_ORIGIN
+        value: "https://deep-sensing.onrender.com" # Example production URL

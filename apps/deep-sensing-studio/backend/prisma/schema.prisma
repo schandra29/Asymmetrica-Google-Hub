@@ -1,5 +1,9 @@
 // Asymmetrica Deep-Sensing Studio - Database Schema
 // Three-Regime Architecture with Quaternion Support
+//
+// JULES-03: This schema is the foundational data model for the Deep-Sensing Studio.
+// It includes models for documents, entities, sentiments, and embeddings,
+// with a focus on performance using appropriate indexes (GIN for JSONB).
 
 generator client {
   provider = "prisma-client-js"
@@ -10,53 +14,99 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// TODO (JULES-03): Complete this schema with the following tables:
-// 1. documents - Core document storage with regime sharding
-// 2. entities - Extracted entities (NER results)
-// 3. sentiments - Sentiment analysis results
-// 4. embeddings - Quaternion embeddings (4D vectors!)
-// 5. users - User accounts (for future auth)
-// 6. api_keys - API key management
-
-/// Document model with Three-Regime classification
-/// TODO (JULES-03): Add fields for:
-/// - id: String @id @default(cuid())
-/// - content: String (full text)
-/// - structured_data: Json (extracted fields)
-/// - embedding: Json? (quaternion {a, bi, cj, dk})
-/// - confidence: Float (harmonic mean!)
-/// - regime: Regime enum
-/// - created_at: DateTime @default(now())
-/// - updated_at: DateTime @updatedAt
-model Document {
-  id String @id @default(cuid())
-  // TODO (JULES-03): Add remaining fields here
-}
-
-/// Three-Regime classification enum
-/// Support (α₀): 32.1x leverage - Maximum efficiency
-/// Exploration (α₁): 26.8x leverage - High creativity
-/// Balance (α₂): 11.5x leverage - Integration
+/// Three-Regime classification enum, based on Asymmetrica Protocol.
+/// - Support (α₀): Maximum efficiency, high-confidence data.
+/// - Exploration (α₁): High creativity, novel or low-confidence data.
+/// - Balance (α₂): Integration and equilibrium between the two.
 enum Regime {
   Support
   Exploration
   Balance
 }
 
-// TODO (JULES-03): Add Entity model for NER results
-// Fields: id, document_id, entity_type, entity_value, confidence, position_start, position_end
+/// Sentiment classification labels.
+enum SentimentLabel {
+  positive
+  negative
+  neutral
+}
 
-// TODO (JULES-03): Add Sentiment model
-// Fields: id, document_id, sentiment_score, sentiment_label, confidence
+/// Core model for storing documents and their processed metadata.
+model Document {
+  id              String   @id @default(cuid())
+  content         String
+  structured_data Json     @default("{}") // Stores extracted entities (NER) as JSONB.
+  embedding       Json?    // Stores the 4D quaternion embedding: {a, bi, cj, dk}.
+  confidence      Float    // Harmonic mean confidence score (0-1).
+  regime          Regime   // Classified regime for sharding and analysis.
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
 
-// TODO (JULES-03): Add Embedding model for quaternion vectors
-// Fields: id, document_id, quaternion (Json: {a, bi, cj, dk}), created_at
+  // Relations to associated data models.
+  entities   Entity[]
+  sentiments Sentiment[]
+  embeddings Embedding[]
 
-// TODO (JULES-03): Add User model for auth (future Phase 2)
-// Fields: id, email, name, api_key_hash, created_at
+  // Indexes for performance optimization.
+  @@index([regime]) // Speeds up queries filtered by regime.
+  @@index([created_at]) // Optimizes sorting by creation date.
+  @@index([structured_data], type: Gin) // GIN index for fast searching within the JSONB data.
+  // Note: A GiST index for quaternion similarity will be added via a custom SQL migration
+  // as it depends on a custom similarity function.
+}
 
-// TODO (JULES-03): Add indexes:
-// - @@index([regime]) on Document
-// - @@index([document_id]) on Entity
-// - GIN index on structured_data JSONB field
-// - GiST index for quaternion similarity search
+/// Model for storing Named Entity Recognition (NER) results.
+model Entity {
+  id             String   @id @default(cuid())
+  document_id    String
+  entity_type    String // e.g., "PERSON", "ORGANIZATION", "LOCATION"
+  entity_value   String // The actual text of the entity.
+  confidence     Float
+  position_start Int
+  position_end   Int
+
+  // Relation to the parent document.
+  document Document @relation(fields: [document_id], references: [id], onDelete: Cascade)
+
+  // Index for quickly retrieving all entities for a given document.
+  @@index([document_id])
+}
+
+/// Model for storing sentiment analysis results.
+model Sentiment {
+  id              String         @id @default(cuid())
+  document_id     String
+  sentiment_score Float // Score from -1.0 (negative) to 1.0 (positive).
+  sentiment_label SentimentLabel // 'positive', 'negative', or 'neutral'.
+  confidence      Float
+
+  // Relation to the parent document.
+  document Document @relation(fields: [document_id], references: [id], onDelete: Cascade)
+
+  // Index for quickly retrieving sentiment for a given document.
+  @@index([document_id])
+}
+
+/// Model for storing quaternion embeddings, linking them to a document.
+model Embedding {
+  id          String   @id @default(cuid())
+  document_id String
+  quaternion  Json // The 4D quaternion vector: {a, bi, cj, dk}.
+  created_at  DateTime @default(now())
+
+  // Relation to the parent document.
+  document Document @relation(fields: [document_id], references: [id], onDelete: Cascade)
+
+  // Index for quickly retrieving embeddings for a given document.
+  @@index([document_id])
+}
+
+/// User model for future authentication and authorization (Phase 2).
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  api_key_hash String?   @unique
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+}
