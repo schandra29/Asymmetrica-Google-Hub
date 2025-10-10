@@ -2,12 +2,13 @@ import asyncio
 import os
 import time
 import uuid
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 from core.defensekit.three_regime_planner import ThreeRegimePlanner, TaskRegime, TaskClassification
 from core.defensekit.williams_optimizer import WilliamsOptimizer, BatchOptimizationResult
 from core.defensekit.harmonic_timer import HarmonicTimer, RetryResult
 from core.defensekit.regime_aware_cache import RegimeAwareCache
+from core.vedic.vedic_statistics import harmonic_mean, dharma_index, attractor_analysis
 
 # In-memory storage for tasks. In a real app, this would be a database or a persistent store.
 tasks_db: Dict[str, "SynthesisTask"] = {}
@@ -26,11 +27,39 @@ class SynthesisTask:
         self.batch_plan: Optional[BatchOptimizationResult] = None
         self.failures = 0
 
-    def update_status(self, status: str, progress: float, details: str):
+        # VEDIC ENHANCEMENT: Track quality metrics
+        self.batch_quality_history: List[float] = []
+        self.overall_dharma: Optional[float] = None
+        self.convergence_rate: Optional[float] = None
+        self.quality_config: Optional[Dict] = None
+        self.current_stability: Optional[float] = None
+
+    def update_status(self, status: str, progress: float, details: str, stability: Optional[float] = None):
+        """
+        Update task status with optional stability metric
+
+        Args:
+            status: Status string (pending, running, complete, failed, warning)
+            progress: Percentage complete (0-100)
+            details: Human-readable status message
+            stability: Optional Dharma index (0-1) for real-time quality feedback
+        """
         self.status = status
         self.progress = progress
         self.details = details
-        print(f"Task {self.task_id}: {status} - {progress}% - {details}") # For console logging
+
+        # VEDIC ENHANCEMENT: Store stability for frontend display
+        if stability is not None:
+            self.current_stability = stability
+        elif hasattr(self, 'batch_quality_history') and self.batch_quality_history:
+            # Auto-calculate if not provided
+            from core.vedic.vedic_statistics import dharma_index
+            self.current_stability = dharma_index(self.batch_quality_history)
+        else:
+            self.current_stability = None
+
+        stability_str = f" | Stability: {self.current_stability:.3f}" if self.current_stability else ""
+        print(f"Task {self.task_id}: {status} - {progress}%{stability_str} - {details}") # For console logging
 
 
 class SynthesisEngine:
@@ -67,7 +96,38 @@ class SynthesisEngine:
                 description=task.request.goal
             )
             regime = task.classification.regime
-            task.update_status("running", 10.0, f"Task classified into '{regime.value}' regime.")
+
+            # VEDIC ENHANCEMENT: Select quality metric based on regime
+            regime_quality_config = {
+                TaskRegime.EXPLORATION: {
+                    "metric": "harmonic_mean",
+                    "threshold": 0.75,
+                    "rationale": "Conservative - catch all outliers",
+                    "stability_target": 0.70
+                },
+                TaskRegime.OPTIMIZATION: {
+                    "metric": "attractor_analysis",
+                    "threshold": 0.80,
+                    "rationale": "Track convergence toward optimal",
+                    "stability_target": 0.80
+                },
+                TaskRegime.STABILIZATION: {
+                    "metric": "dharma_index",
+                    "threshold": 0.90,
+                    "rationale": "Require consistency, minimal variance",
+                    "stability_target": 0.90
+                }
+            }
+
+            quality_config = regime_quality_config.get(regime, regime_quality_config[TaskRegime.OPTIMIZATION])
+            task.quality_config = quality_config  # Store for later use
+
+            task.update_status(
+                "running",
+                10.0,
+                f"Task classified into '{regime.value}' regime. "
+                f"Quality metric: {quality_config['metric']} (threshold: {quality_config['threshold']})"
+            )
             await asyncio.sleep(0.01)
 
             # 2. Simulate getting documents and use WilliamsOptimizer
@@ -84,7 +144,9 @@ class SynthesisEngine:
             processed_docs_count = 0
             for i in range(task.batch_plan.num_batches):
                 current_progress = 30.0 + (i / task.batch_plan.num_batches) * 60.0
+                # Initial status update for the batch
                 task.update_status("running", current_progress, f"Processing batch {i+1}/{task.batch_plan.num_batches}...")
+
 
                 # Simulate a resilient API call for each doc in the batch
                 # In a real app, this would be a real API call (e.g., to a summarization service)
@@ -115,9 +177,74 @@ class SynthesisEngine:
 
                 processed_docs_count += task.batch_plan.optimal_batch_size
 
+                # VEDIC ENHANCEMENT: Batch quality monitoring with harmonic mean
+                batch_confidences = []
+                for doc_idx in range(task.batch_plan.optimal_batch_size):
+                    mock_confidence = 0.85 + (i % 3) * 0.05  # Varies by batch
+                    batch_confidences.append(mock_confidence)
+
+                harmonic_quality = harmonic_mean(batch_confidences)
+                quality_threshold = task.quality_config['threshold']
+
+                if harmonic_quality < quality_threshold:
+                    task.update_status(
+                        "warning",
+                        current_progress,
+                        f"Batch {i+1}/{task.batch_plan.num_batches} - QUALITY WARNING: "
+                        f"Harmonic confidence {harmonic_quality:.3f} below {regime.value} threshold ({quality_threshold})"
+                    )
+                    task.failures += 1
+                else:
+                    task.update_status(
+                        "running",
+                        current_progress,
+                        f"Batch {i+1}/{task.batch_plan.num_batches} - Quality OK: "
+                        f"{harmonic_quality:.3f} (meets {regime.value} standard)"
+                    )
+
+                if not hasattr(task, 'batch_quality_history'):
+                    task.batch_quality_history = []
+                task.batch_quality_history.append(harmonic_quality)
+
 
             # 5. Finalize the process
-            task.update_status("running", 95.0, "Consolidating results from cache...")
+            # VEDIC ENHANCEMENT: Convergence tracking with attractor analysis
+            if len(task.batch_quality_history) > 1:
+                task.overall_dharma = dharma_index(task.batch_quality_history)
+
+                quality_targets = {
+                    TaskRegime.EXPLORATION: 0.75,
+                    TaskRegime.OPTIMIZATION: 0.80,
+                    TaskRegime.STABILIZATION: 0.90
+                }
+                target_quality = quality_targets.get(regime, 0.80)
+
+                attractor_result = attractor_analysis(
+                    task.batch_quality_history,
+                    target_quality
+                )
+
+                task.convergence_rate = attractor_result.convergence_rate
+
+                convergence_status = ""
+                if attractor_result.convergence_rate is not None:
+                    if attractor_result.convergence_rate > 0:
+                        convergence_status = "✓ Quality improving over time"
+                    elif attractor_result.convergence_rate < -0.01:
+                        convergence_status = "⚠ Quality degrading over time"
+                    else:
+                        convergence_status = "→ Quality stable throughout"
+
+                dharma_status = f"Stability (Dharma): {task.overall_dharma:.3f}"
+
+                task.update_status(
+                    "running",
+                    95.0,
+                    f"Consolidating results... | {dharma_status} | {convergence_status}"
+                )
+            else:
+                task.update_status("running", 95.0, "Consolidating results from cache...")
+
             await asyncio.sleep(0.01)
 
             # Retrieve all results from cache to form the final knowledge graph

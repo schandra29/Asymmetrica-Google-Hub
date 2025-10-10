@@ -28,10 +28,13 @@ class SynthesisRequest(BaseModel):
     directory: str
     goal: str
 
+from typing import Optional
+
 class SynthesisStatus(BaseModel):
     status: str
     progress: float
     details: str
+    stability: Optional[float] = None  # VEDIC ENHANCEMENT
 
 class SynthesisResult(BaseModel):
     knowledge_graph: dict
@@ -51,15 +54,22 @@ async def start_synthesis(request: SynthesisRequest):
 async def get_synthesis_status(task_id: str):
     """
     Retrieves the status of an ongoing synthesis task.
+    Includes Vedic stability metric (Dharma Index) if available.
     """
     task = tasks_db.get(task_id)
     if not task:
-        return SynthesisStatus(status="not_found", progress=0, details="Task not found.")
+        return SynthesisStatus(
+            status="not_found",
+            progress=0,
+            details="Task not found.",
+            stability=None
+        )
 
     return SynthesisStatus(
         status=task.status,
         progress=task.progress,
-        details=task.details
+        details=task.details,
+        stability=getattr(task, 'current_stability', None)  # VEDIC ENHANCEMENT
     )
 
 

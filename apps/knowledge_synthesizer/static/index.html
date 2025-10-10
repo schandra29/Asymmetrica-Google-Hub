@@ -45,6 +45,15 @@
             <div id="progress-bar-container">
                 <div id="progress-bar"></div>
             </div>
+
+<!-- VEDIC ENHANCEMENT: Stability meter -->
+<div id="stability-container" style="margin-top: 1rem; display: none;">
+    <label style="font-size: 0.9rem; color: #666;">Synthesis Stability (Dharma Index)</label>
+    <div id="stability-bar-container" style="width: 100%; background-color: #ccc; border-radius: 4px; overflow: hidden; margin-top: 0.5rem;">
+        <div id="stability-bar" style="width: 0%; height: 15px; background-color: #9c27b0; transition: width 0.5s;"></div>
+    </div>
+    <span id="stability-value" style="font-size: 0.85rem; color: #666; margin-top: 0.25rem; display: block;"></span>
+</div>
         </div>
 
         <div class="results-area" id="results-container" style="display: none;">

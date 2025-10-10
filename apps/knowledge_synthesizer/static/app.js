@@ -105,5 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             progressBar.style.backgroundColor = '#4caf50';
         }
+
+    // VEDIC ENHANCEMENT: Update stability meter
+    const stabilityContainer = document.getElementById('stability-container');
+    const stabilityBar = document.getElementById('stability-bar');
+    const stabilityValue = document.getElementById('stability-value');
+
+    if (data.stability !== null && data.stability !== undefined) {
+        stabilityContainer.style.display = 'block';
+
+        // Convert 0-1 scale to percentage for display
+        const stabilityPercent = (data.stability * 100).toFixed(1);
+        stabilityBar.style.width = `${stabilityPercent}%`;
+
+        // Color-code stability
+        if (data.stability >= 0.8) {
+            stabilityBar.style.backgroundColor = '#4caf50'; // Green (high dharma)
+            stabilityValue.textContent = `${stabilityPercent}% - Excellent stability (high dharma)`;
+        } else if (data.stability >= 0.5) {
+            stabilityBar.style.backgroundColor = '#f0ad4e'; // Yellow (moderate)
+            stabilityValue.textContent = `${stabilityPercent}% - Moderate stability`;
+        } else {
+            stabilityBar.style.backgroundColor = '#d9534f'; // Red (low dharma)
+            stabilityValue.textContent = `${stabilityPercent}% - Low stability (high variance)`;
+        }
+    } else {
+        stabilityContainer.style.display = 'none';
+    }
     };
 });
