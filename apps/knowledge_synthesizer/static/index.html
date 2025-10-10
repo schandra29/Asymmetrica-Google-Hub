@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asymmetrica Knowledge Synthesizer</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f4f6f8; color: #1a1a1a; margin: 0; padding: 2rem; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        input, textarea { width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; box-sizing: border-box; }
+        textarea { resize: vertical; min-height: 80px; }
+        button { display: block; width: 100%; padding: 1rem; background-color: #007aff; color: white; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #005ecb; }
+        button:disabled { background-color: #aaa; cursor: not-allowed; }
+        .status-area, .results-area { margin-top: 2rem; padding: 1.5rem; border-radius: 4px; background-color: #eef1f4; }
+        h2 { margin-top: 0; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; }
+        #status-details { font-family: monospace; font-size: 0.9rem; }
+        #progress-bar-container { width: 100%; background-color: #ccc; border-radius: 4px; overflow: hidden; margin-top: 1rem; }
+        #progress-bar { width: 0%; height: 20px; background-color: #4caf50; transition: width 0.5s; }
+        #results { white-space: pre-wrap; word-wrap: break-word; font-family: monospace; background-color: #fff; padding: 1rem; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Asymmetrica Knowledge Synthesizer</h1>
+
+        <div class="form-group">
+            <label for="directory">Document Directory</label>
+            <input type="text" id="directory" value="/path/to/my/research_papers">
+        </div>
+
+        <div class="form-group">
+            <label for="goal">Synthesis Goal</label>
+            <textarea id="goal" placeholder="e.g., 'explore novel concepts in quantum physics research' or 'stabilize my understanding of core machine learning papers'">explore novel concepts in quantum physics research</textarea>
+        </div>
+
+        <button id="synthesize-btn">Synthesize Knowledge</button>
+
+        <div class="status-area" id="status-container" style="display: none;">
+            <h2>Synthesis Status</h2>
+            <p id="status-details">Waiting to start...</p>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="results-area" id="results-container" style="display: none;">
+            <h2>Synthesis Results</h2>
+            <pre id="results"></pre>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
