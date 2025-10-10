@@ -1,25 +1,39 @@
 {
-  "name": "@asymmetrica/shared",
+  "name": "@deep-sensing/shared",
   "version": "1.0.0",
-  "description": "Shared types and utilities for Deep-Sensing Studio",
+  "description": "Shared TypeScript types for Deep-Sensing Studio (Backend + Frontend)",
   "private": true,
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint types --ext .ts",
-    "lint:fix": "eslint types --ext .ts --fix"
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "typecheck": "tsc --noEmit"
   },
+  "keywords": [
+    "typescript",
+    "types",
+    "shared",
+    "asymmetrica",
+    "deep-sensing",
+    "quaternion",
+    "three-regime"
+  ],
+  "author": "Asymmetrica Team",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "eslint": "^9.0.0",
     "typescript": "^5.6.0"
   },
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
-  }
+  },
+  "type": "commonjs"
 }
