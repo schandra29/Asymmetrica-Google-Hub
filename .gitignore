@@ -107,3 +107,8 @@ source_materials/prismatica_era/**/.nyc_output/
 source_materials/prismatica_era/**/Large Files - Avoid/
 source_materials/prismatica_era/**/eeg-data.csv
 source_materials/prismatica_era/**/eeg_samples_with_regimes.csv
+
+# Node.js
+node_modules/
+package-lock.json
+.DS_Store
